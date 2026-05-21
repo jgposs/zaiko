@@ -192,7 +192,7 @@ def run():
     save_state(state)
 
     if alerts:
-        lines = [f"🔔 {a['name']} ({','.join(a['sizes'])})\n  {a['url']}" for a in alerts]
+        lines = [f"🔔 {a['name'].split('COLOR:')[0].strip()}\n{a['url']}" for a in alerts]
         body = "\n\n".join(lines)
         subject = f"COMOLI: {len(alerts)} item(s) with size {TARGET_SIZE} in stock"
         notify(subject, body, alerts[0]["url"])
