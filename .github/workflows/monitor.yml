@@ -1,0 +1,83 @@
+# COMOLI Monitor — GitHub Actions Setup
+# ======================================
+# This runs your comoli_monitor.py every 30 minutes FOR FREE
+# using GitHub Actions. No server needed.
+#
+# SETUP STEPS:
+# 1. Create a free GitHub account at github.com
+# 2. Create a new PRIVATE repository (call it e.g. "comoli-monitor")
+# 3. Upload comoli_monitor.py to the repo root
+# 4. Create the file .github/workflows/monitor.yml with the content below
+# 5. Add your secrets in GitHub → Settings → Secrets → Actions:
+#       COMOLI_EMAIL_SENDER      your.gmail@gmail.com
+#       COMOLI_EMAIL_PASSWORD    your Gmail App Password
+#       COMOLI_EMAIL_RECIPIENT   your.email@example.com
+# 6. Push — Actions will start running automatically!
+#
+# TIP: GitHub Actions stores artifacts between runs, so comoli_state.json
+# persists and you won't get duplicate notifications.
+
+name: COMOLI Size Monitor
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"   # every 30 minutes
+  workflow_dispatch:           # lets you trigger manually from GitHub UI
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      # Restore the state file from the previous run
+      - name: Restore state
+        uses: actions/cache@v4
+        with:
+          path: comoli_state.json
+          key: comoli-state-${{ github.run_id }}
+          restore-keys: |
+            comoli-state-
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Run monitor
+        env:
+          COMOLI_EMAIL_SENDER:    ${{ secrets.COMOLI_EMAIL_SENDER }}
+          COMOLI_EMAIL_PASSWORD:  ${{ secrets.COMOLI_EMAIL_PASSWORD }}
+          COMOLI_EMAIL_RECIPIENT: ${{ secrets.COMOLI_EMAIL_RECIPIENT }}
+        run: |
+          # Patch the script to use environment variables for secrets
+          python - <<'EOF'
+          import os, importlib.util, pathlib
+
+          # Read script and inject env vars at runtime
+          src = pathlib.Path("comoli_monitor.py").read_text()
+          overrides = {
+              'EMAIL_SENDER':    os.environ.get("COMOLI_EMAIL_SENDER", ""),
+              'EMAIL_PASSWORD':  os.environ.get("COMOLI_EMAIL_PASSWORD", ""),
+              'EMAIL_RECIPIENT': os.environ.get("COMOLI_EMAIL_RECIPIENT", ""),
+          }
+          for key, val in overrides.items():
+              import re
+              src = re.sub(rf'^{key}\s*=\s*".*?"', f'{key} = "{val}"', src, flags=re.MULTILINE)
+
+          pathlib.Path("comoli_monitor_ci.py").write_text(src)
+          exec(compile(src, "comoli_monitor_ci.py", "exec"))
+          EOF
+
+      # Save state for the next run
+      - name: Save state
+        if: always()
+        uses: actions/cache@v4
+        with:
+          path: comoli_state.json
+          key: comoli-state-${{ github.run_id }}
