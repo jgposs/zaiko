@@ -113,25 +113,79 @@ def get_product_links() -> list[dict]:
 def get_available_sizes(product_url: str) -> list[str]:
     """
     Visit a product page and return the sizes listed.
-    Comoli renders sizes like:  2/\n3/\n4
-    so we look for digit-only tokens near 'SIZE'.
+    Tries multiple strategies to find sizes since Comoli is a Next.js
+    site that may embed data in <script> tags rather than visible HTML.
     """
     soup = fetch(product_url)
     if not soup:
         return []
 
-    text = soup.get_text(" ", strip=True)
+    # ── Strategy 1: Next.js __NEXT_DATA__ JSON ────────────────────────
+    # Next.js embeds all page data as JSON in a <script id="__NEXT_DATA__"> tag
+    next_data_tag = soup.find("script", {"id": "__NEXT_DATA__"})
+    if next_data_tag and next_data_tag.string:
+        try:
+            data = json.loads(next_data_tag.string)
+            raw = json.dumps(data)
+            # Look for size arrays like ["1","2","3","4"] or size fields
+            size_arrays = re.findall(r'"sizes?":\s*(\[[^\]]+\])', raw)
+            for arr in size_arrays:
+                sizes = re.findall(r'"(\d+)"', arr)
+                if sizes:
+                    return sizes
+            # Also look for size near numbers 1-5 in the JSON
+            size_match = re.search(r'"[Ss]ize":\s*"(\d+)"', raw)
+            if size_match:
+                return [size_match.group(1)]
+        except Exception:
+            pass
 
-    # Find the SIZE section and extract the sizes after it
-    size_match = re.search(r"SIZE\s*([\d /\n]+)", text)
+    # ── Strategy 2: Any <script> tag containing size data ────────────
+    for script in soup.find_all("script"):
+        if not script.string:
+            continue
+        text = script.string
+        if "SIZE" not in text.upper():
+            continue
+        try:
+            # Try parsing as JSON if it looks like a data blob
+            data = json.loads(text)
+            raw = json.dumps(data)
+            sizes = re.findall(r'"(\d)"', raw)
+            sizes = [s for s in sizes if s in "12345"]
+            if sizes:
+                return list(dict.fromkeys(sizes))
+        except Exception:
+            pass
+        # Plain text search within script
+        size_match = re.search(r'SIZE["\s:,]+([1-5](?:["\s,/]+[1-5])*)', text)
+        if size_match:
+            return re.findall(r"[1-5]", size_match.group(1))
+
+    # ── Strategy 3: Visible page text near "SIZE" ────────────────────
+    text = soup.get_text(" ", strip=True)
+    size_match = re.search(r"SIZE\s*([\d\s/]+)", text)
     if size_match:
         raw = size_match.group(1)
         sizes = re.findall(r"\d+", raw)
-        return sizes
+        # Filter to plausible clothing sizes (1-5 for Comoli)
+        sizes = [s for s in sizes if 1 <= int(s) <= 5]
+        if sizes:
+            return sizes
 
-    # Fallback: look for isolated 1-2 digit numbers that look like sizes
-    sizes = re.findall(r"\b([1-9]|1[0-9])\b", text)
-    return list(dict.fromkeys(sizes))  # deduplicated, order preserved
+    # ── Strategy 4: Look for a COLOR/SIZE table pattern ──────────────
+    # Comoli pages list sizes like "2/ 3/ 4" after color names
+    color_size_match = re.search(
+        r"(?:BLACK|WHITE|GRAY|NAVY|CHARCOAL|BROWN|BEIGE)[^\d]*(\d[\d\s/]*)",
+        text, re.IGNORECASE
+    )
+    if color_size_match:
+        sizes = re.findall(r"\d+", color_size_match.group(1))
+        sizes = [s for s in sizes if 1 <= int(s) <= 5]
+        if sizes:
+            return sizes
+
+    return []
 
 
 # ─────────────────────────────────────────────
@@ -202,6 +256,25 @@ def run():
     if not products:
         print("[WARN] No products found — site may have changed structure.")
         return
+
+    # Debug: print raw HTML snippet of first product to help diagnose size parsing
+    first = products[0] if products else None
+    if first:
+        soup = fetch(first["url"])
+        if soup:
+            # Show __NEXT_DATA__ presence
+            nd = soup.find("script", {"id": "__NEXT_DATA__"})
+            print(f"[DEBUG] __NEXT_DATA__ present: {nd is not None}")
+            # Show a snippet of visible text around SIZE
+            text = soup.get_text(" ", strip=True)
+            idx = text.upper().find("SIZE")
+            if idx >= 0:
+                print(f"[DEBUG] Text around SIZE: ...{text[max(0,idx-30):idx+80]}...")
+            else:
+                print(f"[DEBUG] 'SIZE' not found in visible text")
+            # Show script count
+            scripts = soup.find_all("script")
+            print(f"[DEBUG] Script tags found: {len(scripts)}")
 
     alerts = []
 
