@@ -78,11 +78,10 @@ def get_product_links(page) -> list[dict]:
 
 def get_available_sizes(page, product_url: str) -> list[str]:
     """
-    Render the product page and return sizes that are in stock
-    (i.e. visible but NOT struck through / crossed out).
+    Render the product page and return sizes that are in stock.
 
-    Comoli marks sold-out sizes with CSS text-decoration: line-through.
-    We use Playwright's computed style API to detect this.
+    Comoli marks sold-out sizes with class="td_line-through" on the
+    <span> wrapping the size number. In-stock sizes have no such class.
     """
     try:
         page.goto(product_url, wait_until="networkidle", timeout=30000)
@@ -90,35 +89,25 @@ def get_available_sizes(page, product_url: str) -> list[str]:
         print(f"[WARN] Could not load {product_url}: {e}")
         return []
 
-    # Find all elements whose text is purely a number (the size labels)
-    # Comoli renders sizes as standalone text nodes like "2", "3", "4"
-    size_elements = page.query_selector_all("*")
-
     in_stock = []
 
-    for el in size_elements:
-        try:
-            text = el.inner_text().strip()
-        except Exception:
-            continue
+    # Sold-out sizes: <span class="td_line-through">4</span>
+    sold_out = set()
+    for el in page.query_selector_all("span.td_line-through"):
+        text = el.inner_text().strip()
+        if re.match(r"^\d$", text):
+            sold_out.add(text)
+            print(f"  [SOLD OUT] size {text}")
 
-        # Only look at elements that are just a single digit (the size number)
+    # All sizes: any <span> inside a <p> whose text is a single digit
+    # and is NOT in the sold-out set
+    for el in page.query_selector_all("p > span"):
+        text = el.inner_text().strip()
         if not re.match(r"^\d$", text):
             continue
         if int(text) < 1 or int(text) > 5:
             continue
-
-        # Check computed text-decoration for line-through
-        try:
-            decoration = el.evaluate(
-                "el => window.getComputedStyle(el).textDecorationLine"
-            )
-        except Exception:
-            decoration = ""
-
-        if "line-through" in (decoration or ""):
-            print(f"  [SOLD OUT] size {text}")
-        else:
+        if text not in sold_out:
             in_stock.append(text)
 
     return list(dict.fromkeys(in_stock))  # deduplicated, order preserved
