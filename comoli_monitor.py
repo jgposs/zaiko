@@ -128,12 +128,10 @@ def save_state(state: dict):
 def notify(subject: str, body: str, url: str = ""):
     try:
         data = urllib.parse.urlencode({
-            "token":     PUSHOVER_API_TOKEN,
-            "user":      PUSHOVER_USER_KEY,
-            "title":     subject,
-            "message":   body,
-            "url":       url,
-            "url_title": "View on COMOLI",
+            "token":   PUSHOVER_API_TOKEN,
+            "user":    PUSHOVER_USER_KEY,
+            "title":   subject,
+            "message": body,
         }).encode()
         urllib.request.urlopen("https://api.pushover.net/1/messages.json", data, timeout=10)
         print(f"[PUSHOVER] Sent: {subject}")
@@ -194,7 +192,7 @@ def run():
     save_state(state)
 
     if alerts:
-        lines = [f"• {a['name']} (sizes: {', '.join(a['sizes'])})\n  {a['url']}" for a in alerts]
+        lines = [f"🔔 {a['name']} ({','.join(a['sizes'])})\n  {a['url']}" for a in alerts]
         body = "\n\n".join(lines)
         subject = f"COMOLI: {len(alerts)} item(s) with size {TARGET_SIZE} in stock"
         notify(subject, body, alerts[0]["url"])
