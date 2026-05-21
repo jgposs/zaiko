@@ -40,8 +40,8 @@ MAILORDER   = f"{BASE_URL}/mailorder"
 STATE_FILE = Path(__file__).parent / "comoli_state.json"
 
 # ── Notification method ──────────────────────
-NOTIFY_EMAIL    = True
-NOTIFY_PUSHOVER = False
+NOTIFY_EMAIL    = False
+NOTIFY_PUSHOVER = True
 NOTIFY_CONSOLE  = False
 
 # ── Email settings ───────────────────────────
