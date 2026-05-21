@@ -85,6 +85,8 @@ def get_available_sizes(page, product_url: str) -> list[str]:
     """
     try:
         page.goto(product_url, wait_until="networkidle", timeout=30000)
+        # Wait for size elements to appear in the DOM
+        page.wait_for_selector("p > span", timeout=5000)
     except Exception as e:
         print(f"[WARN] Could not load {product_url}: {e}")
         return []
@@ -95,14 +97,20 @@ def get_available_sizes(page, product_url: str) -> list[str]:
     sold_out = set()
     for el in page.query_selector_all("span.td_line-through"):
         text = el.inner_text().strip()
-        if re.match(r"^\d$", text):
+        if re.match(r"^\d$", text) and 1 <= int(text) <= 5:
             sold_out.add(text)
             print(f"  [SOLD OUT] size {text}")
 
-    # All sizes: any <span> inside a <p> whose text is a single digit
-    # and is NOT in the sold-out set
-    for el in page.query_selector_all("p > span"):
-        text = el.inner_text().strip()
+    # All sizes live inside <p> elements as direct text (in-stock)
+    # or as <span class="td_line-through"> (sold out).
+    # We read every <p> in the size section and check its text content.
+    for el in page.query_selector_all("p"):
+        try:
+            # Get only the direct text (ignoring child span text like "/")
+            text = el.evaluate("el => Array.from(el.childNodes).filter(n => n.nodeType === 3).map(n => n.textContent.trim()).join('').trim()")
+        except Exception:
+            continue
+
         if not re.match(r"^\d$", text):
             continue
         if int(text) < 1 or int(text) > 5:
