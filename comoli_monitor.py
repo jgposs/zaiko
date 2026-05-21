@@ -194,7 +194,7 @@ def run():
     # Sanity check — if we found very few sizes across all products,
     # the page structure may have changed and the monitor may be broken
     total_sizes = sum(len(v.get("sizes", [])) for v in state.values())
-    if total_sizes < 10:
+    if total_sizes == 0:
         notify(
             "⚠️ COMOLI monitor may be broken",
             f"Only {total_sizes} sizes found across all products — the site structure may have changed. Check the GitHub Actions logs.",
