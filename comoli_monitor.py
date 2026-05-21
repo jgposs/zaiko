@@ -3,7 +3,7 @@
 COMOLI Size Monitor (Playwright edition)
 =========================================
 Uses a headless browser to fully render each product page,
-then checks computed CSS styles to detect struck-through (sold-out) sizes.
+then checks for the "td_line-through" CSS class to detect sold-out sizes.
 
 HOW TO USE
 ----------
@@ -11,7 +11,7 @@ HOW TO USE
    pip install playwright
    playwright install chromium
 
-2. Set your notification method in the CONFIG section below.
+2. Set your Pushover credentials in the CONFIG section below.
 
 3. Run manually:
    python comoli_monitor.py
@@ -20,11 +20,9 @@ HOW TO USE
 """
 
 import json
-import os
 import re
-import smtplib
-import time
-from email.mime.text import MIMEText
+import urllib.parse
+import urllib.request
 from pathlib import Path
 
 from playwright.sync_api import sync_playwright
@@ -39,17 +37,6 @@ MAILORDER   = f"{BASE_URL}/mailorder"
 
 STATE_FILE = Path(__file__).parent / "comoli_state.json"
 
-# ── Notification method ──────────────────────
-NOTIFY_EMAIL    = False
-NOTIFY_PUSHOVER = True
-NOTIFY_CONSOLE  = False
-
-# ── Email settings ───────────────────────────
-EMAIL_SENDER    = "your.gmail@gmail.com"
-EMAIL_PASSWORD  = "your-app-password"
-EMAIL_RECIPIENT = "your.email@example.com"
-
-# ── Pushover settings ────────────────────────
 PUSHOVER_USER_KEY  = "your-pushover-user-key"
 PUSHOVER_API_TOKEN = "your-pushover-api-token"
 
@@ -81,15 +68,14 @@ def get_available_sizes(page, product_url: str) -> list[str]:
     Render the product page and return sizes that are in stock.
 
     Comoli marks sold-out sizes with class="td_line-through" on the
-    <span> wrapping the size number. In-stock sizes have no such class.
+    <span> wrapping the size number. In-stock sizes are direct text
+    nodes inside <p> elements with no such class.
     """
     try:
         page.goto(product_url, wait_until="networkidle", timeout=30000)
     except Exception as e:
         print(f"[WARN] Could not load {product_url}: {e}")
         return []
-
-    in_stock = []
 
     # Sold-out sizes: <span class="td_line-through">4</span>
     sold_out = set()
@@ -99,16 +85,18 @@ def get_available_sizes(page, product_url: str) -> list[str]:
             sold_out.add(text)
             print(f"  [SOLD OUT] size {text}")
 
-    # All sizes live inside <p> elements as direct text (in-stock)
-    # or as <span class="td_line-through"> (sold out).
-    # We read every <p> in the size section and check its text content.
+    # In-stock sizes are direct text nodes inside <p> elements
+    in_stock = []
     for el in page.query_selector_all("p"):
         try:
-            # Get only the direct text (ignoring child span text like "/")
-            text = el.evaluate("el => Array.from(el.childNodes).filter(n => n.nodeType === 3).map(n => n.textContent.trim()).join('').trim()")
+            text = el.evaluate(
+                "el => Array.from(el.childNodes)"
+                ".filter(n => n.nodeType === 3)"
+                ".map(n => n.textContent.trim())"
+                ".join('').trim()"
+            )
         except Exception:
             continue
-
         if not re.match(r"^\d$", text):
             continue
         if int(text) < 1 or int(text) > 5:
@@ -137,44 +125,20 @@ def save_state(state: dict):
 #  NOTIFICATIONS
 # ─────────────────────────────────────────────
 
-def send_email(subject: str, body: str):
-    msg = MIMEText(body, "plain", "utf-8")
-    msg["Subject"] = subject
-    msg["From"]    = EMAIL_SENDER
-    msg["To"]      = EMAIL_RECIPIENT
-    try:
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
-            smtp.login(EMAIL_SENDER, EMAIL_PASSWORD)
-            smtp.sendmail(EMAIL_SENDER, EMAIL_RECIPIENT, msg.as_string())
-        print(f"[EMAIL] Sent: {subject}")
-    except Exception as e:
-        print(f"[EMAIL ERROR] {e}")
-
-
-def send_pushover(title: str, message: str, url: str = ""):
-    import urllib.request, urllib.parse
+def notify(subject: str, body: str, url: str = ""):
     try:
         data = urllib.parse.urlencode({
             "token":     PUSHOVER_API_TOKEN,
             "user":      PUSHOVER_USER_KEY,
-            "title":     title,
-            "message":   message,
+            "title":     subject,
+            "message":   body,
             "url":       url,
             "url_title": "View on COMOLI",
         }).encode()
         urllib.request.urlopen("https://api.pushover.net/1/messages.json", data, timeout=10)
-        print(f"[PUSHOVER] Sent: {title}")
+        print(f"[PUSHOVER] Sent: {subject}")
     except Exception as e:
         print(f"[PUSHOVER ERROR] {e}")
-
-
-def notify(subject: str, body: str, product_url: str = ""):
-    if NOTIFY_CONSOLE:
-        print(f"\n{'='*50}\n{subject}\n{body}\n{'='*50}")
-    if NOTIFY_EMAIL:
-        send_email(f"🇯🇵 COMOLI: {subject}", body)
-    if NOTIFY_PUSHOVER:
-        send_pushover(f"COMOLI: {subject}", body, product_url)
 
 
 # ─────────────────────────────────────────────
@@ -206,28 +170,18 @@ def run():
             prev  = state.get(url, {})
             prev_sizes = prev.get("sizes", None)
 
-            is_new        = prev_sizes is None
-            size4_now     = TARGET_SIZE in sizes
-            size4_before  = TARGET_SIZE in (prev_sizes or [])
+            is_new         = prev_sizes is None
+            size4_now      = TARGET_SIZE in sizes
+            size4_before   = TARGET_SIZE in (prev_sizes or [])
             size4_appeared = size4_now and not size4_before
 
             if is_new and size4_now:
-                alerts.append({
-                    "reason": "New item with your size!",
-                    "name": name,
-                    "url": url,
-                    "sizes": sizes,
-                })
+                alerts.append({"name": name, "url": url, "sizes": sizes})
                 print(f"[NEW+SIZE4] {name} — sizes in stock: {sizes}")
             elif is_new:
                 print(f"[NEW] {name} — sizes in stock: {sizes} (no size {TARGET_SIZE})")
             elif size4_appeared:
-                alerts.append({
-                    "reason": f"Size {TARGET_SIZE} back in stock!",
-                    "name": name,
-                    "url": url,
-                    "sizes": sizes,
-                })
+                alerts.append({"name": name, "url": url, "sizes": sizes})
                 print(f"[SIZE4 APPEARED] {name}")
             else:
                 status = f"✓ size {TARGET_SIZE} in stock" if size4_now else f"no size {TARGET_SIZE}"
@@ -240,16 +194,9 @@ def run():
     save_state(state)
 
     if alerts:
-        lines = []
-        for a in alerts:
-            lines.append(
-                f"📦 {a['reason']}\n"
-                f"   {a['name']}\n"
-                f"   Sizes in stock: {', '.join(a['sizes'])}\n"
-                f"   {a['url']}\n"
-            )
-        body = "\n".join(lines) + f"\nShop: {MAILORDER}"
-        subject = f"{len(alerts)} item(s) with size {TARGET_SIZE} in stock at COMOLI"
+        lines = [f"• {a['name']} (sizes: {', '.join(a['sizes'])})\n  {a['url']}" for a in alerts]
+        body = "\n\n".join(lines)
+        subject = f"COMOLI: {len(alerts)} item(s) with size {TARGET_SIZE} in stock"
         notify(subject, body, alerts[0]["url"])
     else:
         print(f"[DONE] No new size-{TARGET_SIZE} alerts this run.")
