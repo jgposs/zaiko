@@ -46,7 +46,7 @@ PUSHOVER_API_TOKEN = "your-pushover-api-token"
 
 def get_product_links(page) -> list[dict]:
     """Return list of {name, url} from the mailorder listing page."""
-    page.goto(MAILORDER, wait_until="networkidle", timeout=30000)
+    page.goto(MAILORDER, wait_until="domcontentloaded", timeout=60000)
     links = page.query_selector_all("a[href*='/mailorder/']")
     products = []
     seen = set()
@@ -72,7 +72,7 @@ def get_available_sizes(page, product_url: str) -> list[str]:
     nodes inside <p> elements with no such class.
     """
     try:
-        page.goto(product_url, wait_until="networkidle", timeout=30000)
+        page.goto(product_url, wait_until="domcontentloaded", timeout=60000)
     except Exception as e:
         print(f"[WARN] Could not load {product_url}: {e}")
         return []
