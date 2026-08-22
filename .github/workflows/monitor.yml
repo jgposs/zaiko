@@ -2,7 +2,7 @@ name: COMOLI Size Monitor
 
 on:
   schedule:
-    - cron: "*/30 * * * *"   # every 30 minutes
+    - cron: "5 15 * * *"   # 12:05 AM Japan Standard Time (JST, UTC+9) — runs once daily
   workflow_dispatch:           # lets you trigger manually from GitHub UI
 
 jobs:
