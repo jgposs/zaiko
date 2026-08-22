@@ -2,58 +2,56 @@ name: COMOLI Size Monitor
 
 on:
   schedule:
-    - cron: "5 15 * * *"   # 12:05 AM Japan Standard Time (JST, UTC+9) — runs once daily
-  workflow_dispatch:           # lets you trigger manually from GitHub UI
+    # 12:05 AM Japan Standard Time (UTC+9). Japan does not observe DST,
+    # so this stays at 00:05 JST all year.
+    - cron: "5 15 * * *"
+  workflow_dispatch:
+
+# Needed so the job can commit comoli_state.json back to the repo.
+permissions:
+  contents: write
+
+# A manual run while the scheduled one is in flight would otherwise race
+# on the state commit.
+concurrency:
+  group: comoli-monitor
+  cancel-in-progress: false
 
 jobs:
   monitor:
     runs-on: ubuntu-latest
+    # Hard stop. Without this a hung job can burn up to 6 hours of the
+    # monthly Actions allowance in a single run.
+    timeout-minutes: 10
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Restore state
-        uses: actions/cache@v4
-        with:
-          path: comoli_state.json
-          key: comoli-state-${{ github.run_id }}
-          restore-keys: |
-            comoli-state-
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"
+          cache: pip
 
       - name: Install dependencies
-        run: |
-          pip install playwright
-          playwright install chromium
-          playwright install-deps chromium
+        run: pip install -r requirements.txt
 
       - name: Run monitor
         env:
-          PUSHOVER_USER_KEY:   ${{ secrets.PUSHOVER_USER_KEY }}
-          PUSHOVER_API_TOKEN:  ${{ secrets.PUSHOVER_API_TOKEN }}
-        run: |
-          python - <<'EOF'
-          import os, re, pathlib
+          PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+          PUSHOVER_API_TOKEN: ${{ secrets.PUSHOVER_API_TOKEN }}
+        run: python comoli_monitor.py
 
-          src = pathlib.Path("comoli_monitor.py").read_text()
-          overrides = {
-              'PUSHOVER_USER_KEY':  os.environ.get("PUSHOVER_USER_KEY", ""),
-              'PUSHOVER_API_TOKEN': os.environ.get("PUSHOVER_API_TOKEN", ""),
-          }
-          for key, val in overrides.items():
-              src = re.sub(rf'^{key}\s*=\s*".*?"', f'{key} = "{val}"', src, flags=re.MULTILINE)
-
-          exec(compile(src, "comoli_monitor.py", "exec"))
-          EOF
-
-      - name: Save state
+      - name: Persist state
         if: always()
-        uses: actions/cache@v4
-        with:
-          path: comoli_state.json
-          key: comoli-state-${{ github.run_id }}
+        run: |
+          if [ -n "$(git status --porcelain comoli_state.json)" ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add comoli_state.json
+            git commit -m "chore: update COMOLI stock state [skip ci]"
+            git push
+          else
+            echo "State unchanged - nothing to commit."
+          fi
