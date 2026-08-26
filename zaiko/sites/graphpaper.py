@@ -4,10 +4,10 @@ This is a Shopify storefront, which is a gift: `products.json` reports every
 variant's stock as a boolean, so there is no HTML to parse and no per-product
 request. The whole catalogue comes back in one or two calls.
 
-Size lives in a named "Size" option whose position varies by product, so the
-option list is read rather than assuming option2. Values are spelled with an
-underscore on this store ("2_INT"); normalize_size folds that together with
-"2-INT" and "2 int" so target_sizes can be written the obvious way.
+Size lives in a named option whose position varies by product, so the option
+list is read rather than assuming option2. Values are spelled with an
+underscore on this store ("2_INT"); the engine's normalize_size folds that
+together with "2-INT" and "2 int".
 """
 
 from __future__ import annotations
@@ -16,11 +16,15 @@ import json
 import time
 from typing import Iterator
 
-from .base import (SiteAdapter, SiteLooksBroken, SiteUnavailable, Stock,
-                   normalize_size)
+from .base import SiteAdapter, SiteLooksBroken, SiteUnavailable, Stock
 
 PAGE_SIZE = 250          # Shopify's maximum
 MAX_PAGES = 20           # backstop against a pagination bug looping forever
+
+# Shops rename this option; match generously rather than on one exact string.
+# Guessing wrong used to record the colour as the size, which matches no
+# target and so failed silently and permanently.
+SIZE_OPTION_NAMES = ("size", "sizes", "サイズ", "サイズ名")
 
 
 class Graphpaper(SiteAdapter):
@@ -29,7 +33,6 @@ class Graphpaper(SiteAdapter):
     base_url = "https://eng.graphpaper-tokyo.com"
     listing_url = "https://eng.graphpaper-tokyo.com/collections/mens-global"
     target_sizes = ("2", "2-INT")
-    request_delay = 0.4
     accept_language = "en,ja;q=0.8"
 
     # ── helpers ─────────────────────────────────────────────────
@@ -37,35 +40,40 @@ class Graphpaper(SiteAdapter):
     def _size_option_position(product: dict) -> int | None:
         """Which optionN holds the size, from the product's own option list."""
         for option in product.get("options") or []:
-            if str(option.get("name", "")).strip().lower() == "size":
-                position = option.get("position")
-                if isinstance(position, int) and 1 <= position <= 3:
-                    return position
+            name = str(option.get("name", "")).strip().lower()
+            if not any(candidate in name for candidate in SIZE_OPTION_NAMES):
+                continue
+            position = option.get("position")
+            try:
+                position = int(position)
+            except (TypeError, ValueError):
+                continue
+            if 1 <= position <= 3:
+                return position
         return None
 
     def _stock_for(self, product: dict) -> Stock:
-        handle = product.get("handle") or ""
-        name = product.get("title") or handle
-        url = f"{self.base_url}/products/{handle}"
+        handle = str(product.get("handle") or "").strip()
+        name = product.get("title") or handle or "(unnamed product)"
+        url = f"{self.base_url}/products/{handle}" if handle else ""
+
+        if "variants" not in product or not handle:
+            # Shape we don't recognise. Unknown, not empty.
+            return Stock(name=name, url=url, sizes=None)
 
         position = self._size_option_position(product)
-        sizes: list[str] = []
-        for variant in product.get("variants") or []:
-            if not variant.get("available"):
-                continue
-            raw = variant.get(f"option{position}") if position else None
-            if raw is None:
-                # No named Size option (accessories, one-size goods). Fall back
-                # to the variant title's last segment, which is where Shopify
-                # puts the final option. Split on the " / " separator Shopify
-                # joins with, not a bare slash — sizes like "O/S" contain one.
-                title = variant.get("title") or ""
-                raw = title.split(" / ")[-1] if title else ""
-            raw = str(raw).strip()
-            if raw:
-                sizes.append(normalize_size(raw))
+        if position is None:
+            # No option we can identify as the size. Reporting [] here would
+            # read as "sold out in every size" and, if the store ever renames
+            # the option, would silence the whole catalogue with no alarm.
+            return Stock(name=name, url=url, sizes=None)
 
-        return Stock(name=name, url=url, sizes=list(dict.fromkeys(sizes)))
+        sizes = [
+            str(variant.get(f"option{position}", "")).strip()
+            for variant in product.get("variants") or []
+            if variant.get("available")
+        ]
+        return Stock(name=name, url=url, sizes=[s for s in sizes if s])
 
     # ── the engine's entry point ────────────────────────────────
     def collect(self, session, fetch) -> Iterator[Stock]:

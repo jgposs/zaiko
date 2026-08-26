@@ -168,19 +168,44 @@ ADAPTERS = {a.key: a for a in (Comoli(), Graphpaper(), YourBrand())}
 ## Failure behaviour
 
 The awkward part of a stock monitor is not finding stock — it is not lying to
-you when something breaks. Zaiko treats these as distinct:
+you when something breaks. Silence has to mean "nothing new in your size", and
+never "something went quietly wrong."
 
-- **A page fails to load.** Its previous state is left untouched, so a network
-  blip can't read as "sold out" today and "restocked!" tomorrow.
-- **Pages load but no sizes parse anywhere.** The site markup probably changed.
-  You get a *monitor may be broken* push rather than silence.
-- **The listing page is empty or unreachable.** Same — you're told, and the run
-  exits non-zero.
-- **One brand is down or its adapter crashes.** The other brands still run, and
-  the healthy ones still update their state.
+The rule everything else follows from: **a run only updates its memory if it
+went well.** An unhealthy run keeps yesterday's state, so whatever it couldn't
+be sure about is worked out again tomorrow rather than being recorded as
+already seen.
 
-Silence from Zaiko means "nothing new in your size", never "something quietly
-went wrong."
+What that looks like in practice:
+
+- **A page fails to load,** or loads with no size markup at all — a soft 404, an
+  interstitial, a redesign. That product keeps its previous state. "Couldn't
+  read it" is never recorded as "sold out", so there's no fake restock the day
+  it recovers.
+- **Most products fail in one run.** Rate limiting and half-broken redesigns
+  look like this, and reporting on the handful that still parsed would be
+  worse than useless. You get an alarm instead.
+- **The listing or feed is unreachable, empty, or the wrong shape.** Alarm, and
+  the run exits non-zero.
+- **A push doesn't reach Pushover.** The state is left untouched so the alert
+  is re-sent next run, rather than being marked seen and lost forever.
+- **The credentials are missing.** The run stops rather than "succeeding"
+  while delivering nothing.
+- **The state file is unreadable.** The run refuses to overwrite it, because
+  starting fresh would announce the whole catalogue and destroy the only copy
+  of the real memory. Restore it from git history, or delete it and re-seed.
+- **A site takes too long.** Each site gets its own time budget, so a slow shop
+  can't eat the workflow's timeout and starve the other brands behind it.
+- **One brand is down, or its adapter crashes.** The others still run and still
+  save their state.
+- **A flood.** No more than five pushes per site per run; the rest are collapsed
+  into one "held back" message with the detail in the Actions log. Hundreds of
+  alerts at once means something upstream broke, not that hundreds of coats
+  appeared overnight.
+
+Products that disappear from a site are forgotten after 60 days, so the state
+file doesn't grow forever and a genuinely new listing of the same URL later on
+is announced rather than compared against year-old data.
 
 ## License
 

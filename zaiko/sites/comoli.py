@@ -9,19 +9,33 @@ from __future__ import annotations
 
 import re
 import time
+from dataclasses import dataclass
 from typing import Iterator
+from urllib.parse import urlsplit
 
 from bs4 import BeautifulSoup, Tag
 
-from .base import (Product, SiteAdapter, SiteLooksBroken, SiteUnavailable,
-                   Stock, normalize_size)
+from .base import SiteAdapter, SiteLooksBroken, SiteUnavailable, Stock
 
 # A <p> is treated as a size row only if its whole text is digits/slashes.
 SIZE_ROW_RE = re.compile(r"^[\d\s/]+$")
 SIZE_TOKEN_RE = re.compile(r"^[0-6]$")
+# Sizes may share one text node ("4 / 5") or sit in separate ones, depending
+# on where the sold-out <span>s fall. Split so both read the same.
+TOKEN_SPLIT_RE = re.compile(r"[\s/]+")
 
 # Listing links that are not products.
 NOT_PRODUCTS = {"form", "guide", "about", "faq", "law", "privacy", "contact"}
+
+PRODUCT_PREFIX = "/mailorder/"
+HOSTS = {"comoli.jp", "www.comoli.jp"}
+
+
+@dataclass(frozen=True)
+class Product:
+    """A product found on the listing page."""
+    name: str
+    url: str
 
 
 def _inside_strikethrough(node, stop_at) -> bool:
@@ -36,6 +50,27 @@ def _inside_strikethrough(node, stop_at) -> bool:
     return False
 
 
+def _product_path(href: str) -> str | None:
+    """The /mailorder/<slug> path for a product link, or None if it isn't one.
+
+    Handles relative links, protocol-relative ones, and both hosts on either
+    scheme — a product only linked in an absolute form used to be skipped
+    entirely, and nothing would have reported it missing.
+    """
+    parts = urlsplit(href)
+    if parts.netloc and parts.netloc.lower() not in HOSTS:
+        return None
+
+    path = parts.path.rstrip("/")
+    if not path.startswith(PRODUCT_PREFIX):
+        return None
+
+    slug = path[len(PRODUCT_PREFIX):]
+    if not slug or slug.split("/")[0] in NOT_PRODUCTS:
+        return None
+    return path
+
+
 class Comoli(SiteAdapter):
     key = "comoli"
     label = "COMOLI"
@@ -45,43 +80,36 @@ class Comoli(SiteAdapter):
 
     def parse_product_links(self, html: str) -> list[Product]:
         soup = BeautifulSoup(html, "html.parser")
-        products: list[Product] = []
         by_url: dict[str, str] = {}
-        order: list[str] = []
 
         for a in soup.find_all("a", href=True):
-            href = a["href"].split("?")[0].split("#")[0].rstrip("/")
-            if href.startswith(self.base_url):
-                href = href[len(self.base_url):]      # absolute links count too
-            if not href.startswith("/mailorder/"):
-                continue
-            slug = href[len("/mailorder/"):]
-            if not slug or slug.split("/")[0] in NOT_PRODUCTS:
+            path = _product_path(a["href"].split("#")[0])
+            if path is None:
                 continue
 
-            url = self.base_url + href
-            name = a.get_text(" ", strip=True) or slug
+            url = self.base_url + path
+            name = a.get_text(" ", strip=True) or path[len(PRODUCT_PREFIX):]
 
-            if url in by_url:
-                # Same product linked twice (image link + text link). Keep the
-                # more descriptive label for the notification.
-                if len(name) > len(by_url[url]):
-                    by_url[url] = name
-                continue
+            # Same product linked twice (image link + text link). Keep the
+            # more descriptive label for the notification. Reassigning an
+            # existing key preserves its original position.
+            if len(name) > len(by_url.get(url, "")):
+                by_url[url] = name
 
-            by_url[url] = name
-            order.append(url)
+        return [Product(name=name, url=url) for url, name in by_url.items()]
 
-        products = [Product(name=by_url[u], url=u) for u in order]
-        return products
+    def parse_sizes(self, html: str) -> tuple[list[str], list[str]]:
+        """(in stock, sold out) for one product page.
 
-    def parse_available_sizes(self, html: str) -> list[str]:
-        """Sizes live in <p> elements, one row per colour. Each size is either
-        a bare text node (in stock) or wrapped in <span class="td_line-through">
-        (sold out). Each size token is checked individually rather than the <p>
-        as a whole, so this is correct whether the site puts one size per <p> or
-        several in the same <p> — and a size sold out in one colour but live in
-        another is still reported as available.
+        Sizes live in <p> elements, one row per colour, each either a bare
+        text node (in stock) or wrapped in <span class="td_line-through">
+        (sold out). Tokens are checked individually rather than the <p> as a
+        whole, so this is correct whether the site puts one size per <p> or
+        several in the same one — and a size sold out in one colour but live
+        in another is still reported as available.
+
+        Both lists empty means no size markup was recognised at all, which
+        the caller must treat as 'could not read', never as 'sold out'.
         """
         soup = BeautifulSoup(html, "html.parser")
         in_stock: list[str] = []
@@ -92,19 +120,17 @@ class Comoli(SiteAdapter):
             if not row_text or not SIZE_ROW_RE.match(row_text):
                 continue
             for node in p.find_all(string=True):
-                token = node.strip()
-                if not SIZE_TOKEN_RE.match(token):
-                    continue
-                if _inside_strikethrough(node, p):
-                    sold_out.append(token)
-                else:
-                    in_stock.append(token)
+                bucket = sold_out if _inside_strikethrough(node, p) else in_stock
+                for token in TOKEN_SPLIT_RE.split(node.strip()):
+                    if SIZE_TOKEN_RE.match(token):
+                        bucket.append(token)
 
-        for size in dict.fromkeys(sold_out):
-            if size not in in_stock:
-                print(f"  [SOLD OUT] size {size}")
+        return list(dict.fromkeys(in_stock)), list(dict.fromkeys(sold_out))
 
-        return list(dict.fromkeys(in_stock))
+    def parse_available_sizes(self, html: str) -> list[str]:
+        """Just the in-stock sizes. Cannot distinguish sold out from
+        unreadable — use parse_sizes for that."""
+        return self.parse_sizes(html)[0]
 
     # ── the engine's entry point ────────────────────────────────
     def collect(self, session, fetch) -> Iterator[Stock]:
@@ -123,9 +149,25 @@ class Comoli(SiteAdapter):
             if page is None:
                 yield Stock(product.name, product.url, None)
                 continue
-            sizes = [normalize_size(s) for s in self.parse_available_sizes(page)]
-            yield Stock(product.name, product.url, sizes)
+
+            in_stock, sold_out = self.parse_sizes(page)
+            if not in_stock and not sold_out:
+                # HTTP 200, but nothing that looks like a size row: an
+                # interstitial, a soft 404, a maintenance page, or a redesign.
+                # Recording that as "sold out" would fire a fake restock the
+                # day it recovers.
+                print(f"[SKIP] {product.name} — no size markup on the page")
+                yield Stock(product.name, product.url, None)
+                continue
+
+            for size in sold_out:
+                if size not in in_stock:
+                    print(f"  [SOLD OUT] size {size}")
+
+            yield Stock(product.name, product.url, in_stock)
             time.sleep(self.request_delay)
 
     def display_name(self, name: str) -> str:
-        return name.split("COLOR")[0].strip() or name
+        # Word-anchored: a bare split on "COLOR" turns "TRICOLOR KNIT VEST"
+        # into "TRI".
+        return re.split(r"\bCOLOR\b", name, 1)[0].strip() or name

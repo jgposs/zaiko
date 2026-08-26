@@ -52,23 +52,43 @@ jobs:
         env:
           PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
           PUSHOVER_API_TOKEN: ${{ secrets.PUSHOVER_API_TOKEN }}
+          # Passed through the environment rather than interpolated into the
+          # script: `site` is free text, and this step holds the secrets.
+          SITE: ${{ inputs.site }}
+          MODE: ${{ inputs.mode }}
         run: |
           ARGS=""
-          [ -n "${{ inputs.site }}" ] && ARGS="$ARGS --site ${{ inputs.site }}"
-          [ "${{ inputs.mode }}" = "seed" ] && ARGS="$ARGS --seed"
-          [ "${{ inputs.mode }}" = "dry-run" ] && ARGS="$ARGS --dry-run"
+          [ -n "$SITE" ] && ARGS="$ARGS --site $SITE"
+          [ "$MODE" = "seed" ] && ARGS="$ARGS --seed"
+          [ "$MODE" = "dry-run" ] && ARGS="$ARGS --dry-run"
           echo "Running: python run.py$ARGS"
           python run.py $ARGS
 
+      # always(): a run that alarms on one site may still have good state for
+      # the other, and run.py only advances state it trusts.
       - name: Persist state
         if: always()
         run: |
-          if [ -n "$(git status --porcelain state.json)" ]; then
-            git config user.name  "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add state.json
-            git commit -m "chore: update stock state [skip ci]"
-            git push
-          else
+          if [ -z "$(git status --porcelain state.json)" ]; then
             echo "State unchanged - nothing to commit."
+            exit 0
           fi
+
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add state.json
+          git commit -m "chore: update stock state [skip ci]"
+
+          # A human commit landing on main between checkout and push would
+          # otherwise reject this, losing the state update — which makes the
+          # next run re-send every alert from this one.
+          for attempt in 1 2 3; do
+            if git push; then
+              exit 0
+            fi
+            echo "Push rejected (attempt $attempt); rebasing on origin/main."
+            git pull --rebase --autostash origin main || exit 1
+            sleep 5
+          done
+          echo "Could not push the state update after 3 attempts."
+          exit 1

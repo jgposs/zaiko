@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from .base import Product, SiteAdapter
+from .base import SiteAdapter
 from .comoli import Comoli
 from .graphpaper import Graphpaper
 
@@ -18,7 +18,3 @@ def resolve(keys: list[str] | None = None) -> list[SiteAdapter]:
         known = ", ".join(sorted(ADAPTERS))
         raise SystemExit(f"Unknown site(s): {', '.join(unknown)}. Known: {known}")
     return [ADAPTERS[k] for k in keys]
-
-
-__all__ = ["ADAPTERS", "Comoli", "Graphpaper", "Product", "SiteAdapter",
-           "resolve"]

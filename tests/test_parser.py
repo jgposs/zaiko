@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 """Offline tests for parsing and message handling. No network."""
 
-import _bootstrap
 from _bootstrap import check, report
 
-from zaiko.notify import chunk_lines
 from zaiko.config import PUSHOVER_LIMIT
+from zaiko.notify import chunk_alerts
+from zaiko.sites import ADAPTERS, resolve
+from zaiko.sites.base import normalize_size
 from zaiko.sites.comoli import Comoli
+from zaiko.sites.graphpaper import Graphpaper
 
 comoli = Comoli()
 sizes = comoli.parse_available_sizes
@@ -28,7 +30,14 @@ all_in_one_p = """
 """
 check("all sizes in one <p>", sizes(all_in_one_p), ["1", "2"])
 
-# ── 3. Sold out in one colour, available in another ─────────────────────
+# ── 3. Sizes sharing ONE text node, with no <span> to split them ────────
+# A row with nothing sold out has the fewest span wrappers, so this is the
+# most likely shape to meet in the wild — and it used to parse as nothing.
+check("two sizes in one text node, slash-separated", sizes("<p>4 / 5</p>"), ["4", "5"])
+check("no spaces around the slash", sizes("<p>4/5</p>"), ["4", "5"])
+check("single size, bare text node", sizes("<p>4</p>"), ["4"])
+
+# ── 4. Sold out in one colour, available in another ─────────────────────
 two_colours = """
 <p>BLACK</p>
 <p><span class="td_line-through">4</span></p>
@@ -37,85 +46,76 @@ two_colours = """
 """
 check("size 4 sold out in black, live in white", sizes(two_colours), ["4"])
 
-# ── 4. Everything sold out ──────────────────────────────────────────────
-all_gone = """
-<p><span class="td_line-through">2</span></p>
-<p><span class="td_line-through">4</span></p>
-"""
-check("everything sold out", sizes(all_gone), [])
+# ── 5. Sold out vs unreadable — the distinction the whole design rests on ─
+all_gone = '<p><span class="td_line-through">2</span></p><p><span class="td_line-through">4</span></p>'
+check("everything sold out: in-stock empty", comoli.parse_sizes(all_gone)[0], [])
+check("everything sold out: sold-out list populated",
+      comoli.parse_sizes(all_gone)[1], ["2", "4"])
 
-# ── 5. Page with no size markup at all (structure changed) ──────────────
-no_sizes = "<div><p>Cotton 100%</p><p>¥132,000</p><p>E03-06002</p></div>"
-check("no sizes present", sizes(no_sizes), [])
+for label, page in [
+    ("blank page", ""),
+    ("interstitial", "<h1>Just a moment...</h1>"),
+    ("spec table only", "<div><p>Cotton 100%</p><p>¥132,000</p><p>E03-06002</p></div>"),
+    ("prices and dates only", "<p>132000</p><p>2026/08/22</p><p>05018</p>"),
+]:
+    check(f"unreadable ({label}) reports no size markup at all",
+          comoli.parse_sizes(page), ([], []))
 
-# ── 6. Prices / dates must not be mistaken for sizes ────────────────────
-noise = "<p>132000</p><p>2026/08/22</p><p>05018</p>"
-check("prices and dates ignored", sizes(noise), [])
+# ── 6. Nested markup around the digit ───────────────────────────────────
+check("digit nested in <a><em>", sizes('<p><a href="#"><em>3</em></a><span>/</span></p>'), ["3"])
 
-# ── 7. Nested markup around the digit ───────────────────────────────────
-nested = '<p><a href="#"><em>3</em></a><span>/</span></p>'
-check("digit nested in <a><em>", sizes(nested), ["3"])
+# ── 7. Duplicate sizes across colours collapse ──────────────────────────
+check("duplicates collapsed, order kept",
+      sizes("<p>4<span>/</span></p><p>4<span>/</span></p><p>5</p>"), ["4", "5"])
 
-# ── 8. Duplicate sizes across colours collapse ──────────────────────────
-dupes = "<p>4<span>/</span></p><p>4<span>/</span></p><p>5</p>"
-check("duplicates collapsed, order kept", sizes(dupes), ["4", "5"])
-
-# ── 9. Product-link extraction, incl. junk filtering ────────────────────
+# ── 8. Product-link extraction, incl. junk filtering ────────────────────
 listing = """
 <a href="/mailorder">MAIL ORDER</a>
 <a href="/mailorder/form">ORDER FORM</a>
 <a href="/mailorder/reversible_jacket_e">REVERSIBLE JACKET <span>COLOR BLACK</span></a>
 <a href="/mailorder/reversible_jacket_e?utm=x">dup with query</a>
 <a href="/mailorder/thin_cotton_ls_t-shirt_e/">TRAILING SLASH</a>
-<a href="https://www.comoli.jp/mailorder/absolute_link_e">ABSOLUTE</a>
 <a href="/shop">SHOP</a>
 """
 found = links(listing)
 check("product URLs (form/dupes/non-products filtered)",
       [p.url for p in found],
       ["https://www.comoli.jp/mailorder/reversible_jacket_e",
-       "https://www.comoli.jp/mailorder/thin_cotton_ls_t-shirt_e",
-       "https://www.comoli.jp/mailorder/absolute_link_e"])
+       "https://www.comoli.jp/mailorder/thin_cotton_ls_t-shirt_e"])
 check("first product name", found[0].name, "REVERSIBLE JACKET COLOR BLACK")
-check("display name trims the colour suffix",
-      comoli.display_name(found[0].name), "REVERSIBLE JACKET")
 
-# ── 10. Pushover chunking stays under the cap ───────────────────────────
-many = [f"🔔 Item number {i} — size 4\nhttps://www.comoli.jp/mailorder/item_{i}"
-        for i in range(30)]
-chunks = chunk_lines(many)
-check("every chunk within Pushover limit",
-      all(len(c) <= PUSHOVER_LIMIT for c in chunks), True)
-check("no alert lines dropped in chunking",
-      sum(c.count("🔔") for c in chunks), 30)
-check("oversized single line is truncated, not dropped",
-      all(len(c) <= PUSHOVER_LIMIT for c in chunk_lines(["x" * 5000])), True)
+# Absolute links in any of the forms a site actually emits must all resolve
+# to the same product, and a foreign host must never be followed.
+for label, href in [
+    ("https + www", "https://www.comoli.jp/mailorder/x"),
+    ("https, no www", "https://comoli.jp/mailorder/x"),
+    ("http", "http://www.comoli.jp/mailorder/x"),
+    ("protocol-relative", "//www.comoli.jp/mailorder/x"),
+    ("relative", "/mailorder/x"),
+]:
+    check(f"link form: {label}",
+          [p.url for p in links(f'<a href="{href}">X</a>')],
+          ["https://www.comoli.jp/mailorder/x"])
+check("foreign host ignored",
+      links('<a href="https://evil.example/mailorder/x">X</a>'), [])
 
-# ── 11. Alert logic: new / restock / steady / gone ──────────────────────
-def newly(prev, current, targets=("4", "5")):
-    available = [s for s in targets if s in current]
-    return [s for s in available if s not in (prev or [])]
+# ── 9. display_name ─────────────────────────────────────────────────────
+check("colour suffix trimmed",
+      comoli.display_name("REVERSIBLE JACKET COLOR BLACK"), "REVERSIBLE JACKET")
+check("COLOR inside a word is not a split point",
+      comoli.display_name("TRICOLOR KNIT VEST"), "TRICOLOR KNIT VEST")
+check("name without COLOR is untouched",
+      comoli.display_name("WOOL COAT"), "WOOL COAT")
 
-check("never seen before, size 4 live -> alert", newly(None, ["2", "4"]), ["4"])
-check("already had 4, still 4 -> silent", newly(["2", "4"], ["2", "4"]), [])
-check("4 gone then back -> alert", newly(["2"], ["2", "4"]), ["4"])
-check("4 sold out -> silent", newly(["2", "4"], ["2"]), [])
-check("non-target size appears -> silent", newly(["4"], ["3", "4"]), [])
-
-# ── 12. Size normalisation ──────────────────────────────────────────────
-from zaiko.sites.base import normalize_size
-
+# ── 10. Size normalisation ──────────────────────────────────────────────
 check("underscore folds to hyphen", normalize_size("2_INT"), "2-INT")
 check("case and padding folded", normalize_size("  2 int "), "2-INT")
 check("already-normal size unchanged", normalize_size("2"), "2")
 check("one-size left alone", normalize_size("O/S"), "O/S")
 
-# ── 13. Graphpaper: Shopify variant reading ─────────────────────────────
-from zaiko.sites.graphpaper import Graphpaper
-
+# ── 11. Graphpaper: Shopify variant reading ─────────────────────────────
 gp = Graphpaper()
 
-# Size is option2 here, and the sold-out variant must not count.
 prod = {
     "handle": "gm263-50480", "title": "Wool Ripstop Shirt Jacket",
     "options": [
@@ -130,37 +130,80 @@ prod = {
     ],
 }
 st = gp._stock_for(prod)
-check("graphpaper size 2 live in one colour counts", st.sizes, ["1", "2"])
+check("graphpaper: size live in one colour counts", st.sizes, ["1", "2"])
 check("graphpaper builds the product URL", st.url,
       "https://eng.graphpaper-tokyo.com/products/gm263-50480")
 check("graphpaper uses the product title", st.name, "Wool Ripstop Shirt Jacket")
 
-# Size option in a different position must still be found.
-moved = dict(prod, options=[
-    {"name": "Size", "position": 1, "values": ["2_INT"]},
-    {"name": "Color", "position": 2, "values": ["NAVY"]},
-], variants=[{"option1": "2_INT", "option2": "NAVY", "available": True}])
-check("graphpaper finds Size at position 1", gp._stock_for(moved).sizes, ["2-INT"])
+check("graphpaper finds Size at position 1",
+      gp._stock_for(dict(prod,
+          options=[{"name": "Size", "position": 1}, {"name": "Color", "position": 2}],
+          variants=[{"option1": "2_INT", "option2": "NAVY", "available": True}])).sizes,
+      ["2_INT"])
 
-# Everything sold out reads as empty, never as unknown.
-gone = dict(prod, variants=[{"option1": "ASH", "option2": "2", "available": False}])
-check("graphpaper all-sold-out is empty, not None", gp._stock_for(gone).sizes, [])
+# A renamed size option used to make the COLOUR the size — which matches no
+# target, so the brand would go silent forever with no alarm.
+check("graphpaper handles a localised Size option name",
+      gp._stock_for(dict(prod,
+          options=[{"name": "サイズ", "position": 1}, {"name": "Color", "position": 2}],
+          variants=[{"option1": "2_INT", "option2": "NAVY", "available": True}])).sizes,
+      ["2_INT"])
+check("graphpaper tolerates a string position",
+      gp._stock_for(dict(prod,
+          options=[{"name": "Size", "position": "1"}],
+          variants=[{"option1": "2", "available": True}])).sizes,
+      ["2"])
 
-# No named Size option: fall back to the last segment of the variant title.
-noopt = {"handle": "sock", "title": "SOCKS", "options": [
-            {"name": "Color", "position": 1, "values": ["BLACK"]}],
-         "variants": [{"title": "BLACK / O/S", "available": True}]}
-check("graphpaper falls back to the variant title", gp._stock_for(noopt).sizes, ["O/S"])
+check("graphpaper all-sold-out is empty, not unknown",
+      gp._stock_for(dict(prod, variants=[
+          {"option1": "ASH", "option2": "2", "available": False}])).sizes, [])
+
+# No identifiable size option is 'unknown', never 'sold out in every size'.
+check("graphpaper: unidentifiable size option reports unknown",
+      gp._stock_for({"handle": "sock", "title": "SOCKS",
+                     "options": [{"name": "Color", "position": 1}],
+                     "variants": [{"option1": "BLACK", "available": True}]}).sizes,
+      None)
+check("graphpaper: missing variants key reports unknown",
+      gp._stock_for({"handle": "x", "title": "X",
+                     "options": [{"name": "Size", "position": 1}]}).sizes, None)
+check("graphpaper: missing handle reports unknown",
+      gp._stock_for({"title": "X", "options": [{"name": "Size", "position": 1}],
+                     "variants": []}).sizes, None)
 
 check("graphpaper targets normalise", gp.normalized_targets, ("2", "2-INT"))
 
-# ── 14. Adapter registry ────────────────────────────────────────────────
-from zaiko.sites import ADAPTERS, resolve
+# ── 12. Pushover chunking ───────────────────────────────────────────────
+many = [(f"🔔 Item number {i} — size 4\nhttps://www.comoli.jp/mailorder/item_{i}",
+         f"https://www.comoli.jp/mailorder/item_{i}") for i in range(30)]
+chunks = chunk_alerts(many)
+check("every chunk within Pushover limit",
+      all(len(body) <= PUSHOVER_LIMIT for body, _ in chunks), True)
+check("no alert lines dropped in chunking",
+      sum(body.count("🔔") for body, _ in chunks), 30)
+check("more than one chunk was needed", len(chunks) > 1, True)
 
+# Each chunk's tap-through must open something inside that chunk, not always
+# the very first alert.
+check("every chunk carries a link", all(url for _, url in chunks), True)
+check("each chunk links to its own first alert",
+      all(url and body.startswith(f"🔔 Item number {url.rsplit('_', 1)[1]} ")
+          for body, url in chunks), True)
+check("chunks link to different products",
+      len({url for _, url in chunks}), len(chunks))
+
+# An over-long line must lose name text, never the URL that makes it useful.
+huge = [("🔔 " + "x" * 5000 + "\nhttps://www.comoli.jp/mailorder/item_x",
+         "https://www.comoli.jp/mailorder/item_x")]
+body = chunk_alerts(huge)[0][0]
+check("oversized line truncated within limit", len(body) <= PUSHOVER_LIMIT, True)
+check("oversized line keeps its URL intact",
+      body.endswith("https://www.comoli.jp/mailorder/item_x"), True)
+
+# ── 13. Adapter registry ────────────────────────────────────────────────
 check("comoli is registered", "comoli" in ADAPTERS, True)
 check("graphpaper is registered", "graphpaper" in ADAPTERS, True)
-check("resolve() with no args returns every site",
-      len(resolve()), len(ADAPTERS))
+check("resolve() with no args returns every site", len(resolve()), len(ADAPTERS))
 check("resolve() honours an explicit key",
       [a.key for a in resolve(["graphpaper"])], ["graphpaper"])
 try:

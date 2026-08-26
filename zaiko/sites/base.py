@@ -5,8 +5,8 @@ now, product by product. How it gets there is its own business — COMOLI walks
 a listing page and fetches each product, Graphpaper reads a Shopify JSON feed
 in a couple of requests. The engine doesn't care.
 
-Everything else — remembering last run, deciding what counts as news,
-notifying, and the failure alarms — is shared and lives in runner.py.
+Everything else — normalising sizes, remembering last run, deciding what counts
+as news, notifying, and the failure alarms — is shared and lives in runner.py.
 """
 
 from __future__ import annotations
@@ -15,12 +15,7 @@ import re
 from dataclasses import dataclass
 from typing import Iterator
 
-
-@dataclass(frozen=True)
-class Product:
-    """A product found on a listing page."""
-    name: str
-    url: str
+from ..config import SITE_TIME_BUDGET
 
 
 @dataclass(frozen=True)
@@ -30,6 +25,10 @@ class Stock:
     sizes=None means 'could not be read' — deliberately different from an
     empty list, which means 'read fine, nothing in stock'. The engine keeps
     the previous state for None so a blip can't look like a restock later.
+    Yield None whenever you are not certain: a wrong empty list is recorded
+    as 'sold out' and produces a fake restock alert the day it recovers.
+
+    Sizes are yielded exactly as the site spells them; the engine normalises.
     """
     name: str
     url: str
@@ -64,9 +63,10 @@ class SiteAdapter:
     # ── what to watch ───────────────────────────────────────────
     target_sizes: tuple[str, ...] = ()
 
-    # ── politeness ──────────────────────────────────────────────
+    # ── politeness and limits ───────────────────────────────────
     request_delay: float = 0.4          # seconds between requests
     accept_language: str = "ja,en;q=0.8"
+    time_budget: float = SITE_TIME_BUDGET
 
     # ── the one required method ─────────────────────────────────
     def collect(self, session, fetch) -> Iterator[Stock]:
@@ -75,9 +75,10 @@ class SiteAdapter:
         `fetch(session, url) -> str | None` is passed in rather than imported
         so the engine (and tests) control how requests are made.
 
-        Raise SiteUnavailable if the site is unreachable, or SiteLooksBroken
-        if it responds with something unrecognisable. Both raise an alert
-        rather than passing silently.
+        Yield at least one Stock, and raise rather than yielding nothing:
+        SiteUnavailable if the site is unreachable, SiteLooksBroken if it
+        responds with something unrecognisable. Both raise an alert rather
+        than passing silently.
         """
         raise NotImplementedError
 
