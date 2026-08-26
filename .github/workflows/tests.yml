@@ -10,11 +10,17 @@ jobs:
   test:
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      matrix:
+        # 3.9 is what stock macOS ships, so the suite has to pass there too —
+        # that's what makes `python3 run.py` work on a Mac with nothing installed.
+        python-version: ["3.9", "3.12"]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: ${{ matrix.python-version }}
           cache: pip
       - run: pip install -r requirements.txt
       - name: Parsing tests

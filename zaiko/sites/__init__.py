@@ -1,5 +1,7 @@
 """Adapter registry. Add a brand here and the runner picks it up."""
 
+from __future__ import annotations
+
 from .base import Product, SiteAdapter
 from .comoli import Comoli
 from .graphpaper import Graphpaper

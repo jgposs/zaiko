@@ -5,6 +5,8 @@ For each site it asks the adapter what is in stock, and alerts on sizes that
 in stock is not re-announced on every run.
 """
 
+from __future__ import annotations
+
 from datetime import datetime, timezone
 
 from .http import fetch, make_session

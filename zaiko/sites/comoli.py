@@ -5,6 +5,8 @@ enough; no headless browser, and a full run takes seconds instead of minutes.
 Sold-out sizes are marked with <span class="td_line-through">.
 """
 
+from __future__ import annotations
+
 import re
 import time
 from typing import Iterator

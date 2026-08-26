@@ -10,6 +10,8 @@
     python run.py --list               # show registered sites
 """
 
+from __future__ import annotations
+
 import argparse
 import sys
 

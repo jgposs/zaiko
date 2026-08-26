@@ -10,6 +10,8 @@ underscore on this store ("2_INT"); normalize_size folds that together with
 "2-INT" and "2 int" so target_sizes can be written the obvious way.
 """
 
+from __future__ import annotations
+
 import json
 import time
 from typing import Iterator

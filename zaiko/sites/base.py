@@ -9,6 +9,8 @@ Everything else — remembering last run, deciding what counts as news,
 notifying, and the failure alarms — is shared and lives in runner.py.
 """
 
+from __future__ import annotations
+
 import re
 from dataclasses import dataclass
 from typing import Iterator

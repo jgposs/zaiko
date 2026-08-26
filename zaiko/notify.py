@@ -1,5 +1,7 @@
 """Pushover delivery and message chunking."""
 
+from __future__ import annotations
+
 import os
 
 import requests

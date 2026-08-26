@@ -8,16 +8,44 @@ out.
 It only tells you what *changed*. An item that is still sitting in your size
 from yesterday stays quiet.
 
+## A note on use
+
+This is a personal project — one person checking a couple of shops for their
+own size, once a day. It's public because that's the easiest way to run it and
+because someone else may find the approach useful, not because it's a product.
+
+The politeness settings are deliberate, and they matter more than they look:
+
+- **Once a day.** These are small independent labels, not marketplaces. A daily
+  check is plenty for the way they drop stock, and it costs them nothing.
+- **Delays between requests**, and a normal browser user agent, so a run looks
+  like one person browsing rather than a machine.
+- **Graphpaper is read through `products.json`**, the same public endpoint the
+  store's own frontend uses — no page scraping at all.
+
+If you fork this: please keep the schedule and the delays where they are, and
+use your own Pushover credentials. The whole point is that a stock alert
+shouldn't cost the shop anything. Turning the frequency up doesn't get you the
+item much sooner, but a hundred forks all polling hard would be a genuine
+nuisance to a business that never asked to be monitored.
+
+Nothing here bypasses a paywall, a login, a queue, or a bot protection, and it
+shouldn't be extended to. It reads pages that are already public, at a pace a
+person could manage by hand.
+
 ## Running it
 
-```bash
-pip install -r requirements.txt
+Needs Python 3.9 or newer — which means stock macOS works with nothing
+installed.
 
-python run.py                 # check every registered site
-python run.py --site comoli   # just one
-python run.py --dry-run       # hit the network, push nothing, don't save state
-python run.py --seed          # record current stock silently (see below)
-python run.py --list          # show what's registered
+```bash
+pip3 install -r requirements.txt
+
+python3 run.py                 # check every registered site
+python3 run.py --site comoli   # just one
+python3 run.py --dry-run       # hit the network, push nothing, don't save state
+python3 run.py --seed          # record current stock silently (see below)
+python3 run.py --list          # show what's registered
 ```
 
 Pushover credentials come from the environment. Without them the script still
@@ -40,7 +68,7 @@ Run it once in seed mode to record what's in stock right now without sending
 anything:
 
 ```bash
-python run.py --seed
+python3 run.py --seed
 ```
 
 From then on you only hear about changes. The workflow exposes the same thing:
@@ -153,3 +181,7 @@ you when something breaks. Zaiko treats these as distinct:
 
 Silence from Zaiko means "nothing new in your size", never "something quietly
 went wrong."
+
+## License
+
+MIT — see [LICENSE](LICENSE). Provided as is, with no warranty.

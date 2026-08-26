@@ -7,6 +7,8 @@ Committed back to the repo by the workflow, so its git history doubles as a
 record of what dropped when.
 """
 
+from __future__ import annotations
+
 import json
 
 from . import config

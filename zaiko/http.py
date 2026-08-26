@@ -1,5 +1,7 @@
 """HTTP fetching with retries. Site-agnostic."""
 
+from __future__ import annotations
+
 import time
 
 import requests
