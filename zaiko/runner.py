@@ -20,7 +20,8 @@ from .http import fetch, make_session
 from .notify import chunk_alerts, have_credentials, notify
 from .sites import resolve
 from .sites.base import SiteLooksBroken, SiteUnavailable, normalize_size
-from .state import StateUnreadable, load_state, prune, save_state
+from .state import (StateUnreadable, load_state, prune,
+                    refresh_last_seen, save_state)
 
 
 def _sender(dry_run: bool = False, seed: bool = False):
@@ -168,7 +169,7 @@ def run_site(adapter, all_state: dict, dry_run: bool = False,
                 "name": item.name,
                 "sizes": sizes,
                 "changed_at": changed_at,
-                "last_seen": stamp,
+                "last_seen": refresh_last_seen(prev.get("last_seen"), now),
             }
 
     except SiteUnavailable as e:

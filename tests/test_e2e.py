@@ -85,6 +85,33 @@ rc = run_comoli()
 check("run 2 exit code", rc, 0)
 check("run 2 is silent (no re-announcement)", len(sent), 0)
 
+# The state file must be byte-identical after a run where nothing moved.
+# Otherwise every daily run commits a diff touching every product, and the
+# git history of state.json — the record of what actually dropped and when —
+# becomes unreadable.
+#
+# The clock has to advance between the two runs or this passes for the wrong
+# reason: back-to-back runs land in the same second, so second-resolution
+# timestamps match even when they are being rewritten every time.
+class AdvancingClock:
+    """datetime stand-in for runner: one minute per run."""
+    def __init__(self, start):
+        self.t = start
+
+    def now(self, tz=None):
+        self.t += timedelta(minutes=1)
+        return self.t
+
+
+real_datetime, runner.datetime = runner.datetime, AdvancingClock(
+    datetime.now(timezone.utc))
+run_comoli()
+unchanged = config.STATE_FILE.read_bytes()
+run_comoli()
+check("an unchanged run leaves the state file byte-identical",
+      config.STATE_FILE.read_bytes(), unchanged)
+runner.datetime = real_datetime
+
 # ── Run 3: size 5 restocks on the jacket ────────────────────────────────
 PAGES[JACKET] = "<p>2<span>/</span></p><p>4<span>/</span></p><p>5</p>"
 rc = run_comoli()
@@ -291,6 +318,15 @@ rc = run_comoli()
 check("stale product is forgotten",
       "https://www.comoli.jp/mailorder/ancient" in load_state()["comoli"], False)
 check("products seen this run are kept", JACKET in load_state()["comoli"], True)
+
+# last_seen must still be refreshed once it goes stale, or nothing would
+# ever age out of the file.
+state = load_state()
+state["comoli"][TEE]["last_seen"] = old
+config.STATE_FILE.write_text(json.dumps(state), encoding="utf-8")
+run_comoli()
+check("a stale last_seen is refreshed when the product is seen again",
+      load_state()["comoli"][TEE]["last_seen"] != old, True)
 
 # A product that leaves the site and returns is genuinely new again.
 state = load_state()

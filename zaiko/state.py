@@ -64,6 +64,26 @@ def save_state(state: dict) -> None:
         raise
 
 
+def refresh_last_seen(previous, now: datetime) -> str:
+    """The last_seen value to store for a product seen this run.
+
+    Deliberately coarse. Writing the current time on every run gives every
+    product a changed line every day, so the state file's git history — the
+    thing that records what actually dropped and when — becomes unreadable.
+    Refreshing only once it has aged past LAST_SEEN_REFRESH_DAYS keeps an
+    unchanged run byte-identical, at the cost of pruning a vanished product
+    up to that many days late.
+    """
+    if previous:
+        try:
+            seen = datetime.fromisoformat(str(previous))
+            if now - seen < timedelta(days=config.LAST_SEEN_REFRESH_DAYS):
+                return str(previous)
+        except (ValueError, TypeError):
+            pass
+    return now.isoformat(timespec="seconds")
+
+
 def prune(site_state: dict, seen_urls: set, now: datetime) -> int:
     """Drop products not seen for STATE_TTL_DAYS. Returns how many went.
 

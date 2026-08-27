@@ -30,6 +30,11 @@ MAX_PUSHES_PER_SITE = 5
 # and report it.
 SITE_TIME_BUDGET = 300    # seconds
 
+# How stale a product's last_seen may get before it is rewritten. Stamping it
+# every run would make state.json produce a ~260-line diff daily even when no
+# stock moved, burying the real changes its git history exists to record.
+LAST_SEEN_REFRESH_DAYS = 7
+
 # Forget a product this long after it was last seen on the site. Without this
 # the state file grows forever, and a delisted product that returns months
 # later is compared against year-old data and never announced.
