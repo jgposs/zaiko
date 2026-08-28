@@ -1,6 +1,6 @@
 # Zaiko 在庫
 
-Stock monitor for Japanese fashion brand shops. It walks each brand's online
+Stock monitor for online fashion shops. It walks each brand's online
 store once a day and sends a Pushover push the moment something appears in a
 size you actually wear — a new drop, or a restock of something that had sold
 out.
@@ -206,6 +206,14 @@ What that looks like in practice:
 Products that disappear from a site are forgotten after 60 days, so the state
 file doesn't grow forever and a genuinely new listing of the same URL later on
 is announced rather than compared against year-old data.
+
+## Documentation
+
+- [Architecture](docs/ARCHITECTURE.md) — how it works, and the invariant it all serves
+- [Adding a brand](docs/ADDING_A_BRAND.md) — the adapter recipe, and the traps
+- [Operations](docs/OPERATIONS.md) — running it, reading its alarms, recovery
+- [Decisions](docs/DECISIONS.md) — why it is this way, including what went wrong
+- [Roadmap](docs/ROADMAP.md) — where it is going
 
 ## License
 

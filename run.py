@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Zaiko (在庫) — stock monitor for Japanese fashion brand shops.
+"""Zaiko (在庫) — stock monitor for online fashion shops.
 
     python run.py                      # every registered site
     python run.py --site comoli        # just one

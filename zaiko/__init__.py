@@ -1,4 +1,4 @@
-"""Zaiko (在庫) — stock monitor for Japanese fashion brand shops."""
+"""Zaiko (在庫) — stock monitor for online fashion shops."""
 
 from __future__ import annotations
 
