@@ -13,6 +13,7 @@ from zaiko.sites import ADAPTERS
 from zaiko.sites.base import SiteLooksBroken, SiteUnavailable, Stock, SiteAdapter
 from zaiko.sites.comoli import Comoli
 from zaiko.sites.graphpaper import Graphpaper
+from zaiko.sites.neighbour import Neighbour
 from zaiko.state import load_state
 
 # ── Harness ─────────────────────────────────────────────────────────────
@@ -516,6 +517,74 @@ sent.clear()
 rc = runner.run()
 check("graphpaper alarms when unreachable", rc, 1)
 check("graphpaper unreachable text", "unreachable" in sent[0][0], True)
+
+# ── Neighbour: a second shop for a brand already watched ───────────────
+del ADAPTERS["graphpaper"]
+nb = Neighbour()
+nb.request_delay = 0
+ADAPTERS["neighbour-comoli"] = nb
+config.STATE_FILE = tmp / "nb.json"
+
+NB_FEED = {"products": [
+    {"handle": "comoli-shirt-black", "title": "Comoli Shirt Black",
+     "options": [{"name": "Size", "position": 1}],
+     "variants": [{"option1": "3", "available": True},
+                  {"option1": "4", "available": False}]},
+    {"handle": "wool-trousers-grey", "title": "Wool Trousers Grey",
+     "options": [{"name": "Size", "position": 1}],
+     "variants": [{"option1": "4", "available": True}]},
+]}
+NB_URL = ("https://www.shopneighbour.com/en-us/collections/comoli-mens"
+          "/products.json?limit=250&page=1")
+TROUSERS = "https://www.shopneighbour.com/en-us/products/wool-trousers-grey"
+
+runner.fetch = lambda session, url: json.dumps(NB_FEED) if url == NB_URL else None
+sent.clear()
+rc = runner.run()
+check("neighbour run is healthy", rc, 0)
+check("neighbour alerted once", len(sent), 1)
+check("neighbour alerted on the size 4 trousers",
+      "Wool Trousers Grey" in sent[0][1], True)
+check("neighbour did not alert on the size 3 shirt",
+      "Comoli Shirt Black" in sent[0][1], False)
+# The whole point of a separate site: the push has to say which shop, and the
+# link has to open that shop's page rather than comoli.jp's.
+check("the push title names the shop", "Neighbour" in sent[0][0], True)
+check("the alert links to the market-prefixed product page",
+      TROUSERS in sent[0][1], True)
+check("neighbour stored the size under its own site key",
+      sizes_for(TROUSERS, "neighbour-comoli"), ["4"])
+
+NB_FEED["products"][0]["variants"][1]["available"] = True
+sent.clear()
+rc = runner.run()
+check("neighbour alerts when the shirt restocks in 4", len(sent), 1)
+check("that alert is the shirt", "Comoli Shirt Black" in sent[0][1], True)
+
+sent.clear()
+check("neighbour is silent when nothing changed", (runner.run(), len(sent)), (0, 0))
+
+# The trap this store actually sets. A collection that is renamed, unpublished
+# or deleted answers HTTP 200 with an empty product list — not a 404 — which
+# is indistinguishable from a healthy feed to anything that only checks the
+# status code. Recorded rather than alarmed, it would mark every garment sold
+# out, then stay quiet forever with the monitor apparently fine.
+before_nb = dict(load_state()["neighbour-comoli"])
+runner.fetch = lambda session, url: json.dumps({"products": []})
+sent.clear()
+rc = runner.run()
+check("neighbour alarms when the collection returns no products", rc, 1)
+check("that alarm says the monitor may be broken", "broken" in sent[0][0], True)
+check("the empty collection did not touch saved stock",
+      load_state()["neighbour-comoli"], before_nb)
+
+# The same shape one page deep: page 1 fine, page 2 empty, which is simply
+# the end of the collection and must stay healthy.
+runner.fetch = lambda session, url: json.dumps(
+    NB_FEED if url == NB_URL else {"products": []})
+sent.clear()
+check("an empty second page is the end of the feed, not a fault",
+      (runner.run(), len(sent)), (0, 0))
 
 # ── Seed mode: record current stock silently, then stay quiet ───────────
 ADAPTERS.clear()

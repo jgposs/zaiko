@@ -9,6 +9,7 @@ from zaiko.sites import ADAPTERS, resolve
 from zaiko.sites.base import normalize_size
 from zaiko.sites.comoli import Comoli
 from zaiko.sites.graphpaper import Graphpaper
+from zaiko.sites.neighbour import Neighbour
 
 comoli = Comoli()
 sizes = comoli.parse_available_sizes
@@ -173,6 +174,67 @@ check("graphpaper: missing handle reports unknown",
 
 check("graphpaper targets normalise", gp.normalized_targets, ("2", "2-INT"))
 
+# ── 11b. Neighbour: the same reader, a market-prefixed store ────────────
+nb = Neighbour()
+
+# Shape taken from the live feed: one option, named Size, at position 1.
+shirt = {
+    "handle": "comoli-mens-comoli-shirt-black-aw26",
+    "title": "Comoli Shirt Black",
+    "options": [{"name": "Size", "position": 1, "values": ["2", "3", "4"]}],
+    "variants": [
+        {"option1": "2", "available": False},
+        {"option1": "3", "available": False},
+        {"option1": "4", "available": True},
+    ],
+}
+st = nb._stock_for(shirt)
+check("neighbour reads a single Size option", st.sizes, ["4"])
+check("neighbour uses the product title", st.name, "Comoli Shirt Black")
+
+# This store serves products under a market prefix. base_url + "/products/"
+# is the inherited default and would send the push to a redirect, so the
+# override has to survive: an alert whose link doesn't open the garment is
+# most of the alert gone.
+check("neighbour keeps the market prefix in product URLs", st.url,
+      "https://www.shopneighbour.com/en-us/products/"
+      "comoli-mens-comoli-shirt-black-aw26")
+check("graphpaper still uses the un-prefixed default",
+      gp._stock_for({"handle": "coat-b", "title": "COAT",
+                     "options": [{"name": "Size", "position": 1}],
+                     "variants": [{"option1": "2", "available": True}]}).url,
+      "https://eng.graphpaper-tokyo.com/products/coat-b")
+
+check("neighbour watches 4 and 5", nb.normalized_targets, ("4", "5"))
+check("neighbour has its own state key, not comoli's", nb.key != "comoli", True)
+
+# Sold out in every size is a fact; unreadable is not. Same distinction as
+# everywhere else, asserted here because this adapter is what will report it.
+check("neighbour all-sold-out is empty, not unknown",
+      nb._stock_for(dict(shirt, variants=[{"option1": "4", "available": False}])).sizes,
+      [])
+check("neighbour: no identifiable size option reports unknown",
+      nb._stock_for({"handle": "cap", "title": "CAP",
+                     "options": [{"name": "Color", "position": 1}],
+                     "variants": [{"option1": "BLACK", "available": True}]}).sizes,
+      None)
+
+# Footwear (JP scale) and one-size pieces share this collection with the
+# garments. Neither can be mistaken for a 4 or a 5, but they must come back
+# spelled as the shop spells them rather than folded into the garment scale.
+check("neighbour passes footwear sizes through untouched",
+      nb._stock_for({"handle": "boot", "title": "Leather Boots",
+                     "options": [{"name": "Size", "position": 1}],
+                     "variants": [{"option1": "27", "available": True},
+                                  {"option1": "27.5", "available": True},
+                                  {"option1": "28", "available": False}]}).sizes,
+      ["27", "27.5"])
+check("neighbour passes Free Size through untouched",
+      nb._stock_for({"handle": "scarf", "title": "Silk Scarf",
+                     "options": [{"name": "Size", "position": 1}],
+                     "variants": [{"option1": "Free Size", "available": True}]}).sizes,
+      ["Free Size"])
+
 # ── 12. Pushover chunking ───────────────────────────────────────────────
 many = [(f"🔔 Item number {i} — size 4\nhttps://www.comoli.jp/mailorder/item_{i}",
          f"https://www.comoli.jp/mailorder/item_{i}") for i in range(30)]
@@ -203,6 +265,9 @@ check("oversized line keeps its URL intact",
 # ── 13. Adapter registry ────────────────────────────────────────────────
 check("comoli is registered", "comoli" in ADAPTERS, True)
 check("graphpaper is registered", "graphpaper" in ADAPTERS, True)
+check("neighbour is registered", "neighbour-comoli" in ADAPTERS, True)
+check("the two COMOLI shops are separate sites",
+      len({ADAPTERS["comoli"].key, ADAPTERS["neighbour-comoli"].key}), 2)
 check("resolve() with no args returns every site", len(resolve()), len(ADAPTERS))
 check("resolve() honours an explicit key",
       [a.key for a in resolve(["graphpaper"])], ["graphpaper"])

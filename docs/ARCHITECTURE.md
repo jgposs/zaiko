@@ -11,8 +11,10 @@ run.py                  CLI: --site, --dry-run, --seed, --list
         ├── state.py    load/save/prune the memory
         └── sites/
               base.py         the SiteAdapter contract
+              shopify.py      shared reader for Shopify collection feeds
               comoli.py       COMOLI      — scrapes HTML
-              graphpaper.py   Graphpaper  — reads a Shopify JSON feed
+              graphpaper.py   Graphpaper  — Shopify feed
+              neighbour.py    COMOLI at Neighbour — Shopify feed
 ```
 
 ## The one invariant

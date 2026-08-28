@@ -106,3 +106,18 @@ for the reason you expect.
 said daily, so it was called daily — but the repo had actually been running
 every 30 minutes until a week earlier. Read what a system *did*, not only what
 its config says it should do.
+
+**A deleted Shopify collection answers 200 with an empty list.** Found while
+adding the Neighbour store, by asking the live site for a collection that
+doesn't exist rather than assuming it would 404. Every status-code check in the
+world would have called that feed healthy, and the run would have recorded
+COMOLI as sold out in every size at that shop and then said nothing again. It
+was already handled — `total == 0` raises `SiteLooksBroken` — but by accident
+rather than intent, and untested. Now both. The general form: **ask what a
+watched thing's disappearance actually looks like on the wire, and check that
+the code can tell it from an ordinary quiet day.**
+
+**One brand can need two adapters.** COMOLI is watched at its own mailorder and
+at a stockist. They are separate site keys with separate state, because a
+garment sold out in Japan and in stock in Vancouver is not one fact, and
+merging them would silence the shop that has it.

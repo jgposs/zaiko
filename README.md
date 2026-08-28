@@ -20,8 +20,8 @@ The politeness settings are deliberate, and they matter more than they look:
   check is plenty for the way they drop stock, and it costs them nothing.
 - **Delays between requests**, and a normal browser user agent, so a run looks
   like one person browsing rather than a machine.
-- **Graphpaper is read through `products.json`**, the same public endpoint the
-  store's own frontend uses — no page scraping at all.
+- **The Shopify shops are read through `products.json`**, the same public
+  endpoint their own frontends use — no page scraping at all.
 
 If you fork this: please keep the schedule and the delays where they are, and
 use your own Pushover credentials. The whole point is that a stock alert
@@ -99,8 +99,10 @@ zaiko/
   runner.py             the engine — shared by every site
   sites/
     base.py             the SiteAdapter contract
+    shopify.py          shared reader for Shopify collection feeds
     comoli.py           COMOLI — scrapes comoli.jp/mailorder
-    graphpaper.py       Graphpaper — reads the Shopify JSON feed
+    graphpaper.py       Graphpaper — Shopify feed
+    neighbour.py        COMOLI at Neighbour — Shopify feed
 tests/
   test_parser.py        parsing and message handling, offline
   test_e2e.py           full runs with the network stubbed out
@@ -112,6 +114,12 @@ tests/
 |---|---|---|---|
 | `comoli` | COMOLI | 4, 5 | scrapes the mail order listing, then each product page |
 | `graphpaper` | Graphpaper | 2, 2-INT | reads the Shopify `products.json` feed for the mens-global collection |
+| `neighbour-comoli` | COMOLI, at the Neighbour store | 4, 5 | reads the Shopify `products.json` feed for the comoli-mens collection |
+
+A brand can appear twice. COMOLI's own mailorder and a stockist that carries
+it are separate sites with separate state: the same garment in two shops is
+two independent answers to "is it in stock in a 4?", and the push title says
+which shop so the link goes where you expect.
 
 Sizes are matched loosely: `2_INT`, `2-int` and `2 INT` all count as `2-INT`,
 so you can write target sizes the obvious way regardless of how a shop spells
@@ -121,9 +129,10 @@ them.
 
 An adapter has exactly one required job — `collect`, which yields what is in
 stock right now, product by product. How it gets there is its own business:
-COMOLI walks a listing and fetches each product page, Graphpaper reads a JSON
-feed in one request. The engine handles the rest — state, change detection,
-alerting, and the failure alarms.
+COMOLI walks a listing and fetches each product page; the Shopify shops read
+a JSON feed in one request, and share `ShopifyCollectionAdapter` to do it.
+The engine handles the rest — state, change detection, alerting, and the
+failure alarms.
 
 ```python
 # zaiko/sites/yourbrand.py
@@ -162,7 +171,7 @@ Then register it in `zaiko/sites/__init__.py`:
 ```python
 from .yourbrand import YourBrand
 
-ADAPTERS = {a.key: a for a in (Comoli(), Graphpaper(), YourBrand())}
+ADAPTERS = {a.key: a for a in (Comoli(), Graphpaper(), Neighbour(), YourBrand())}
 ```
 
 ## Failure behaviour

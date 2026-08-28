@@ -35,7 +35,7 @@ def main() -> int:
 
     if args.list:
         for key, a in sorted(ADAPTERS.items()):
-            print(f"{key:12} {a.label:12} sizes {'/'.join(a.target_sizes)}  {a.listing_url}")
+            print(f"{key:18} {a.label:20} sizes {'/'.join(a.target_sizes):8} {a.listing_url}")
         return 0
 
     return run(site_keys=args.sites, dry_run=args.dry_run, seed=args.seed)

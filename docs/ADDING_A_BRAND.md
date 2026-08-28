@@ -45,7 +45,7 @@ Register it:
 # zaiko/sites/__init__.py
 from .yourbrand import YourBrand
 
-ADAPTERS = {a.key: a for a in (Comoli(), Graphpaper(), YourBrand())}
+ADAPTERS = {a.key: a for a in (Comoli(), Graphpaper(), Neighbour(), YourBrand())}
 ```
 
 ## Check for a JSON feed first
@@ -58,8 +58,24 @@ curl -s "https://theshop.com/collections/<collection>/products.json?limit=250" |
 
 If that returns JSON, the shop is Shopify and you are done thinking about
 markup: every variant reports `available` as a boolean, and the whole catalogue
-arrives in one or two requests instead of one per product. `graphpaper.py` is
-the template. A surprising number of small brand shops are Shopify.
+arrives in one or two requests instead of one per product. A surprising number
+of small brand shops are Shopify — two of the three watched here are.
+
+When it is, **don't write an adapter at all**: subclass
+`ShopifyCollectionAdapter` (`sites/shopify.py`), which already does the paging,
+the size-option hunting and the three-valued answer. `graphpaper.py` and
+`neighbour.py` are both a docstring and six class attributes. Set
+`product_url_prefix` if the store serves products under a market prefix
+(`/en-us/products/…`) rather than at `base_url/products`.
+
+## The same brand in a second shop
+
+A stockist that carries a brand you already watch is a **separate site key**,
+not an extra URL inside the existing adapter. Its state, its failure alarms and
+its push title stay its own — merging them would let one shop's sold-out mask
+the other's restock, which is the silence this project exists to prevent. Give
+the label the shop's name (`COMOLI (Neighbour)`), or an alert tells you nothing
+about where to buy it.
 
 Other things worth probing before committing to scraping: `/products.json`
 at the site root, a `sitemap.xml`, or an XHR the product page itself makes
@@ -94,6 +110,15 @@ Split within text nodes.
 **Normalise nothing yourself.** Yield sizes as the site spells them. The engine
 folds case, spaces, underscores and hyphens. If you normalise in the adapter you
 will eventually normalise differently from `target_sizes` and match nothing.
+
+**A dead feed can answer 200.** Shopify serves a collection that has been
+renamed, unpublished or deleted as HTTP 200 with `{"products":[]}` — not a 404.
+Nothing about the response says the thing you are watching stopped existing, so
+an adapter that trusts the status code records the brand as sold out in every
+size and then goes quiet forever, looking healthy the whole time. The base
+class treats "no products at all" as `SiteLooksBroken` for exactly this; if you
+write your own `collect`, do the same. An empty *later* page is different — that
+is just the end of the collection.
 
 **Handle every link form.** Comoli's listing was parsed by string prefix, so
 absolute, `http://`, and non-`www` links were silently dropped. Parse the host
