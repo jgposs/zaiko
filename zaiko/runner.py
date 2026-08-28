@@ -162,13 +162,18 @@ def run_site(adapter, all_state: dict, dry_run: bool = False,
 
             # Only stamp changed_at when stock actually moved, so the state
             # file's git history records real changes rather than heartbeats.
-            changed_at = prev.get("changed_at")
-            if prev_sizes != sizes:
-                changed_at = stamp
+            #
+            # Compared as sets: a site is under no obligation to list its
+            # variants in a stable order, and Shopify doesn't. An order-
+            # sensitive comparison turned ["1","2"] becoming ["2","1"] into a
+            # recorded change, which is noise in the one place that is supposed
+            # to be signal. When only the order moved, the stored list is kept
+            # as it was so the file stays byte-identical.
+            moved = prev_sizes is None or set(prev_sizes) != set(sizes)
             state[item.url] = {
                 "name": item.name,
-                "sizes": sizes,
-                "changed_at": changed_at,
+                "sizes": sizes if moved else prev_sizes,
+                "changed_at": stamp if moved else prev.get("changed_at"),
                 "last_seen": refresh_last_seen(prev.get("last_seen"), now),
             }
 

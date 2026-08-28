@@ -85,6 +85,13 @@ history that the file is committed *for*. Now refreshed only once a week.
 The lesson generalised: **before adding a field to a state entry, ask what it
 does to the diff of an unchanged run.**
 
+**A reshuffled list counted as a change.** Immediately after the `last_seen`
+fix, the next run still committed a diff: the same sizes had come back in a
+different order and `changed_at` was stamped for it. Sizes are now compared as
+sets. Two non-changes writing themselves into the history in two days is the
+argument for the standing question — **any write to a state entry must justify
+itself against the diff of an unchanged run.**
+
 **A test passed for the wrong reason — twice.** First, an assertion of the form
 `url in body` passed trivially against an empty string. Second, the test for the
 `last_seen` fix compared two runs that both landed in the same second, so

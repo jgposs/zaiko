@@ -110,6 +110,19 @@ unchanged = config.STATE_FILE.read_bytes()
 run_comoli()
 check("an unchanged run leaves the state file byte-identical",
       config.STATE_FILE.read_bytes(), unchanged)
+
+# Same sizes in a different order is not a stock change. Sites don't promise
+# a stable variant order, and recording a reshuffle as a change writes noise
+# into the history that exists to record real ones.
+reordered = dict(PAGES)
+reordered[JACKET] = ('<p><span class="td_line-through">5</span></p>'
+                     '<p>4<span>/</span></p><p>2<span>/</span></p>')
+real_fetch = runner.fetch
+runner.fetch = lambda session, url: reordered.get(url)
+run_comoli()
+check("a reordered size list is not treated as a change",
+      config.STATE_FILE.read_bytes(), unchanged)
+runner.fetch = real_fetch
 runner.datetime = real_datetime
 
 # ── Run 3: size 5 restocks on the jacket ────────────────────────────────
