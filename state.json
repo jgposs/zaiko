@@ -275,6 +275,78 @@
       "name": "ALUMO for Graphpaper S/S Oversized Band Collar Shirt",
       "sizes": []
     },
+    "https://eng.graphpaper-tokyo.com/products/cm263-50038": {
+      "changed_at": "2026-08-28T23:59:46+00:00",
+      "last_seen": "2026-08-28T23:59:46+00:00",
+      "name": "Silk Noil Viscose Sleeping Shirt",
+      "sizes": []
+    },
+    "https://eng.graphpaper-tokyo.com/products/cm263-50040": {
+      "changed_at": "2026-08-28T23:59:46+00:00",
+      "last_seen": "2026-08-28T23:59:46+00:00",
+      "name": "Silicon Poplin Oversized Regular Collar Shirt",
+      "sizes": []
+    },
+    "https://eng.graphpaper-tokyo.com/products/cm263-50041": {
+      "changed_at": "2026-08-28T23:59:46+00:00",
+      "last_seen": "2026-08-28T23:59:46+00:00",
+      "name": "Silicon Poplin Oversized Band Collar Shirt",
+      "sizes": []
+    },
+    "https://eng.graphpaper-tokyo.com/products/cm263-50042": {
+      "changed_at": "2026-08-28T23:59:46+00:00",
+      "last_seen": "2026-08-28T23:59:46+00:00",
+      "name": "ALUMO for GP Regular Collar Shirt",
+      "sizes": []
+    },
+    "https://eng.graphpaper-tokyo.com/products/cm263-50043": {
+      "changed_at": "2026-08-28T23:59:46+00:00",
+      "last_seen": "2026-08-28T23:59:46+00:00",
+      "name": "ALUMO for GP L/S Oversized Regular Collar Shirt",
+      "sizes": []
+    },
+    "https://eng.graphpaper-tokyo.com/products/cm263-50044": {
+      "changed_at": "2026-08-28T23:59:46+00:00",
+      "last_seen": "2026-08-28T23:59:46+00:00",
+      "name": "ALUMO for GP L/S Oversized Band Collar Shirt",
+      "sizes": []
+    },
+    "https://eng.graphpaper-tokyo.com/products/cm263-70039": {
+      "changed_at": "2026-08-28T23:59:46+00:00",
+      "last_seen": "2026-08-28T23:59:46+00:00",
+      "name": "Cotton Pique Jersey L/S Skipper Polo",
+      "sizes": []
+    },
+    "https://eng.graphpaper-tokyo.com/products/cm263-70045": {
+      "changed_at": "2026-08-28T23:59:46+00:00",
+      "last_seen": "2026-08-28T23:59:46+00:00",
+      "name": "Tri Spun Cotton L/S Oversized Tee",
+      "sizes": []
+    },
+    "https://eng.graphpaper-tokyo.com/products/cm263-70046": {
+      "changed_at": "2026-08-28T23:59:46+00:00",
+      "last_seen": "2026-08-28T23:59:46+00:00",
+      "name": "Brushed Mockrody High Neck L/S Tee",
+      "sizes": []
+    },
+    "https://eng.graphpaper-tokyo.com/products/cu263-80047": {
+      "changed_at": "2026-08-28T23:59:46+00:00",
+      "last_seen": "2026-08-28T23:59:46+00:00",
+      "name": "Suvin High Gauge L/S Crew Neck Knit",
+      "sizes": []
+    },
+    "https://eng.graphpaper-tokyo.com/products/cu263-80048": {
+      "changed_at": "2026-08-28T23:59:46+00:00",
+      "last_seen": "2026-08-28T23:59:46+00:00",
+      "name": "Suvin High Gauge Knit Cardigan",
+      "sizes": []
+    },
+    "https://eng.graphpaper-tokyo.com/products/cu263-80050": {
+      "changed_at": "2026-08-28T23:59:46+00:00",
+      "last_seen": "2026-08-28T23:59:46+00:00",
+      "name": "High Gauge Knit Oversized Cardigan",
+      "sizes": []
+    },
     "https://eng.graphpaper-tokyo.com/products/gm234-50073b": {
       "changed_at": "2026-08-26T03:16:32+00:00",
       "last_seen": "2026-08-26T16:25:34+00:00",
@@ -729,11 +801,12 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40040b": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-08-28T23:59:46+00:00",
       "last_seen": "2026-08-26T16:25:34+00:00",
       "name": "Compact Ponte Chef Pants",
       "sizes": [
-        "1"
+        "1",
+        "2"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40041b": {
