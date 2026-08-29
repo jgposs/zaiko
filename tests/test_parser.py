@@ -9,6 +9,7 @@ from zaiko.sites import ADAPTERS, resolve
 from zaiko.sites.base import normalize_size
 from zaiko.sites.comoli import Comoli
 from zaiko.sites.graphpaper import Graphpaper
+from zaiko.sites.kent import Kent
 from zaiko.sites.neighbour import Neighbour
 
 comoli = Comoli()
@@ -276,6 +277,74 @@ check("graphpaper reads unchanged through the same path",
                      "variants": [{"option1": "NAVY", "option2": "2_INT",
                                    "available": True}]}).sizes,
       ["2_INT"])
+
+# ── 11d. KENT: colour is half the identity ──────────────────────────────
+kent = Kent()
+K_SIZES = ["XS", "S", "M", "L", "XL", "2XL", "3XL"]
+K_COLS = ["Cloud", "Charcoal Black", "Heather Gray", "Sand (Undyed)"]
+K_AVAIL = {("XS", "Charcoal Black"), ("S", "Sand (Undyed)"), ("L", "Sand (Undyed)"),
+           ("XL", "Sand (Undyed)"), ("2XL", "Cloud"), ("2XL", "Heather Gray"),
+           ("2XL", "Sand (Undyed)"), ("3XL", "Heather Gray"), ("3XL", "Sand (Undyed)")}
+
+
+def kent_product(available=K_AVAIL, **over):
+    """The live shape as of August 2026: Size at 1, Color at 2, 28 variants."""
+    p = {"handle": "mens-organic-cotton-classic-boxer",
+         "title": "Breather Boxer",
+         "options": [{"name": "Size", "position": 1, "values": K_SIZES},
+                     {"name": "Color", "position": 2, "values": K_COLS}],
+         "variants": [{"option1": s, "option2": c, "option3": None,
+                       "available": (s, c) in available}
+                      for s in K_SIZES for c in K_COLS]}
+    p.update(over)
+    return p
+
+
+def kent_sizes(product):
+    got = list(kent._stocks_for(product))
+    return got[0].sizes if len(got) == 1 else got
+
+
+check("kent watches one colour of one product",
+      len(list(kent._stocks_for(kent_product()))), 1)
+check("kent reads only the watched colour's stock", kent_sizes(kent_product()), ["XS"])
+check("a product kent doesn't watch yields nothing",
+      list(kent._stocks_for(kent_product(handle="womens-something"))), [])
+check("kent's state key is per colour",
+      list(kent._stocks_for(kent_product()))[0].url,
+      "https://www.wearkent.com/products/"
+      "mens-organic-cotton-classic-boxer#Charcoal-Black")
+
+# The restock being waited for.
+check("M in the watched colour is reported",
+      sorted(kent_sizes(kent_product(K_AVAIL | {("M", "Charcoal Black")}))),
+      ["M", "XS"])
+
+# The failure this adapter exists to prevent: reading sizes across colours
+# would report M here, alert on a colour that wasn't wanted, and then record M
+# as in stock — so the real Charcoal Black restock would have nothing to
+# announce and would pass in silence.
+check("M in another colour is not the watched colour's stock",
+      kent_sizes(kent_product(K_AVAIL | {("M", "Sand (Undyed)")})), ["XS"])
+
+# Sold out vs unreadable, again.
+check("watched colour sold out in every size is [], not unknown",
+      kent_sizes(kent_product(available=set())), [])
+check("a renamed or dropped colour is unknown, not sold out",
+      kent_sizes(kent_product(options=[
+          {"name": "Size", "position": 1, "values": K_SIZES},
+          {"name": "Color", "position": 2, "values": ["Cloud", "Black"]}])),
+      None)
+check("no identifiable colour option is unknown",
+      kent_sizes(kent_product(options=[
+          {"name": "Size", "position": 1, "values": K_SIZES}])),
+      None)
+check("a null size on an available variant of that colour is unknown",
+      kent_sizes(kent_product(available={("M", "Charcoal Black")}, variants=[
+          {"option1": None, "option2": "Charcoal Black", "available": True}])),
+      None)
+check("kent is registered", "kent" in ADAPTERS, True)
+check("kent watches M", kent.normalized_targets, ("M",))
 
 # ── 12. Pushover chunking ───────────────────────────────────────────────
 many = [(f"🔔 Item number {i} — size 4\nhttps://www.comoli.jp/mailorder/item_{i}",

@@ -13,6 +13,7 @@ from zaiko.sites import ADAPTERS
 from zaiko.sites.base import SiteLooksBroken, SiteUnavailable, Stock, SiteAdapter
 from zaiko.sites.comoli import Comoli
 from zaiko.sites.graphpaper import Graphpaper
+from zaiko.sites.kent import Kent
 from zaiko.sites.neighbour import Neighbour
 from zaiko.state import load_state
 
@@ -623,6 +624,75 @@ check("a wholly unreadable feed alarms", rc, 1)
 check("the alarm says the products were unreadable",
       "unreadable" in sent[0][0], True)
 check("nothing was written for it", load_state().get("neighbour-comoli", {}), {})
+
+# ── KENT: a watched product that vanishes must alarm, not go quiet ─────
+del ADAPTERS["neighbour-comoli"]
+kent = Kent(); kent.request_delay = 0
+ADAPTERS["kent"] = kent
+config.STATE_FILE = tmp / "kent.json"
+
+K_URL = "https://www.wearkent.com/products.json?limit=250&page=1"
+K_KEY = ("https://www.wearkent.com/products/"
+         "mens-organic-cotton-classic-boxer#Charcoal-Black")
+
+
+def kent_feed(available):
+    return {"products": [
+        {"handle": "mens-organic-cotton-classic-boxer", "title": "Breather Boxer",
+         "options": [{"name": "Size", "position": 1, "values": ["M", "L"]},
+                     {"name": "Color", "position": 2,
+                      "values": ["Charcoal Black", "Sand (Undyed)"]}],
+         "variants": [{"option1": s, "option2": c, "available": (s, c) in available}
+                      for s in ("M", "L") for c in ("Charcoal Black", "Sand (Undyed)")]},
+        # A product kent doesn't watch, in stock in M, to prove it stays out.
+        {"handle": "womens-something", "title": "Not Watched",
+         "options": [{"name": "Size", "position": 1}],
+         "variants": [{"option1": "M", "available": True}]},
+    ]}
+
+
+serve = [kent_feed(set())]
+runner.fetch = lambda session, url: json.dumps(serve[0]) if url == K_URL else None
+
+sent.clear()
+rc = runner.run()
+check("kent run is healthy with nothing in stock", rc, 0)
+check("kent is silent when the watched colour is sold out", len(sent), 0)
+check("kent recorded the watched colour as sold out", sizes_for(K_KEY, "kent"), [])
+check("kent tracks only what it watches", len(load_state()["kent"]), 1)
+
+# The other colour restocking in M must not be reported, and must not be
+# recorded as M — otherwise the real restock later has nothing to announce.
+serve[0] = kent_feed({("M", "Sand (Undyed)")})
+sent.clear()
+check("another colour's M is not an alert", (runner.run(), len(sent)), (0, 0))
+check("and was not recorded as the watched colour's stock",
+      sizes_for(K_KEY, "kent"), [])
+
+# The one being waited for.
+serve[0] = kent_feed({("M", "Sand (Undyed)"), ("M", "Charcoal Black")})
+sent.clear()
+rc = runner.run()
+check("kent alerts when the watched colour returns in M", len(sent), 1)
+check("the alert names the colour", "Charcoal Black" in sent[0][1], True)
+check("the alert links to the watched colour", K_KEY in sent[0][1], True)
+
+sent.clear()
+check("kent is silent once it has been announced",
+      (runner.run(), len(sent)), (0, 0))
+
+# If the product is delisted or its handle changes, kent watches nothing at
+# all. That is not a quiet day — it is a monitor with nothing to monitor.
+before_kent = dict(load_state()["kent"])
+serve[0] = {"products": [{"handle": "womens-something", "title": "Not Watched",
+                          "options": [{"name": "Size", "position": 1}],
+                          "variants": [{"option1": "M", "available": True}]}]}
+sent.clear()
+rc = runner.run()
+check("kent alarms when the watched product is gone from the feed", rc, 1)
+check("that alarm says it produced nothing", "returned nothing" in sent[0][0], True)
+check("the vanished product did not lose its saved stock",
+      load_state()["kent"], before_kent)
 
 # ── Seed mode: record current stock silently, then stay quiet ───────────
 ADAPTERS.clear()

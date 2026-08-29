@@ -15,6 +15,7 @@ run.py                  CLI: --site, --dry-run, --seed, --list
               comoli.py       COMOLI      — scrapes HTML
               graphpaper.py   Graphpaper  — Shopify feed
               neighbour.py    COMOLI at Neighbour — Shopify feed
+              kent.py         KENT — one product, one colour
 ```
 
 ## The one invariant

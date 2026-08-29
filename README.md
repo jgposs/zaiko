@@ -103,6 +103,7 @@ zaiko/
     comoli.py           COMOLI — scrapes comoli.jp/mailorder
     graphpaper.py       Graphpaper — Shopify feed
     neighbour.py        COMOLI at Neighbour — Shopify feed
+    kent.py             KENT — one product, one colour
 tests/
   test_parser.py        parsing and message handling, offline
   test_e2e.py           full runs with the network stubbed out
@@ -115,6 +116,7 @@ tests/
 | `comoli` | COMOLI | 4, 5 | scrapes the mail order listing, then each product page |
 | `graphpaper` | Graphpaper | 2, 2-INT | reads the Shopify `products.json` feed for the mens-global collection |
 | `neighbour-comoli` | COMOLI, at the Neighbour store | 4, 5 | reads the Shopify `products.json` feed for the comoli-mens collection |
+| `kent` | KENT | M | reads the Shopify `products.json` feed, and watches one product in one colour |
 
 A brand can appear twice. COMOLI's own mailorder and a stockist that carries
 it are separate sites with separate state: the same garment in two shops is

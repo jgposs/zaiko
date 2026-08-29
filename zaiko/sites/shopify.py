@@ -104,6 +104,18 @@ class ShopifyCollectionAdapter(SiteAdapter):
         # and must stay [] rather than becoming unknown.
         return Stock(name=name, url=url, sizes=sizes)
 
+    def _stocks_for(self, product: dict) -> Iterator[Stock]:
+        """The Stocks one feed product becomes. One, by default.
+
+        The extension point for a shop where a product is not the unit you
+        watch — a garment sold in four colours is four separate answers to
+        "is it in stock in an M?", and collapsing them lets one colour's
+        restock mask another's. Overriding this is also how a subclass
+        watches only part of a catalogue: yield nothing for a product and it
+        is simply not tracked.
+        """
+        yield self._stock_for(product)
+
     # ── the engine's entry point ────────────────────────────────
     def collect(self, session, fetch) -> Iterator[Stock]:
         total = 0
@@ -137,7 +149,7 @@ class ShopifyCollectionAdapter(SiteAdapter):
 
             for product in products:
                 total += 1
-                yield self._stock_for(product)
+                yield from self._stocks_for(product)
 
             if len(products) < PAGE_SIZE:
                 break

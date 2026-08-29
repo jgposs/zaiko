@@ -121,6 +121,23 @@ size". Silence over something that may be sitting there in your size, from a
 run that reports itself healthy. Check the value, not just the key, and return
 `None` for the product when an *available* variant's size can't be named.
 
+**A size option is not always the whole answer.** A product sold in four
+colours with one Size option is four independent answers to "is it in stock in
+an M?", not one. Reading sizes across colours reports M the day any colour has
+it — a wrong alert, and then M is recorded as in stock, so the colour you
+actually wanted has no change to announce when it returns. Silence, arrived at
+through an alert. When colour matters, make it part of the product identity:
+one `Stock` per colour with its own URL and its own state entry, the way COMOLI
+gets one URL per colour for free. `kent.py` does this by overriding
+`_stocks_for`, which is also how an adapter watches only part of a catalogue.
+
+**Not every Shopify endpoint reports stock.** `/products/<handle>.json` — the
+one that matches the URL in your browser — returns variants with no `available`
+key at all. An adapter reading it sees every variant as unavailable, reports
+`[]` for everything, and goes silent forever with nothing to alarm on. The
+collection and root `/products.json` feeds carry `available`; the `.js` AJAX
+endpoint does too. Check the field is actually there before trusting a feed.
+
 **A dead feed can answer 200.** Shopify serves a collection that has been
 renamed, unpublished or deleted as HTTP 200 with `{"products":[]}` — not a 404.
 Nothing about the response says the thing you are watching stopped existing, so
