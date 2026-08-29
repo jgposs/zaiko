@@ -2427,5 +2427,266 @@
         "2"
       ]
     }
+  },
+  "neighbour-comoli": {
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-black-denim-over-pants-1": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Black Denim Over Pants",
+      "sizes": []
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-black-denim-zip-short-jacket": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Black Denim Zip Short Jacket",
+      "sizes": []
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-black-drill-jacket": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Black Drill Jacket",
+      "sizes": []
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-canapa-suit-black": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Canapa Suit Black",
+      "sizes": []
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-canapa-vest-black": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Canapa Vest Black",
+      "sizes": [
+        "2"
+      ]
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-cashmere-washi-comoli-knit-ivory": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Cashmere-Washi COMOLI Knit Ivory",
+      "sizes": [
+        "FREE-SIZE"
+      ]
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-cashmere-washi-shawl-collar-knit-jacket-black": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Cashmere Washi Shawl Collar Knit Jacket Black",
+      "sizes": []
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-comoli-shirt-black-aw26": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Comoli Shirt Black",
+      "sizes": []
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-corduroy-drawstring-pants-black": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Corduroy Drawstring Pants Black",
+      "sizes": []
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-cotton-duck-painter-pants-brown": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Cotton Duck Painter Pants Brown",
+      "sizes": []
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-cotton-duck-tapered-pants": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Cotton Duck Tapered Pants",
+      "sizes": []
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-cotton-jersey-long-sleeve-t-shirt-white": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Cotton Jersey Long Sleeve T-Shirt White",
+      "sizes": []
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-cotton-jersey-sleeveless-top-white-ss26": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Cotton Jersey Sleeveless Top White",
+      "sizes": [
+        "3",
+        "4"
+      ]
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-cotton-mesh-sleeveless-top-black": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Cotton Mesh Sleeveless Top Black",
+      "sizes": [
+        "2",
+        "4"
+      ]
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-drill-zip-jacket-black": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Drill Zip Jacket Black",
+      "sizes": []
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-fleece-crew-neck-fade-black": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Fleece Crew Neck Fade Black",
+      "sizes": []
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-fleece-zip-jacket-fade-black": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Fleece Zip Jacket Fade Black",
+      "sizes": []
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-footworks-exclusive-tyrolean-shoes-beige": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "FOOTWORKS Exclusive Tyrolean Shoes Beige",
+      "sizes": []
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-hemp-duck-zip-short-jacket-brown": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Hemp Duck Zip Short Jacket Brown",
+      "sizes": []
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-khadi-cotton-short-sleeve-open-collar-shirt-black": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Khadi Cotton Short Sleeve Open Collar Shirt Black",
+      "sizes": [
+        "2",
+        "3"
+      ]
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-lamb-leather-canadian-coat-black": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Lamb Leather Canadian Coat Black",
+      "sizes": [
+        "2"
+      ]
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-linen-crew-neck-knit-po-brown": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Linen Crew-Neck Knit PO Brown",
+      "sizes": []
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-lw-cotton-fleece-short-sleeve-crew-neck-top-black": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "LW Cotton Fleece Short-Sleeve Crew Neck Top Black",
+      "sizes": [
+        "4"
+      ]
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-lw-cotton-fleece-shorts-black": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "LW Cotton Fleece Shorts Black",
+      "sizes": []
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-lw-cotton-fleece-zip-hoodie-black": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "LW Cotton Fleece Zip Hoodie Black",
+      "sizes": []
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-oxford-pullover-black-ss26": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Oxford Pullover Black",
+      "sizes": []
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-oxford-zip-hoodie-black": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Oxford Zip Hoodie Black",
+      "sizes": []
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-pique-short-sleeve-polo-shirt-black": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Pique Short Sleeve Polo Shirt Black",
+      "sizes": []
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-post-work-twill-cap-shoulder-blouson-ivory": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Post-Work Twill Cap Shoulder Blouson Ivory",
+      "sizes": []
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-post-work-twill-pants-black-aw25": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Post Work Twill Pants Black",
+      "sizes": []
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-post-work-twill-pants-ivory": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Post-Work Twill Pants Ivory",
+      "sizes": []
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-rayon-comoli-shirt-black": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Rayon Comoli Shirt Black",
+      "sizes": []
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-sheep-grain-leather-coat-brown": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Sheep Grain Leather Coat Brown",
+      "sizes": [
+        "2"
+      ]
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-short-sleeve-open-collar-shirt-zebra": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Short-Sleeve Open Collar Shirt Zebra",
+      "sizes": [
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-silk-flannel-jacket-fade-navy": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Silk Flannel Jacket Fade Navy",
+      "sizes": []
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-skipper-shirt-stripe": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Skipper Shirt Stripe",
+      "sizes": []
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-thin-cotton-layered-t-shirt-black": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Thin Cotton Layered T-Shirt Black",
+      "sizes": []
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-wool-felt-pants-charcoal": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Wool Felt Pants Charcoal",
+      "sizes": []
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-wool-knit-knee-tucked-pants-navy": {
+      "changed_at": "2026-08-29T04:04:20+00:00",
+      "last_seen": "2026-08-29T04:04:20+00:00",
+      "name": "Wool Knit Knee-Tucked Pants Navy",
+      "sizes": [
+        "3"
+      ]
+    }
   }
 }
