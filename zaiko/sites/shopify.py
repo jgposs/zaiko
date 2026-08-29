@@ -79,12 +79,30 @@ class ShopifyCollectionAdapter(SiteAdapter):
             # the option, would silence the whole catalogue with no alarm.
             return Stock(name=name, url=url, sizes=None)
 
-        sizes = [
-            str(variant.get(f"option{position}", "")).strip()
-            for variant in product.get("variants") or []
-            if variant.get("available")
-        ]
-        return Stock(name=name, url=url, sizes=[s for s in sizes if s])
+        sizes = []
+        for variant in product.get("variants") or []:
+            if not variant.get("available"):
+                continue                    # sold out; its size doesn't matter
+
+            raw = variant.get(f"option{position}")
+            if raw is None or not str(raw).strip():
+                # The options list promised the size at this position and this
+                # variant hasn't got one. Shopify sends every variant all three
+                # option slots and nulls the unused ones, so `.get(..., "")`
+                # returns None here rather than the default, and str() would
+                # turn it into the literal "None" — a size that normalises to
+                # NONE, matches no target, and reads to the engine as a
+                # confident "in stock, nothing in your size". That is a silent
+                # miss on a garment that may well be sitting there in a 4.
+                # An available variant whose size we cannot name means we
+                # cannot answer for this product at all.
+                return Stock(name=name, url=url, sizes=None)
+
+            sizes.append(str(raw).strip())
+
+        # No available variants is a real answer — sold out in every size —
+        # and must stay [] rather than becoming unknown.
+        return Stock(name=name, url=url, sizes=sizes)
 
     # ── the engine's entry point ────────────────────────────────
     def collect(self, session, fetch) -> Iterator[Stock]:

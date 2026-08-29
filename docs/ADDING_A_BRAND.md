@@ -111,6 +111,16 @@ Split within text nodes.
 folds case, spaces, underscores and hyphens. If you normalise in the adapter you
 will eventually normalise differently from `target_sizes` and match nothing.
 
+**`.get(key, default)` does not save you from a null.** A JSON feed that
+carries a key with a null value returns the null, not your default — Shopify
+sends every variant all three option slots and nulls the unused ones. Wrapping
+that in `str()` produces the four-character string `"None"`, which is a size as
+far as the rest of the code is concerned: it normalises, it matches no target,
+and the product reads to the engine as a confident "in stock, nothing in your
+size". Silence over something that may be sitting there in your size, from a
+run that reports itself healthy. Check the value, not just the key, and return
+`None` for the product when an *available* variant's size can't be named.
+
 **A dead feed can answer 200.** Shopify serves a collection that has been
 renamed, unpublished or deleted as HTTP 200 with `{"products":[]}` — not a 404.
 Nothing about the response says the thing you are watching stopped existing, so

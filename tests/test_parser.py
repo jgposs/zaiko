@@ -235,6 +235,48 @@ check("neighbour passes Free Size through untouched",
                      "variants": [{"option1": "Free Size", "available": True}]}).sizes,
       ["Free Size"])
 
+# ── 11c. A size the feed doesn't actually carry ─────────────────────────
+# Shopify sends every variant all three option slots and nulls the unused
+# ones, so .get("option2", "") returns None rather than the default when the
+# options list names Size at a position the variants don't fill. str(None) is
+# the literal "None", which normalises to NONE, matches no target, and reads
+# to the engine as a healthy "in stock, nothing in your size" — silence over a
+# garment that may be sitting there in a 4. Unknown is the only honest answer.
+promised_at_2 = {
+    "handle": "sleeping-shirt", "title": "Sleeping Shirt",
+    "options": [{"name": "Size", "position": 2}],
+    "variants": [{"option1": "4", "option2": None, "available": True},
+                 {"option1": "5", "option2": None, "available": True}],
+}
+check("null at the promised size position reports unknown",
+      nb._stock_for(promised_at_2).sizes, None)
+check("that product is never reported as a readable size",
+      nb._stock_for(promised_at_2).sizes in ([], ["None"], ["NONE"]), False)
+check("a blank size on an available variant reports unknown",
+      nb._stock_for(dict(promised_at_2, variants=[
+          {"option1": "4", "option2": "   ", "available": True}])).sizes,
+      None)
+
+# Only *available* variants have to be readable — a sold-out one's size is
+# nobody's business, and letting it force unknown would make half the
+# catalogue unreadable for no gain.
+check("a null size on a sold-out variant doesn't spoil the product",
+      nb._stock_for(dict(promised_at_2, variants=[
+          {"option1": "x", "option2": None, "available": False},
+          {"option1": "x", "option2": "4", "available": True}])).sizes,
+      ["4"])
+# And the distinction the whole design rests on must survive the fix.
+check("no available variants is still sold out, not unknown",
+      nb._stock_for(dict(promised_at_2, variants=[
+          {"option1": "x", "option2": "4", "available": False}])).sizes,
+      [])
+check("graphpaper reads unchanged through the same path",
+      gp._stock_for({"handle": "coat", "title": "COAT",
+                     "options": [{"name": "Size", "position": 2}],
+                     "variants": [{"option1": "NAVY", "option2": "2_INT",
+                                   "available": True}]}).sizes,
+      ["2_INT"])
+
 # ── 12. Pushover chunking ───────────────────────────────────────────────
 many = [(f"🔔 Item number {i} — size 4\nhttps://www.comoli.jp/mailorder/item_{i}",
          f"https://www.comoli.jp/mailorder/item_{i}") for i in range(30)]

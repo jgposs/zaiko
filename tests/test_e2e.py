@@ -586,6 +586,44 @@ sent.clear()
 check("an empty second page is the end of the feed, not a fault",
       (runner.run(), len(sent)), (0, 0))
 
+# ── An unreadable size must not pass as a healthy "not your size" ──────
+# The feed names Size at a position its variants leave null. Read literally
+# that yields the string "None", which normalises to a size matching nothing —
+# so the product would be recorded as successfully checked, alert nothing, and
+# go quiet while possibly sitting in stock in a 4.
+config.STATE_FILE = tmp / "nb2.json"
+BAD = {"handle": "sleeping-shirt", "title": "Sleeping Shirt",
+       "options": [{"name": "Size", "position": 2}],
+       "variants": [{"option1": "4", "option2": None, "available": True}]}
+GOOD = {"handle": "wool-trousers-grey", "title": "Wool Trousers Grey",
+        "options": [{"name": "Size", "position": 1}],
+        "variants": [{"option1": "4", "available": True}]}
+BAD_URL = "https://www.shopneighbour.com/en-us/products/sleeping-shirt"
+
+runner.fetch = lambda session, url: json.dumps(
+    {"products": [BAD, GOOD]}) if url == NB_URL else json.dumps({"products": []})
+sent.clear()
+rc = runner.run()
+check("a half-unreadable run is still healthy", rc, 0)
+check("the readable product still alerted", len(sent), 1)
+check("that alert is the trousers", "Wool Trousers Grey" in sent[0][1], True)
+# The point: nothing was recorded for the product we couldn't read, so it is
+# re-derived next run instead of being remembered as checked-and-uninteresting.
+check("the unreadable product was not recorded at all",
+      BAD_URL in load_state()["neighbour-comoli"], False)
+
+# And when the whole feed reads that way, it is not a quiet day — it is a run
+# that understood nothing, and has to say so.
+config.STATE_FILE = tmp / "nb3.json"
+runner.fetch = lambda session, url: json.dumps(
+    {"products": [BAD]}) if url == NB_URL else json.dumps({"products": []})
+sent.clear()
+rc = runner.run()
+check("a wholly unreadable feed alarms", rc, 1)
+check("the alarm says the products were unreadable",
+      "unreadable" in sent[0][0], True)
+check("nothing was written for it", load_state().get("neighbour-comoli", {}), {})
+
 # ── Seed mode: record current stock silently, then stay quiet ───────────
 ADAPTERS.clear()
 ADAPTERS["comoli"] = comoli

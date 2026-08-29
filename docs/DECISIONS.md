@@ -121,3 +121,20 @@ the code can tell it from an ordinary quiet day.**
 at a stockist. They are separate site keys with separate state, because a
 garment sold out in Japan and in stock in Vancouver is not one fact, and
 merging them would silence the shop that has it.
+
+**A null size became the string "None", and that read as success.** Found by
+reviewing the Shopify adapter for null dereferences rather than by anything
+going wrong. `variant.get("option2", "")` returns the default only when the key
+is *absent*; Shopify sends the key with a null value, so `str()` turned it into
+`"None"` — a size token that normalises fine, matches no target, and leaves the
+product recorded as read-and-uninteresting. Every other bug of this shape in
+this repo has been an adapter returning `[]` where it meant `None`; this one
+returned a populated list, which is worse, because a non-empty answer looks
+healthier than an empty one. It had never fired in the wild — 310 state entries,
+zero `NONE` values — and would have stayed invisible when it did.
+
+The generalisation, which is now the third variant of the same lesson: **the
+dangerous failure is not the one that returns nothing, it is the one that
+returns something plausible.** `[]` for unknown, the colour where the size
+should be, and `"None"` for a null are all the same mistake — a confident
+answer the adapter had no right to give.
