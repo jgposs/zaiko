@@ -791,6 +791,16 @@
         "1"
       ]
     },
+    "https://eng.graphpaper-tokyo.com/products/gm263-30325": {
+      "changed_at": "2026-08-29T18:21:27+00:00",
+      "last_seen": "2026-08-29T18:21:27+00:00",
+      "name": "Hairy Suede Corbusier Jacket",
+      "sizes": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
     "https://eng.graphpaper-tokyo.com/products/gm263-30394": {
       "changed_at": "2026-08-26T03:16:32+00:00",
       "last_seen": "2026-08-26T16:25:34+00:00",
@@ -1016,6 +1026,15 @@
         "2"
       ]
     },
+    "https://eng.graphpaper-tokyo.com/products/gm263-40381": {
+      "changed_at": "2026-08-29T18:21:27+00:00",
+      "last_seen": "2026-08-29T18:21:27+00:00",
+      "name": "Dry Westpoint Barrel-Fit Belted Pants",
+      "sizes": [
+        "1",
+        "2"
+      ]
+    },
     "https://eng.graphpaper-tokyo.com/products/gm263-40393": {
       "changed_at": "2026-08-26T03:16:32+00:00",
       "last_seen": "2026-08-26T16:25:34+00:00",
@@ -1075,15 +1094,14 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-50005b": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-08-29T18:21:27+00:00",
       "last_seen": "2026-08-26T16:25:34+00:00",
       "name": "Broad Regular Collar Shirt",
       "sizes": [
         "2",
         "3",
         "2-INT",
-        "3-INT",
-        "1"
+        "3-INT"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-50020b": {
@@ -1822,6 +1840,15 @@
         "2"
       ]
     },
+    "https://eng.graphpaper-tokyo.com/products/gu263-10380": {
+      "changed_at": "2026-08-29T18:21:27+00:00",
+      "last_seen": "2026-08-29T18:21:27+00:00",
+      "name": "Dry Westpoint Railway Coat",
+      "sizes": [
+        "1",
+        "2"
+      ]
+    },
     "https://eng.graphpaper-tokyo.com/products/gu263-20054db": {
       "changed_at": "2026-08-26T03:16:32+00:00",
       "last_seen": "2026-08-26T16:25:34+00:00",
@@ -1955,6 +1982,24 @@
         "1",
         "2",
         "3"
+      ]
+    },
+    "https://eng.graphpaper-tokyo.com/products/gu263-30320": {
+      "changed_at": "2026-08-29T18:21:27+00:00",
+      "last_seen": "2026-08-29T18:21:27+00:00",
+      "name": "Cow Leather Raglan Blouson",
+      "sizes": [
+        "0",
+        "1"
+      ]
+    },
+    "https://eng.graphpaper-tokyo.com/products/gu263-30324": {
+      "changed_at": "2026-08-29T18:21:27+00:00",
+      "last_seen": "2026-08-29T18:21:27+00:00",
+      "name": "Hairy Suede Raglan Blouson",
+      "sizes": [
+        "1",
+        "2"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-40058db": {
@@ -2123,15 +2168,23 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-40063rb": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-08-29T18:21:27+00:00",
       "last_seen": "2026-08-26T16:25:34+00:00",
       "name": "Selvage Denim Belted Pants",
       "sizes": [
         "0",
         "1",
         "2",
-        "3",
-        "3-INT"
+        "3"
+      ]
+    },
+    "https://eng.graphpaper-tokyo.com/products/gu263-50322": {
+      "changed_at": "2026-08-29T18:21:27+00:00",
+      "last_seen": "2026-08-29T18:21:27+00:00",
+      "name": "Sheep Nubuck L/S Regular Collar Shirt",
+      "sizes": [
+        "1",
+        "2"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-70070b": {
@@ -2425,6 +2478,16 @@
       "sizes": [
         "1",
         "2"
+      ]
+    }
+  },
+  "kent": {
+    "https://www.wearkent.com/products/mens-organic-cotton-classic-boxer#Charcoal-Black": {
+      "changed_at": "2026-08-29T18:21:29+00:00",
+      "last_seen": "2026-08-29T18:21:29+00:00",
+      "name": "Men's Organic Supima Cotton “Breather” Boxer (Charcoal Black)",
+      "sizes": [
+        "XS"
       ]
     }
   },
