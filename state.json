@@ -306,16 +306,21 @@
       "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/cm263-50044": {
-      "changed_at": "2026-08-28T23:59:46+00:00",
+      "changed_at": "2026-08-31T20:51:19+00:00",
       "last_seen": "2026-08-28T23:59:46+00:00",
       "name": "ALUMO for GP L/S Oversized Band Collar Shirt",
-      "sizes": []
+      "sizes": [
+        "1",
+        "2"
+      ]
     },
     "https://eng.graphpaper-tokyo.com/products/cm263-70039": {
-      "changed_at": "2026-08-28T23:59:46+00:00",
+      "changed_at": "2026-08-31T20:51:19+00:00",
       "last_seen": "2026-08-28T23:59:46+00:00",
       "name": "Cotton Pique Jersey L/S Skipper Polo",
-      "sizes": []
+      "sizes": [
+        "2"
+      ]
     },
     "https://eng.graphpaper-tokyo.com/products/cm263-70045": {
       "changed_at": "2026-08-28T23:59:46+00:00",
@@ -324,10 +329,12 @@
       "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/cm263-70046": {
-      "changed_at": "2026-08-28T23:59:46+00:00",
+      "changed_at": "2026-08-31T20:51:19+00:00",
       "last_seen": "2026-08-28T23:59:46+00:00",
       "name": "Brushed Mockrody High Neck L/S Tee",
-      "sizes": []
+      "sizes": [
+        "2"
+      ]
     },
     "https://eng.graphpaper-tokyo.com/products/cu263-80047": {
       "changed_at": "2026-08-28T23:59:46+00:00",
@@ -336,16 +343,21 @@
       "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/cu263-80048": {
-      "changed_at": "2026-08-28T23:59:46+00:00",
+      "changed_at": "2026-08-31T20:51:19+00:00",
       "last_seen": "2026-08-28T23:59:46+00:00",
       "name": "Suvin High Gauge Knit Cardigan",
-      "sizes": []
+      "sizes": [
+        "1"
+      ]
     },
     "https://eng.graphpaper-tokyo.com/products/cu263-80050": {
-      "changed_at": "2026-08-28T23:59:46+00:00",
+      "changed_at": "2026-08-31T20:51:19+00:00",
       "last_seen": "2026-08-28T23:59:46+00:00",
       "name": "High Gauge Knit Oversized Cardigan",
-      "sizes": []
+      "sizes": [
+        "1",
+        "3"
+      ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm234-50073b": {
       "changed_at": "2026-08-26T03:16:32+00:00",
@@ -564,13 +576,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm254-20049": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-08-31T20:51:19+00:00",
       "last_seen": "2026-08-26T16:25:34+00:00",
       "name": "SIDOGRAS Melange Ponte Jacket",
-      "sizes": [
-        "2",
-        "1"
-      ]
+      "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/gm254-40045": {
       "changed_at": "2026-08-26T03:16:32+00:00",
@@ -581,22 +590,16 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm254-40051": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-08-31T20:51:19+00:00",
       "last_seen": "2026-08-26T16:25:34+00:00",
       "name": "SIDOGRAS Melange Ponte Wide Tapered Slacks",
-      "sizes": [
-        "3",
-        "2"
-      ]
+      "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/gm254-40052": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-08-31T20:51:19+00:00",
       "last_seen": "2026-08-26T16:25:34+00:00",
       "name": "SIDOGRAS Melange Ponte Wide Slacks",
-      "sizes": [
-        "2",
-        "3"
-      ]
+      "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/gm254-40103": {
       "changed_at": "2026-08-26T03:16:32+00:00",
@@ -1840,21 +1843,21 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-10380": {
-      "changed_at": "2026-08-29T18:21:27+00:00",
+      "changed_at": "2026-08-31T20:51:19+00:00",
       "last_seen": "2026-08-29T18:21:27+00:00",
       "name": "Dry Westpoint Railway Coat",
       "sizes": [
+        "0",
         "1",
         "2"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-20054db": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-08-31T20:51:19+00:00",
       "last_seen": "2026-08-26T16:25:34+00:00",
       "name": "Selvage Denim Jacket-DARK FADE-",
       "sizes": [
         "0",
-        "1",
         "2"
       ]
     },
@@ -1879,11 +1882,12 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-20055db": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-08-31T20:51:19+00:00",
       "last_seen": "2026-08-26T16:25:34+00:00",
       "name": "Selvage Denim Trucker Jacket-DARK FADE-",
       "sizes": [
         "0",
+        "1",
         "2"
       ]
     },
@@ -1963,14 +1967,13 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-20122b": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-08-31T20:51:19+00:00",
       "last_seen": "2026-08-26T16:25:34+00:00",
       "name": "Garment Dyed Typewriter Oversized Jacket",
       "sizes": [
         "1",
         "2",
-        "3",
-        "3-INT"
+        "3"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-20122c": {
@@ -1984,12 +1987,11 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-30320": {
-      "changed_at": "2026-08-29T18:21:27+00:00",
+      "changed_at": "2026-08-31T20:51:19+00:00",
       "last_seen": "2026-08-29T18:21:27+00:00",
       "name": "Cow Leather Raglan Blouson",
       "sizes": [
-        "0",
-        "1"
+        "0"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-30324": {
