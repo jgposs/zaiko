@@ -741,6 +741,12 @@
         "3-INT"
       ]
     },
+    "https://eng.graphpaper-tokyo.com/products/gm263-20110b": {
+      "changed_at": "2026-09-01T18:23:34+00:00",
+      "last_seen": "2026-09-01T18:23:34+00:00",
+      "name": "Soft Knit Corduroy Jacket",
+      "sizes": []
+    },
     "https://eng.graphpaper-tokyo.com/products/gm263-20186b": {
       "changed_at": "2026-08-26T03:16:32+00:00",
       "last_seen": "2026-08-26T16:25:34+00:00",
@@ -795,13 +801,12 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-30325": {
-      "changed_at": "2026-08-29T18:21:27+00:00",
+      "changed_at": "2026-09-01T18:23:34+00:00",
       "last_seen": "2026-08-29T18:21:27+00:00",
       "name": "Hairy Suede Corbusier Jacket",
       "sizes": [
         "1",
-        "2",
-        "3"
+        "2"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-30394": {
@@ -850,12 +855,17 @@
         "2-INT"
       ]
     },
+    "https://eng.graphpaper-tokyo.com/products/gm263-40112b": {
+      "changed_at": "2026-09-01T18:23:34+00:00",
+      "last_seen": "2026-09-01T18:23:34+00:00",
+      "name": "Soft Knit Corduroy Wide Tapered Chef Pants",
+      "sizes": []
+    },
     "https://eng.graphpaper-tokyo.com/products/gm263-40123b": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-09-01T18:23:34+00:00",
       "last_seen": "2026-08-26T16:25:34+00:00",
       "name": "Garment Dyed Typewriter Oversized Slacks",
       "sizes": [
-        "1",
         "2"
       ]
     },
@@ -1967,11 +1977,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-20122b": {
-      "changed_at": "2026-08-31T20:51:19+00:00",
+      "changed_at": "2026-09-01T18:23:34+00:00",
       "last_seen": "2026-08-26T16:25:34+00:00",
       "name": "Garment Dyed Typewriter Oversized Jacket",
       "sizes": [
-        "1",
         "2",
         "3"
       ]
