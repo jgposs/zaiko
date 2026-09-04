@@ -49,6 +49,16 @@
         "2"
       ]
     },
+    "https://www.comoli.jp/mailorder/cotton_jersey_6p_pants_e": {
+      "changed_at": "2026-09-04T18:18:13+00:00",
+      "last_seen": "2026-09-04T18:18:13+00:00",
+      "name": "COTTON JERSEY 6P PANTS COLOR： BLACK",
+      "sizes": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
     "https://www.comoli.jp/mailorder/cotton_jersey_g8_jacket_c": {
       "changed_at": "2026-08-26T03:16:29+00:00",
       "last_seen": "2026-09-02T18:34:46+00:00",
@@ -190,6 +200,16 @@
         "1",
         "2",
         "3"
+      ]
+    },
+    "https://www.comoli.jp/mailorder/surplus_ls_t-shirt_e": {
+      "changed_at": "2026-09-04T18:18:13+00:00",
+      "last_seen": "2026-09-04T18:18:13+00:00",
+      "name": "SURPLUS L/S T-SHIRT COLOR： BLACK / WHITE",
+      "sizes": [
+        "2",
+        "3",
+        "4"
       ]
     },
     "https://www.comoli.jp/mailorder/thin_cotton_ls_t-shirt_e": {
@@ -588,12 +608,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm254-40051": {
-      "changed_at": "2026-09-03T18:32:54+00:00",
+      "changed_at": "2026-09-04T18:18:26+00:00",
       "last_seen": "2026-09-02T18:35:03+00:00",
       "name": "SIDOGRAS Melange Ponte Wide Tapered Slacks",
-      "sizes": [
-        "3"
-      ]
+      "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/gm254-40052": {
       "changed_at": "2026-08-31T20:51:19+00:00",
@@ -2498,14 +2516,17 @@
   },
   "kent": {
     "https://www.wearkent.com/products/mens-organic-cotton-classic-boxer#Charcoal-Black": {
-      "changed_at": "2026-09-03T18:32:55+00:00",
+      "changed_at": "2026-09-04T18:18:28+00:00",
       "last_seen": "2026-08-29T18:21:29+00:00",
       "name": "Men's Organic Supima Cotton “Breather” Boxer (Charcoal Black)",
       "sizes": [
         "XS",
         "S",
+        "M",
         "L",
-        "XL"
+        "XL",
+        "2XL",
+        "3XL"
       ]
     }
   },
