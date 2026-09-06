@@ -322,12 +322,11 @@
       "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/cm263-50044": {
-      "changed_at": "2026-08-31T20:51:19+00:00",
+      "changed_at": "2026-09-06T17:35:41+00:00",
       "last_seen": "2026-09-05T17:15:47+00:00",
       "name": "ALUMO for GP L/S Oversized Band Collar Shirt",
       "sizes": [
-        "1",
-        "2"
+        "1"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/cm263-70039": {
@@ -809,17 +808,16 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-20450": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-09-06T17:35:41+00:00",
       "last_seen": "2026-09-02T18:35:03+00:00",
       "name": "Cotton Double Serge Jacket",
       "sizes": [
-        "2",
-        "1"
+        "2"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-30325": {
       "changed_at": "2026-09-03T18:32:54+00:00",
-      "last_seen": "2026-08-29T18:21:27+00:00",
+      "last_seen": "2026-09-06T17:35:41+00:00",
       "name": "Hairy Suede Corbusier Jacket",
       "sizes": [
         "1",
@@ -1087,7 +1085,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40381": {
       "changed_at": "2026-08-29T18:21:27+00:00",
-      "last_seen": "2026-08-29T18:21:27+00:00",
+      "last_seen": "2026-09-06T17:35:41+00:00",
       "name": "Dry Westpoint Barrel-Fit Belted Pants",
       "sizes": [
         "1",
@@ -1323,12 +1321,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-50346": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-09-06T17:35:41+00:00",
       "last_seen": "2026-09-02T18:35:03+00:00",
       "name": "SIDOGRAS Brown Stripe L/S Oversized Band Collar Shirt",
-      "sizes": [
-        "2"
-      ]
+      "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-50472": {
       "changed_at": "2026-09-05T17:15:47+00:00",
@@ -1933,7 +1929,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-10380": {
       "changed_at": "2026-08-31T20:51:19+00:00",
-      "last_seen": "2026-08-29T18:21:27+00:00",
+      "last_seen": "2026-09-06T17:35:41+00:00",
       "name": "Dry Westpoint Railway Coat",
       "sizes": [
         "0",
@@ -2076,7 +2072,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-30320": {
       "changed_at": "2026-08-31T20:51:19+00:00",
-      "last_seen": "2026-08-29T18:21:27+00:00",
+      "last_seen": "2026-09-06T17:35:41+00:00",
       "name": "Cow Leather Raglan Blouson",
       "sizes": [
         "0"
@@ -2084,7 +2080,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-30324": {
       "changed_at": "2026-09-05T17:15:47+00:00",
-      "last_seen": "2026-08-29T18:21:27+00:00",
+      "last_seen": "2026-09-06T17:35:41+00:00",
       "name": "Hairy Suede Raglan Blouson",
       "sizes": [
         "1"
@@ -2266,7 +2262,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-50322": {
       "changed_at": "2026-09-03T18:32:54+00:00",
-      "last_seen": "2026-08-29T18:21:27+00:00",
+      "last_seen": "2026-09-06T17:35:41+00:00",
       "name": "Sheep Nubuck L/S Regular Collar Shirt",
       "sizes": [
         "1",
@@ -2659,11 +2655,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/nexm263-40002": {
-      "changed_at": "2026-09-05T17:15:47+00:00",
+      "changed_at": "2026-09-06T17:35:41+00:00",
       "last_seen": "2026-09-05T17:15:47+00:00",
       "name": "NORMAL EXPERT for Graphpaper ”LAZY PANTS LOAM”",
       "sizes": [
-        "L",
         "XL"
       ]
     },
@@ -2728,8 +2723,8 @@
   },
   "kent": {
     "https://www.wearkent.com/products/mens-organic-cotton-classic-boxer#Charcoal-Black": {
-      "changed_at": "2026-09-04T18:18:28+00:00",
-      "last_seen": "2026-08-29T18:21:29+00:00",
+      "changed_at": "2026-09-06T17:35:50+00:00",
+      "last_seen": "2026-09-06T17:35:50+00:00",
       "name": "Men's Organic Supima Cotton “Breather” Boxer (Charcoal Black)",
       "sizes": [
         "XS",
@@ -2737,7 +2732,6 @@
         "M",
         "L",
         "XL",
-        "2XL",
         "3XL"
       ]
     }
