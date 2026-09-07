@@ -816,11 +816,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-30325": {
-      "changed_at": "2026-09-03T18:32:54+00:00",
+      "changed_at": "2026-09-07T19:06:43+00:00",
       "last_seen": "2026-09-06T17:35:41+00:00",
       "name": "Hairy Suede Corbusier Jacket",
       "sizes": [
-        "1",
         "2",
         "3"
       ]
@@ -932,12 +931,11 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40124c": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-09-07T19:06:43+00:00",
       "last_seen": "2026-09-02T18:35:03+00:00",
       "name": "Garment Dyed Typewriter Parachute Pants",
       "sizes": [
-        "1",
-        "2"
+        "1"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40165b": {
@@ -2227,15 +2225,14 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-40063db": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-09-07T19:06:43+00:00",
       "last_seen": "2026-09-02T18:35:03+00:00",
       "name": "Selvage Denim Belted Pants -DARK FADE-",
       "sizes": [
         "0",
-        "2",
         "3",
-        "2-INT",
-        "3-INT"
+        "3-INT",
+        "2"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-40063lb": {
@@ -2723,7 +2720,7 @@
   },
   "kent": {
     "https://www.wearkent.com/products/mens-organic-cotton-classic-boxer#Charcoal-Black": {
-      "changed_at": "2026-09-06T17:35:50+00:00",
+      "changed_at": "2026-09-07T19:06:51+00:00",
       "last_seen": "2026-09-06T17:35:50+00:00",
       "name": "Men's Organic Supima Cotton “Breather” Boxer (Charcoal Black)",
       "sizes": [
@@ -2731,8 +2728,7 @@
         "S",
         "M",
         "L",
-        "XL",
-        "3XL"
+        "XL"
       ]
     }
   },
