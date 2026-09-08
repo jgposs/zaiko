@@ -756,7 +756,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-20110b": {
       "changed_at": "2026-09-05T17:15:47+00:00",
-      "last_seen": "2026-09-01T18:23:34+00:00",
+      "last_seen": "2026-09-08T18:32:07+00:00",
       "name": "Soft Knit Corduroy Jacket",
       "sizes": [
         "1",
@@ -889,7 +889,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40112b": {
       "changed_at": "2026-09-05T17:15:47+00:00",
-      "last_seen": "2026-09-01T18:23:34+00:00",
+      "last_seen": "2026-09-08T18:32:07+00:00",
       "name": "Soft Knit Corduroy Wide Tapered Chef Pants",
       "sizes": [
         "1",
@@ -2652,12 +2652,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/nexm263-40002": {
-      "changed_at": "2026-09-06T17:35:41+00:00",
+      "changed_at": "2026-09-08T18:32:07+00:00",
       "last_seen": "2026-09-05T17:15:47+00:00",
       "name": "NORMAL EXPERT for Graphpaper ”LAZY PANTS LOAM”",
-      "sizes": [
-        "XL"
-      ]
+      "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/nexm263-50003": {
       "changed_at": "2026-09-05T17:15:47+00:00",
