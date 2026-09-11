@@ -51,7 +51,7 @@
     },
     "https://www.comoli.jp/mailorder/cotton_jersey_6p_pants_e": {
       "changed_at": "2026-09-05T17:15:29+00:00",
-      "last_seen": "2026-09-04T18:18:13+00:00",
+      "last_seen": "2026-09-11T18:23:21+00:00",
       "name": "COTTON JERSEY 6P PANTS COLOR： BLACK",
       "sizes": []
     },
@@ -200,7 +200,7 @@
     },
     "https://www.comoli.jp/mailorder/surplus_ls_t-shirt_e": {
       "changed_at": "2026-09-04T18:18:13+00:00",
-      "last_seen": "2026-09-04T18:18:13+00:00",
+      "last_seen": "2026-09-11T18:23:21+00:00",
       "name": "SURPLUS L/S T-SHIRT COLOR： BLACK / WHITE",
       "sizes": [
         "2",
@@ -1251,12 +1251,11 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-50196": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-09-11T18:23:40+00:00",
       "last_seen": "2026-09-10T18:19:46+00:00",
       "name": "Silicon Poplin Oversized Regular Collar Shirt",
       "sizes": [
-        "1",
-        "2"
+        "1"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-50197": {
@@ -1306,12 +1305,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-50345": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-09-11T18:23:40+00:00",
       "last_seen": "2026-09-10T18:19:46+00:00",
       "name": "SIDOGRAS Brown Stripe L/S Oversized Regular Collar Shirt",
-      "sizes": [
-        "2"
-      ]
+      "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-50346": {
       "changed_at": "2026-09-06T17:35:41+00:00",
@@ -1346,11 +1343,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-50620": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-09-11T18:23:40+00:00",
       "last_seen": "2026-09-10T18:19:46+00:00",
       "name": "Easy Care Poplin L/S Oversized B.D Shirt",
       "sizes": [
-        "O/S",
         "O/S-INT"
       ]
     },
@@ -2632,7 +2628,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/nexm253-30002": {
       "changed_at": "2026-09-03T18:32:54+00:00",
-      "last_seen": "2026-09-03T18:32:54+00:00",
+      "last_seen": "2026-09-11T18:23:40+00:00",
       "name": "NORMAL EXPERT for Graphpaper “OVERSIZED FLOAT PANEL”",
       "sizes": [
         "O/S"
