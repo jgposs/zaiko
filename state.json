@@ -752,7 +752,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-20110b": {
       "changed_at": "2026-09-05T17:15:47+00:00",
-      "last_seen": "2026-09-08T18:32:07+00:00",
+      "last_seen": "2026-09-15T18:53:48+00:00",
       "name": "Soft Knit Corduroy Jacket",
       "sizes": [
         "1",
@@ -894,7 +894,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40112b": {
       "changed_at": "2026-09-05T17:15:47+00:00",
-      "last_seen": "2026-09-08T18:32:07+00:00",
+      "last_seen": "2026-09-15T18:53:48+00:00",
       "name": "Soft Knit Corduroy Wide Tapered Chef Pants",
       "sizes": [
         "1",
@@ -2791,12 +2791,11 @@
       "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/nexm263-90001": {
-      "changed_at": "2026-09-05T17:15:47+00:00",
+      "changed_at": "2026-09-15T18:53:48+00:00",
       "last_seen": "2026-09-12T17:44:22+00:00",
       "name": "NORMAL EXPERT for Graphpaper \"LAZY CAP LOAM\"",
       "sizes": [
-        "L",
-        "XL"
+        "L"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/nexm263-90002": {
@@ -3108,12 +3107,10 @@
       "sizes": []
     },
     "https://www.shopneighbour.com/en-us/products/comoli-mens-wool-knit-knee-tucked-pants-navy": {
-      "changed_at": "2026-08-29T04:04:20+00:00",
+      "changed_at": "2026-09-15T18:53:52+00:00",
       "last_seen": "2026-09-12T17:44:25+00:00",
       "name": "Wool Knit Knee-Tucked Pants Navy",
-      "sizes": [
-        "3"
-      ]
+      "sizes": []
     }
   }
 }
