@@ -181,11 +181,11 @@
       ]
     },
     "https://www.comoli.jp/mailorder/ox_bd_shirt": {
-      "changed_at": "2026-08-26T03:16:31+00:00",
+      "changed_at": "2026-09-18T18:19:16+00:00",
       "last_seen": "2026-09-17T18:56:42+00:00",
       "name": "OX B.D SHIRT COLOR： WHITE / STRIPE",
       "sizes": [
-        "1"
+        "2"
       ]
     },
     "https://www.comoli.jp/mailorder/reversible_jacket_e": {
@@ -848,11 +848,12 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40040b": {
-      "changed_at": "2026-09-05T17:15:47+00:00",
+      "changed_at": "2026-09-18T18:19:32+00:00",
       "last_seen": "2026-09-17T18:56:59+00:00",
       "name": "Compact Ponte Chef Pants",
       "sizes": [
-        "1"
+        "1",
+        "2"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40041b": {
@@ -1379,11 +1380,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-50472": {
-      "changed_at": "2026-09-05T17:15:47+00:00",
+      "changed_at": "2026-09-18T18:19:32+00:00",
       "last_seen": "2026-09-12T17:44:22+00:00",
       "name": "Wool Hopsack Long-Sleeve Oversized Regular Collar Shirt",
       "sizes": [
-        "1",
         "2"
       ]
     },
@@ -2790,11 +2790,12 @@
       "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/nexm263-90001": {
-      "changed_at": "2026-09-15T18:53:48+00:00",
+      "changed_at": "2026-09-18T18:19:32+00:00",
       "last_seen": "2026-09-12T17:44:22+00:00",
       "name": "NORMAL EXPERT for Graphpaper \"LAZY CAP LOAM\"",
       "sizes": [
-        "L"
+        "L",
+        "XL"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/nexm263-90002": {
