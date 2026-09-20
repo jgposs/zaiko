@@ -199,13 +199,12 @@
       ]
     },
     "https://www.comoli.jp/mailorder/surplus_ls_t-shirt_e": {
-      "changed_at": "2026-09-04T18:18:13+00:00",
+      "changed_at": "2026-09-20T18:10:22+00:00",
       "last_seen": "2026-09-19T17:56:06+00:00",
       "name": "SURPLUS L/S T-SHIRT COLOR： BLACK / WHITE",
       "sizes": [
         "2",
-        "3",
-        "4"
+        "3"
       ]
     },
     "https://www.comoli.jp/mailorder/thin_cotton_ls_t-shirt_e": {
@@ -839,7 +838,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-30325": {
       "changed_at": "2026-09-07T19:06:43+00:00",
-      "last_seen": "2026-09-13T18:05:46+00:00",
+      "last_seen": "2026-09-20T18:10:35+00:00",
       "name": "Hairy Suede Corbusier Jacket",
       "sizes": [
         "2",
@@ -979,10 +978,11 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40166b": {
-      "changed_at": "2026-09-14T19:49:15+00:00",
+      "changed_at": "2026-09-20T18:10:35+00:00",
       "last_seen": "2026-09-17T18:56:59+00:00",
       "name": "Westpoint Chino Wide Tapered Trousers",
       "sizes": [
+        "1",
         "2"
       ]
     },
@@ -1122,7 +1122,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40381": {
       "changed_at": "2026-08-29T18:21:27+00:00",
-      "last_seen": "2026-09-13T18:05:46+00:00",
+      "last_seen": "2026-09-20T18:10:35+00:00",
       "name": "Dry Westpoint Barrel-Fit Belted Pants",
       "sizes": [
         "1",
@@ -1273,12 +1273,11 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-50030b": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-09-20T18:10:35+00:00",
       "last_seen": "2026-09-17T18:56:59+00:00",
       "name": "High Count Regular Collar Round Cut Oversized Shirt",
       "sizes": [
-        "1",
-        "2"
+        "1"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-50031b": {
@@ -2013,7 +2012,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-10380": {
       "changed_at": "2026-08-31T20:51:19+00:00",
-      "last_seen": "2026-09-13T18:05:46+00:00",
+      "last_seen": "2026-09-20T18:10:35+00:00",
       "name": "Dry Westpoint Railway Coat",
       "sizes": [
         "0",
@@ -2154,16 +2153,14 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-30320": {
-      "changed_at": "2026-08-31T20:51:19+00:00",
-      "last_seen": "2026-09-13T18:05:46+00:00",
+      "changed_at": "2026-09-20T18:10:35+00:00",
+      "last_seen": "2026-09-20T18:10:35+00:00",
       "name": "Cow Leather Raglan Blouson",
-      "sizes": [
-        "0"
-      ]
+      "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-30324": {
       "changed_at": "2026-09-05T17:15:47+00:00",
-      "last_seen": "2026-09-13T18:05:46+00:00",
+      "last_seen": "2026-09-20T18:10:35+00:00",
       "name": "Hairy Suede Raglan Blouson",
       "sizes": [
         "1"
@@ -2349,7 +2346,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-50322": {
       "changed_at": "2026-09-03T18:32:54+00:00",
-      "last_seen": "2026-09-13T18:05:46+00:00",
+      "last_seen": "2026-09-20T18:10:35+00:00",
       "name": "Sheep Nubuck L/S Regular Collar Shirt",
       "sizes": [
         "1",
@@ -2455,13 +2452,12 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-80556b": {
-      "changed_at": "2026-09-05T17:15:47+00:00",
+      "changed_at": "2026-09-20T18:10:35+00:00",
       "last_seen": "2026-09-19T17:56:24+00:00",
       "name": "High Gauge L/S Oversized Crew Neck Knit",
       "sizes": [
-        "1",
         "2",
-        "3"
+        "1"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-80556c": {
@@ -2891,7 +2887,7 @@
   "kent": {
     "https://www.wearkent.com/products/mens-organic-cotton-classic-boxer#Charcoal-Black": {
       "changed_at": "2026-09-07T19:06:51+00:00",
-      "last_seen": "2026-09-13T18:05:48+00:00",
+      "last_seen": "2026-09-20T18:10:37+00:00",
       "name": "Men's Organic Supima Cotton “Breather” Boxer (Charcoal Black)",
       "sizes": [
         "XS",
