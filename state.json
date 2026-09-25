@@ -1320,12 +1320,11 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-50196": {
-      "changed_at": "2026-09-19T17:56:24+00:00",
+      "changed_at": "2026-09-25T19:13:11+00:00",
       "last_seen": "2026-09-24T19:01:50+00:00",
       "name": "Silicon Poplin Oversized Regular Collar Shirt",
       "sizes": [
-        "1",
-        "2"
+        "1"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-50197": {
@@ -2329,12 +2328,11 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-40063rb": {
-      "changed_at": "2026-09-13T18:05:46+00:00",
+      "changed_at": "2026-09-25T19:13:11+00:00",
       "last_seen": "2026-09-24T19:01:50+00:00",
       "name": "Selvage Denim Belted Pants",
       "sizes": [
         "0",
-        "1",
         "3"
       ]
     },
@@ -2880,15 +2878,14 @@
   },
   "kent": {
     "https://www.wearkent.com/products/mens-organic-cotton-classic-boxer#Charcoal-Black": {
-      "changed_at": "2026-09-07T19:06:51+00:00",
+      "changed_at": "2026-09-25T19:13:14+00:00",
       "last_seen": "2026-09-20T18:10:37+00:00",
       "name": "Men's Organic Supima Cotton “Breather” Boxer (Charcoal Black)",
       "sizes": [
         "XS",
         "S",
         "M",
-        "L",
-        "XL"
+        "L"
       ]
     }
   },
@@ -2961,6 +2958,14 @@
       "name": "Cotton Duck Tapered Pants",
       "sizes": []
     },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-cotton-jersey-6-pocket-pants-black": {
+      "changed_at": "2026-09-25T19:13:15+00:00",
+      "last_seen": "2026-09-25T19:13:15+00:00",
+      "name": "Cotton Jersey 6-Pocket Pants Black",
+      "sizes": [
+        "1"
+      ]
+    },
     "https://www.shopneighbour.com/en-us/products/comoli-mens-cotton-jersey-long-sleeve-t-shirt-white": {
       "changed_at": "2026-08-29T04:04:20+00:00",
       "last_seen": "2026-09-12T17:44:25+00:00",
@@ -2974,6 +2979,14 @@
       "sizes": [
         "3",
         "4"
+      ]
+    },
+    "https://www.shopneighbour.com/en-us/products/comoli-mens-cotton-jersey-zip-blouson": {
+      "changed_at": "2026-09-25T19:13:15+00:00",
+      "last_seen": "2026-09-25T19:13:15+00:00",
+      "name": "Cotton Jersey Zip Blouson Black",
+      "sizes": [
+        "2"
       ]
     },
     "https://www.shopneighbour.com/en-us/products/comoli-mens-cotton-mesh-sleeveless-top-black": {
