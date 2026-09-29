@@ -801,15 +801,14 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-20186b": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-09-29T19:56:19+00:00",
       "last_seen": "2026-09-24T19:01:50+00:00",
       "name": "Scale Off Wool Jacket",
       "sizes": [
         "1",
         "2",
         "3",
-        "4",
-        "3-INT"
+        "4"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-20187b": {
@@ -1123,14 +1122,13 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40192b": {
-      "changed_at": "2026-09-27T18:57:53+00:00",
+      "changed_at": "2026-09-29T19:56:19+00:00",
       "last_seen": "2026-09-24T19:01:50+00:00",
       "name": "Scale Off Wool Wide Tapered Slacks",
       "sizes": [
         "1",
         "2",
-        "2-INT",
-        "3-INT"
+        "2-INT"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40221b": {
@@ -1162,11 +1160,12 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40282": {
-      "changed_at": "2026-09-28T21:11:52+00:00",
+      "changed_at": "2026-09-29T19:56:19+00:00",
       "last_seen": "2026-09-26T18:30:07+00:00",
       "name": "PERTEX® QUANTUM AIR Light Thermo Chef Pants",
       "sizes": [
-        "1"
+        "1",
+        "2"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40311": {
@@ -2195,12 +2194,11 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-20056rb": {
-      "changed_at": "2026-09-10T18:19:46+00:00",
+      "changed_at": "2026-09-29T19:56:19+00:00",
       "last_seen": "2026-09-24T19:01:50+00:00",
       "name": "Selvage Denim Zip Jacket",
       "sizes": [
         "0",
-        "1",
         "00"
       ]
     },
@@ -2884,12 +2882,11 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-90574b": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-09-29T19:56:19+00:00",
       "last_seen": "2026-09-24T19:01:50+00:00",
       "name": "Nylon Riggers Belt",
       "sizes": [
-        "2",
-        "1"
+        "2"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-90574c": {
