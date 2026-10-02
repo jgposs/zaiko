@@ -797,14 +797,13 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-20186b": {
-      "changed_at": "2026-09-29T19:56:19+00:00",
+      "changed_at": "2026-10-02T19:52:34+00:00",
       "last_seen": "2026-10-01T20:18:35+00:00",
       "name": "Scale Off Wool Jacket",
       "sizes": [
         "1",
         "2",
-        "3",
-        "4"
+        "3"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-20187b": {
@@ -875,13 +874,12 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-30325": {
-      "changed_at": "2026-09-27T18:57:53+00:00",
+      "changed_at": "2026-10-02T19:52:34+00:00",
       "last_seen": "2026-09-27T18:57:53+00:00",
       "name": "Hairy Suede Corbusier Jacket",
       "sizes": [
         "1",
-        "2",
-        "3"
+        "2"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-30326": {
@@ -930,12 +928,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-30470": {
-      "changed_at": "2026-09-22T18:46:04+00:00",
+      "changed_at": "2026-10-02T19:52:34+00:00",
       "last_seen": "2026-09-26T18:30:07+00:00",
       "name": "Wool Hopsack Track Jacket",
-      "sizes": [
-        "1"
-      ]
+      "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40040b": {
       "changed_at": "2026-09-18T18:19:32+00:00",
@@ -3088,7 +3084,7 @@
     },
     "https://www.shopneighbour.com/en-us/products/comoli-mens-cotton-jersey-6-pocket-pants-black": {
       "changed_at": "2026-09-25T19:13:15+00:00",
-      "last_seen": "2026-09-25T19:13:15+00:00",
+      "last_seen": "2026-10-02T19:52:37+00:00",
       "name": "Cotton Jersey 6-Pocket Pants Black",
       "sizes": [
         "1"
@@ -3111,7 +3107,7 @@
     },
     "https://www.shopneighbour.com/en-us/products/comoli-mens-cotton-jersey-zip-blouson": {
       "changed_at": "2026-09-28T21:11:55+00:00",
-      "last_seen": "2026-09-25T19:13:15+00:00",
+      "last_seen": "2026-10-02T19:52:37+00:00",
       "name": "Cotton Jersey Zip Blouson Black",
       "sizes": []
     },
