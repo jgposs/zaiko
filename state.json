@@ -807,13 +807,12 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-20187b": {
-      "changed_at": "2026-09-21T19:57:07+00:00",
+      "changed_at": "2026-10-04T18:36:18+00:00",
       "last_seen": "2026-10-01T20:18:35+00:00",
       "name": "Scale Off Wool Double Jacket",
       "sizes": [
         "3",
         "2",
-        "3-INT",
         "1"
       ]
     },
@@ -856,12 +855,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-20450": {
-      "changed_at": "2026-10-03T18:39:00+00:00",
+      "changed_at": "2026-10-04T18:36:18+00:00",
       "last_seen": "2026-10-01T20:18:35+00:00",
       "name": "Cotton Double Serge Jacket",
-      "sizes": [
-        "2"
-      ]
+      "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-30281": {
       "changed_at": "2026-09-26T18:30:07+00:00",
@@ -1274,11 +1271,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40471": {
-      "changed_at": "2026-09-05T17:15:47+00:00",
+      "changed_at": "2026-10-04T18:36:18+00:00",
       "last_seen": "2026-10-03T18:39:00+00:00",
       "name": "Wool Hopsack Drawstring Track Pants",
       "sizes": [
-        "1",
         "2"
       ]
     },
@@ -2429,11 +2425,12 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-40063rb": {
-      "changed_at": "2026-09-25T19:13:11+00:00",
+      "changed_at": "2026-10-04T18:36:18+00:00",
       "last_seen": "2026-10-01T20:18:35+00:00",
       "name": "Selvage Denim Belted Pants",
       "sizes": [
         "0",
+        "2",
         "3"
       ]
     },
@@ -2617,12 +2614,11 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-80556b": {
-      "changed_at": "2026-09-20T18:10:35+00:00",
+      "changed_at": "2026-10-04T18:36:18+00:00",
       "last_seen": "2026-10-03T18:39:00+00:00",
       "name": "High Gauge L/S Oversized Crew Neck Knit",
       "sizes": [
-        "2",
-        "1"
+        "2"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-80556c": {
@@ -2675,13 +2671,12 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-80559b": {
-      "changed_at": "2026-09-05T17:15:47+00:00",
+      "changed_at": "2026-10-04T18:36:18+00:00",
       "last_seen": "2026-10-03T18:39:00+00:00",
       "name": "High Gauge Oversized L/S Knit Shirts",
       "sizes": [
         "1",
-        "2",
-        "3"
+        "2"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-80559c": {
