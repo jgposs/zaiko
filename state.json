@@ -186,14 +186,10 @@
       "sizes": []
     },
     "https://www.comoli.jp/mailorder/reversible_jacket_e": {
-      "changed_at": "2026-08-26T03:16:18+00:00",
+      "changed_at": "2026-10-07T20:33:23+00:00",
       "last_seen": "2026-10-01T20:18:18+00:00",
       "name": "REVERSIBLE JACKET COLOR： BLACK",
-      "sizes": [
-        "1",
-        "2",
-        "3"
-      ]
+      "sizes": []
     },
     "https://www.comoli.jp/mailorder/surplus_ls_t-shirt_e": {
       "changed_at": "2026-09-20T18:10:22+00:00",
@@ -789,7 +785,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-20110b": {
       "changed_at": "2026-09-28T21:11:52+00:00",
-      "last_seen": "2026-09-30T19:56:02+00:00",
+      "last_seen": "2026-10-07T20:33:41+00:00",
       "name": "Soft Knit Corduroy Jacket",
       "sizes": [
         "2"
@@ -983,7 +979,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40112b": {
       "changed_at": "2026-09-05T17:15:47+00:00",
-      "last_seen": "2026-09-30T19:56:02+00:00",
+      "last_seen": "2026-10-07T20:33:41+00:00",
       "name": "Soft Knit Corduroy Wide Tapered Chef Pants",
       "sizes": [
         "1",
@@ -2586,14 +2582,13 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-70250b": {
-      "changed_at": "2026-10-03T18:39:00+00:00",
+      "changed_at": "2026-10-07T20:33:41+00:00",
       "last_seen": "2026-10-03T18:39:00+00:00",
       "name": "AZUMA Terry Sweat Pants",
       "sizes": [
-        "0",
-        "1",
         "2",
-        "3"
+        "3",
+        "1"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-70251b": {
