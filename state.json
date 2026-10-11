@@ -940,12 +940,10 @@
       "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40040b": {
-      "changed_at": "2026-10-03T18:39:00+00:00",
+      "changed_at": "2026-10-11T19:28:08+00:00",
       "last_seen": "2026-10-08T20:39:39+00:00",
       "name": "Compact Ponte Chef Pants",
-      "sizes": [
-        "1"
-      ]
+      "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40041b": {
       "changed_at": "2026-08-26T03:16:32+00:00",
@@ -1262,12 +1260,11 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40461": {
-      "changed_at": "2026-09-12T17:44:22+00:00",
+      "changed_at": "2026-10-11T19:28:08+00:00",
       "last_seen": "2026-10-10T19:14:26+00:00",
       "name": "Melange Matt Worsted Side Seamless Trousers",
       "sizes": [
-        "2",
-        "1"
+        "2"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40471": {
@@ -1288,13 +1285,12 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-50001b": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-10-11T19:28:08+00:00",
       "last_seen": "2026-10-08T20:39:39+00:00",
       "name": "Broad L/S Oversized Regular Collar Shirt",
       "sizes": [
         "2",
-        "1",
-        "2-INT"
+        "1"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-50002b": {
@@ -2374,12 +2370,11 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-40060rb": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-10-11T19:28:08+00:00",
       "last_seen": "2026-10-08T20:39:39+00:00",
       "name": "Selvage Denim Two Tuck Tapered Pants",
       "sizes": [
         "0",
-        "1",
         "2",
         "3",
         "3-INT"
@@ -3137,17 +3132,18 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/sanm263-20002": {
-      "changed_at": "2026-10-10T19:14:26+00:00",
+      "changed_at": "2026-10-11T19:28:08+00:00",
       "last_seen": "2026-10-10T19:14:26+00:00",
       "name": "SANMONT for Graphpaper Wool Twill Work Jacket",
-      "sizes": []
+      "sizes": [
+        "3"
+      ]
     },
     "https://eng.graphpaper-tokyo.com/products/sanm263-40002": {
-      "changed_at": "2026-10-10T19:14:26+00:00",
+      "changed_at": "2026-10-11T19:28:08+00:00",
       "last_seen": "2026-10-10T19:14:26+00:00",
       "name": "SANMONT for Graphpaper Wool Twill Belted Pants",
       "sizes": [
-        "2",
         "3"
       ]
     },
