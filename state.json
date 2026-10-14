@@ -222,11 +222,12 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/alumo-for-gp-l-s-oversized-band-collar-shirt": {
-      "changed_at": "2026-09-10T18:19:46+00:00",
+      "changed_at": "2026-10-14T19:17:03+00:00",
       "last_seen": "2026-10-08T20:39:39+00:00",
       "name": "ALUMO for GP L/S Oversized Band Collar Shirt",
       "sizes": [
-        "1"
+        "1",
+        "2"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/alumo-for-graphpaper-cotton-pocket-square": {
@@ -350,10 +351,13 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm234-50073b": {
-      "changed_at": "2026-09-10T18:19:46+00:00",
+      "changed_at": "2026-10-14T19:17:03+00:00",
       "last_seen": "2026-10-08T20:39:39+00:00",
       "name": "Cotton Cashmere L/S Oversized Regular Collar Shirt",
-      "sizes": []
+      "sizes": [
+        "1",
+        "2"
+      ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm234-50074b": {
       "changed_at": "2026-08-26T03:16:32+00:00",
@@ -1156,12 +1160,11 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40381": {
-      "changed_at": "2026-08-29T18:21:27+00:00",
+      "changed_at": "2026-10-14T19:17:03+00:00",
       "last_seen": "2026-10-12T22:28:23+00:00",
       "name": "Dry Westpoint Barrel-Fit Belted Pants",
       "sizes": [
-        "1",
-        "2"
+        "1"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40393": {
@@ -2051,7 +2054,7 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu261-90501": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-10-14T19:17:03+00:00",
       "last_seen": "2026-10-08T20:39:39+00:00",
       "name": "REPRODUCTION OF FOUND for Graphpaper US NAVY MILITARY TRAINER",
       "sizes": [
@@ -2059,8 +2062,7 @@
         "40",
         "37",
         "41",
-        "42",
-        "45"
+        "42"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu261-90564c": {
@@ -2393,14 +2395,14 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-40063lb": {
-      "changed_at": "2026-10-09T20:04:32+00:00",
+      "changed_at": "2026-10-14T19:17:03+00:00",
       "last_seen": "2026-10-08T20:39:39+00:00",
       "name": "Selvage Denim Belted Pants -LIGHT FADE-",
       "sizes": [
         "0",
         "1",
         "2",
-        "3"
+        "3-INT"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-40063rb": {
@@ -3387,12 +3389,11 @@
       "sizes": []
     },
     "https://www.shopneighbour.com/en-us/products/comoli-mens-short-sleeve-open-collar-shirt-zebra": {
-      "changed_at": "2026-08-29T04:04:20+00:00",
+      "changed_at": "2026-10-14T19:17:07+00:00",
       "last_seen": "2026-10-10T19:14:35+00:00",
       "name": "Short-Sleeve Open Collar Shirt Zebra",
       "sizes": [
         "2",
-        "3",
         "4"
       ]
     },
