@@ -732,6 +732,16 @@
         "2"
       ]
     },
+    "https://eng.graphpaper-tokyo.com/products/gm263-10530b": {
+      "changed_at": "2026-10-17T17:50:34+00:00",
+      "last_seen": "2026-10-17T17:50:34+00:00",
+      "name": "Supima Moleskine Coat",
+      "sizes": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
     "https://eng.graphpaper-tokyo.com/products/gm263-20039b": {
       "changed_at": "2026-08-26T03:16:32+00:00",
       "last_seen": "2026-10-16T18:44:55+00:00",
@@ -762,11 +772,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-20186b": {
-      "changed_at": "2026-10-06T20:10:04+00:00",
+      "changed_at": "2026-10-17T17:50:34+00:00",
       "last_seen": "2026-10-16T18:44:55+00:00",
       "name": "Scale Off Wool Jacket",
       "sizes": [
-        "1",
         "2",
         "3"
       ]
@@ -833,6 +842,44 @@
       "last_seen": "2026-10-08T20:39:39+00:00",
       "name": "Cotton Double Serge Jacket",
       "sizes": []
+    },
+    "https://eng.graphpaper-tokyo.com/products/gm263-20531b": {
+      "changed_at": "2026-10-17T17:50:34+00:00",
+      "last_seen": "2026-10-17T17:50:34+00:00",
+      "name": "Supima Moleskin Jacket",
+      "sizes": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    "https://eng.graphpaper-tokyo.com/products/gm263-20532b": {
+      "changed_at": "2026-10-17T17:50:34+00:00",
+      "last_seen": "2026-10-17T17:50:34+00:00",
+      "name": "Supima Moleskin Double Jacket",
+      "sizes": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    "https://eng.graphpaper-tokyo.com/products/gm263-30270": {
+      "changed_at": "2026-10-17T17:50:34+00:00",
+      "last_seen": "2026-10-17T17:50:34+00:00",
+      "name": "PERTEX® SHIELD Light Thermo Zip-Up Jacket",
+      "sizes": [
+        "1",
+        "2"
+      ]
+    },
+    "https://eng.graphpaper-tokyo.com/products/gm263-30271": {
+      "changed_at": "2026-10-17T17:50:34+00:00",
+      "last_seen": "2026-10-17T17:50:34+00:00",
+      "name": "PERTEX® SHIELD Insulated Military Parka",
+      "sizes": [
+        "1",
+        "2"
+      ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-30281": {
       "changed_at": "2026-09-26T18:30:07+00:00",
@@ -1255,6 +1302,16 @@
         "2"
       ]
     },
+    "https://eng.graphpaper-tokyo.com/products/gm263-40533b": {
+      "changed_at": "2026-10-17T17:50:34+00:00",
+      "last_seen": "2026-10-17T17:50:34+00:00",
+      "name": "Supima Moleskin Tapered Trousers",
+      "sizes": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
     "https://eng.graphpaper-tokyo.com/products/gm263-50001b": {
       "changed_at": "2026-10-11T19:28:08+00:00",
       "last_seen": "2026-10-16T18:44:55+00:00",
@@ -1590,12 +1647,11 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-70304": {
-      "changed_at": "2026-09-05T17:15:47+00:00",
+      "changed_at": "2026-10-17T17:50:34+00:00",
       "last_seen": "2026-10-10T19:14:26+00:00",
       "name": "Cotton Wool Ripple Crew Neck L/S Tee",
       "sizes": [
-        "1",
-        "2"
+        "1"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-70305": {
@@ -1897,10 +1953,12 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu253-70700b": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
-      "last_seen": "2026-10-08T20:39:39+00:00",
+      "changed_at": "2026-10-17T17:50:34+00:00",
+      "last_seen": "2026-10-17T17:50:34+00:00",
       "name": "LOOPWHEELER for Graphpaper Classic Crew Neck Sweat",
-      "sizes": []
+      "sizes": [
+        "O/S"
+      ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu253-80260b": {
       "changed_at": "2026-09-28T21:11:52+00:00",
@@ -2228,6 +2286,26 @@
       "last_seen": "2026-10-12T22:28:23+00:00",
       "name": "Hairy Suede Raglan Blouson",
       "sizes": [
+        "1",
+        "2"
+      ]
+    },
+    "https://eng.graphpaper-tokyo.com/products/gu263-30340": {
+      "changed_at": "2026-10-17T17:50:34+00:00",
+      "last_seen": "2026-10-17T17:50:34+00:00",
+      "name": "Wool Boa Zip-Up Blouson",
+      "sizes": [
+        "0",
+        "1",
+        "2"
+      ]
+    },
+    "https://eng.graphpaper-tokyo.com/products/gu263-30341": {
+      "changed_at": "2026-10-17T17:50:34+00:00",
+      "last_seen": "2026-10-17T17:50:34+00:00",
+      "name": "Wool Boa Liner Blouson",
+      "sizes": [
+        "0",
         "1",
         "2"
       ]
@@ -2594,6 +2672,56 @@
         "1",
         "2",
         "3"
+      ]
+    },
+    "https://eng.graphpaper-tokyo.com/products/gu263-70751b": {
+      "changed_at": "2026-10-17T17:50:34+00:00",
+      "last_seen": "2026-10-17T17:50:34+00:00",
+      "name": "LOOPWHEELER for Graphpaper Raglan Sweat",
+      "sizes": [
+        "1",
+        "2"
+      ]
+    },
+    "https://eng.graphpaper-tokyo.com/products/gu263-70751c": {
+      "changed_at": "2026-10-17T17:50:34+00:00",
+      "last_seen": "2026-10-17T17:50:34+00:00",
+      "name": "LOOPWHEELER for Graphpaper Raglan Sweat",
+      "sizes": [
+        "2"
+      ]
+    },
+    "https://eng.graphpaper-tokyo.com/products/gu263-70752b": {
+      "changed_at": "2026-10-17T17:50:34+00:00",
+      "last_seen": "2026-10-17T17:50:34+00:00",
+      "name": "LOOPWHEELER for Graphpaper Sweat Parka",
+      "sizes": [
+        "1",
+        "2"
+      ]
+    },
+    "https://eng.graphpaper-tokyo.com/products/gu263-70752c": {
+      "changed_at": "2026-10-17T17:50:34+00:00",
+      "last_seen": "2026-10-17T17:50:34+00:00",
+      "name": "LOOPWHEELER for Graphpaper Sweat Hoodie",
+      "sizes": []
+    },
+    "https://eng.graphpaper-tokyo.com/products/gu263-70753b": {
+      "changed_at": "2026-10-17T17:50:34+00:00",
+      "last_seen": "2026-10-17T17:50:34+00:00",
+      "name": "LOOPWHEELER for Graphpaper Easy Wide Sweat Pants",
+      "sizes": [
+        "1",
+        "2"
+      ]
+    },
+    "https://eng.graphpaper-tokyo.com/products/gu263-70753c": {
+      "changed_at": "2026-10-17T17:50:34+00:00",
+      "last_seen": "2026-10-17T17:50:34+00:00",
+      "name": "LOOPWHEELER for Graphpaper Easy Wide Sweat Pants",
+      "sizes": [
+        "1",
+        "2"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-80540b": {
@@ -3008,11 +3136,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-90574c": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-10-17T17:50:34+00:00",
       "last_seen": "2026-10-16T18:44:55+00:00",
       "name": "Nylon Riggers Belt",
       "sizes": [
-        "1",
         "2"
       ]
     },
@@ -3145,13 +3272,12 @@
   },
   "kent": {
     "https://www.wearkent.com/products/mens-organic-cotton-classic-boxer#Charcoal-Black": {
-      "changed_at": "2026-09-25T19:13:14+00:00",
+      "changed_at": "2026-10-17T17:50:39+00:00",
       "last_seen": "2026-10-12T22:28:26+00:00",
       "name": "Men's Organic Supima Cotton “Breather” Boxer (Charcoal Black)",
       "sizes": [
         "XS",
         "S",
-        "M",
         "L"
       ]
     }
@@ -3227,7 +3353,7 @@
     },
     "https://www.shopneighbour.com/en-us/products/comoli-mens-cotton-jersey-6-pocket-pants-black": {
       "changed_at": "2026-09-25T19:13:15+00:00",
-      "last_seen": "2026-10-09T20:04:36+00:00",
+      "last_seen": "2026-10-17T17:50:39+00:00",
       "name": "Cotton Jersey 6-Pocket Pants Black",
       "sizes": [
         "1"
@@ -3250,7 +3376,7 @@
     },
     "https://www.shopneighbour.com/en-us/products/comoli-mens-cotton-jersey-zip-blouson": {
       "changed_at": "2026-09-28T21:11:55+00:00",
-      "last_seen": "2026-10-09T20:04:36+00:00",
+      "last_seen": "2026-10-17T17:50:39+00:00",
       "name": "Cotton Jersey Zip Blouson Black",
       "sizes": []
     },
