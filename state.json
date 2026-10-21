@@ -900,10 +900,12 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-30325": {
-      "changed_at": "2026-10-19T20:31:44+00:00",
+      "changed_at": "2026-10-21T19:14:20+00:00",
       "last_seen": "2026-10-20T19:09:03+00:00",
       "name": "Hairy Suede Corbusier Jacket",
-      "sizes": []
+      "sizes": [
+        "2"
+      ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-30326": {
       "changed_at": "2026-09-26T18:30:07+00:00",
@@ -1625,11 +1627,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-70260": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-10-21T19:14:20+00:00",
       "last_seen": "2026-10-16T18:44:55+00:00",
       "name": "PERTEX® EQUILIBRIUM L/S Crew Neck Pullover",
       "sizes": [
-        "1",
         "2"
       ]
     },
@@ -3075,10 +3076,12 @@
       "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-90514": {
-      "changed_at": "2026-10-20T19:09:03+00:00",
+      "changed_at": "2026-10-21T19:14:20+00:00",
       "last_seen": "2026-10-16T18:44:55+00:00",
       "name": "Blankof for GP Extra Small Crescent Bag",
-      "sizes": []
+      "sizes": [
+        "O/S"
+      ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-90569b": {
       "changed_at": "2026-08-26T03:16:32+00:00",
@@ -3200,10 +3203,12 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/nexm263-90002": {
-      "changed_at": "2026-10-18T18:00:50+00:00",
+      "changed_at": "2026-10-21T19:14:20+00:00",
       "last_seen": "2026-10-18T18:00:50+00:00",
       "name": "NORMAL EXPERT for Graphpaper \"EXPEND GLOBE KAOLIN & CARBON\"",
-      "sizes": []
+      "sizes": [
+        "O/S"
+      ]
     },
     "https://eng.graphpaper-tokyo.com/products/sanm263-20002": {
       "changed_at": "2026-10-12T22:28:23+00:00",
