@@ -94,19 +94,17 @@
     },
     "https://www.comoli.jp/mailorder/cotton_mesh_ss_t-shirt_b": {
       "changed_at": "2026-08-26T03:16:20+00:00",
-      "last_seen": "2026-10-08T20:39:22+00:00",
+      "last_seen": "2026-10-22T19:09:38+00:00",
       "name": "COTTON MESH S/S T-SHIRT COLOR： BLACK / WHITE",
       "sizes": [
         "3"
       ]
     },
     "https://www.comoli.jp/mailorder/cotton_twill_suit_d": {
-      "changed_at": "2026-08-26T03:16:23+00:00",
+      "changed_at": "2026-10-22T19:09:38+00:00",
       "last_seen": "2026-10-16T18:44:48+00:00",
       "name": "COTTON TWILL SUIT COLOR： BLACK",
       "sizes": [
-        "1",
-        "3",
         "4"
       ]
     },
@@ -765,7 +763,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-20110b": {
       "changed_at": "2026-09-28T21:11:52+00:00",
-      "last_seen": "2026-10-15T19:02:49+00:00",
+      "last_seen": "2026-10-22T19:09:46+00:00",
       "name": "Soft Knit Corduroy Jacket",
       "sizes": [
         "2"
@@ -1003,7 +1001,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40112b": {
       "changed_at": "2026-09-05T17:15:47+00:00",
-      "last_seen": "2026-10-15T19:02:49+00:00",
+      "last_seen": "2026-10-22T19:09:46+00:00",
       "name": "Soft Knit Corduroy Wide Tapered Chef Pants",
       "sizes": [
         "1",
@@ -1061,12 +1059,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40166b": {
-      "changed_at": "2026-10-03T18:39:00+00:00",
+      "changed_at": "2026-10-22T19:09:46+00:00",
       "last_seen": "2026-10-16T18:44:55+00:00",
       "name": "Westpoint Chino Wide Tapered Trousers",
-      "sizes": [
-        "2"
-      ]
+      "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40176b": {
       "changed_at": "2026-08-26T03:16:32+00:00",
@@ -2230,15 +2226,14 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-20121b": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-10-22T19:09:46+00:00",
       "last_seen": "2026-10-16T18:44:55+00:00",
       "name": "Garment Dyed Typewriter Oversized Double Jacket",
       "sizes": [
         "1",
         "2",
         "3",
-        "2-INT",
-        "3-INT"
+        "2-INT"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-20121c": {
@@ -2452,14 +2447,13 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-40063db": {
-      "changed_at": "2026-09-07T19:06:43+00:00",
+      "changed_at": "2026-10-22T19:09:46+00:00",
       "last_seen": "2026-10-16T18:44:55+00:00",
       "name": "Selvage Denim Belted Pants -DARK FADE-",
       "sizes": [
-        "0",
         "3",
         "3-INT",
-        "2"
+        "0"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-40063lb": {
@@ -3203,12 +3197,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/nexm263-90002": {
-      "changed_at": "2026-10-21T19:14:20+00:00",
+      "changed_at": "2026-10-22T19:09:46+00:00",
       "last_seen": "2026-10-18T18:00:50+00:00",
       "name": "NORMAL EXPERT for Graphpaper \"EXPEND GLOBE KAOLIN & CARBON\"",
-      "sizes": [
-        "O/S"
-      ]
+      "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/sanm263-20002": {
       "changed_at": "2026-10-12T22:28:23+00:00",
