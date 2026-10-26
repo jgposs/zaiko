@@ -362,12 +362,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm234-50074b": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-10-26T20:25:14+00:00",
       "last_seen": "2026-10-23T19:04:59+00:00",
       "name": "Cotton Cashmere L/S Oversized Band Collar Shirt",
-      "sizes": [
-        "1"
-      ]
+      "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/gm241-70121b": {
       "changed_at": "2026-08-26T03:16:32+00:00",
@@ -600,10 +598,11 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm261-10330": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-10-26T20:25:14+00:00",
       "last_seen": "2026-10-23T19:04:59+00:00",
       "name": "Melange Herringbone Trench Coat",
       "sizes": [
+        "1",
         "2"
       ]
     },
@@ -1134,11 +1133,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40189b": {
-      "changed_at": "2026-10-25T18:20:56+00:00",
+      "changed_at": "2026-10-26T20:25:14+00:00",
       "last_seen": "2026-10-23T19:04:59+00:00",
       "name": "Scale Off Wool Chef Pants",
       "sizes": [
-        "1",
         "2"
       ]
     },
@@ -2158,11 +2156,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-10420b": {
-      "changed_at": "2026-10-25T18:20:56+00:00",
+      "changed_at": "2026-10-26T20:25:14+00:00",
       "last_seen": "2026-10-24T18:02:54+00:00",
       "name": "Light Melton Oversized Coat",
       "sizes": [
-        "0",
         "1"
       ]
     },
