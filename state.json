@@ -86,7 +86,7 @@
     },
     "https://www.comoli.jp/mailorder/cotton_mesh_ss_t-shirt_b": {
       "changed_at": "2026-08-26T03:16:20+00:00",
-      "last_seen": "2026-10-22T19:09:38+00:00",
+      "last_seen": "2026-10-29T20:12:01+00:00",
       "name": "COTTON MESH S/S T-SHIRT COLOR： BLACK / WHITE",
       "sizes": [
         "3"
@@ -794,7 +794,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-20110b": {
       "changed_at": "2026-09-28T21:11:52+00:00",
-      "last_seen": "2026-10-22T19:09:46+00:00",
+      "last_seen": "2026-10-29T20:12:09+00:00",
       "name": "Soft Knit Corduroy Jacket",
       "sizes": [
         "2"
@@ -1031,7 +1031,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40112b": {
       "changed_at": "2026-09-05T17:15:47+00:00",
-      "last_seen": "2026-10-22T19:09:46+00:00",
+      "last_seen": "2026-10-29T20:12:09+00:00",
       "name": "Soft Knit Corduroy Wide Tapered Chef Pants",
       "sizes": [
         "1",
@@ -1387,12 +1387,11 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-50022b": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-10-29T20:12:09+00:00",
       "last_seen": "2026-10-23T19:04:59+00:00",
       "name": "Oxford L/S Oversized Band Collar Shirt",
       "sizes": [
-        "O/S",
-        "O/S-INT"
+        "O/S"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-50024b": {
@@ -2129,12 +2128,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu261-90564c": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-10-29T20:12:09+00:00",
       "last_seen": "2026-10-23T19:04:59+00:00",
       "name": "Nylon Riggers Belt",
-      "sizes": [
-        "1"
-      ]
+      "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-10175b": {
       "changed_at": "2026-08-26T03:16:32+00:00",
