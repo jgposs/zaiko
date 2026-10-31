@@ -296,7 +296,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/cm263-50055": {
       "changed_at": "2026-10-24T18:02:54+00:00",
-      "last_seen": "2026-10-24T18:02:54+00:00",
+      "last_seen": "2026-10-31T19:13:33+00:00",
       "name": "Fulled Extra Fine Wool L/S Oversized Regular Collar Shirt",
       "sizes": [
         "1"
@@ -324,7 +324,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/cu263-70022": {
       "changed_at": "2026-10-24T18:02:54+00:00",
-      "last_seen": "2026-10-24T18:02:54+00:00",
+      "last_seen": "2026-10-31T19:13:33+00:00",
       "name": "Organic Cotton Terry Pants",
       "sizes": [
         "1",
@@ -719,7 +719,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-10419b": {
       "changed_at": "2026-10-24T18:02:54+00:00",
-      "last_seen": "2026-10-24T18:02:54+00:00",
+      "last_seen": "2026-10-31T19:13:33+00:00",
       "name": "Light Melton Pea Coat",
       "sizes": [
         "1",
@@ -728,7 +728,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-10419c": {
       "changed_at": "2026-10-24T18:02:54+00:00",
-      "last_seen": "2026-10-24T18:02:54+00:00",
+      "last_seen": "2026-10-31T19:13:33+00:00",
       "name": "Light Melton Pea Coat",
       "sizes": [
         "1",
@@ -737,7 +737,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-10421b": {
       "changed_at": "2026-10-24T18:02:54+00:00",
-      "last_seen": "2026-10-24T18:02:54+00:00",
+      "last_seen": "2026-10-31T19:13:33+00:00",
       "name": "Light Melton Shawl Collar Coat",
       "sizes": [
         "1",
@@ -746,7 +746,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-10421c": {
       "changed_at": "2026-10-24T18:02:54+00:00",
-      "last_seen": "2026-10-24T18:02:54+00:00",
+      "last_seen": "2026-10-31T19:13:33+00:00",
       "name": "Light Melton Shawl Collar Coat",
       "sizes": [
         "1",
@@ -764,7 +764,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-10530b": {
       "changed_at": "2026-10-17T17:50:34+00:00",
-      "last_seen": "2026-10-24T18:02:54+00:00",
+      "last_seen": "2026-10-31T19:13:33+00:00",
       "name": "Supima Moleskine Coat",
       "sizes": [
         "1",
@@ -875,7 +875,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-20531b": {
       "changed_at": "2026-10-17T17:50:34+00:00",
-      "last_seen": "2026-10-24T18:02:54+00:00",
+      "last_seen": "2026-10-31T19:13:33+00:00",
       "name": "Supima Moleskin Jacket",
       "sizes": [
         "1",
@@ -885,7 +885,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-20532b": {
       "changed_at": "2026-10-17T17:50:34+00:00",
-      "last_seen": "2026-10-24T18:02:54+00:00",
+      "last_seen": "2026-10-31T19:13:33+00:00",
       "name": "Supima Moleskin Double Jacket",
       "sizes": [
         "1",
@@ -895,7 +895,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-30270": {
       "changed_at": "2026-10-17T17:50:34+00:00",
-      "last_seen": "2026-10-24T18:02:54+00:00",
+      "last_seen": "2026-10-31T19:13:33+00:00",
       "name": "PERTEX® SHIELD Light Thermo Zip-Up Jacket",
       "sizes": [
         "1",
@@ -904,7 +904,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-30271": {
       "changed_at": "2026-10-17T17:50:34+00:00",
-      "last_seen": "2026-10-24T18:02:54+00:00",
+      "last_seen": "2026-10-31T19:13:33+00:00",
       "name": "PERTEX® SHIELD Insulated Military Parka",
       "sizes": [
         "1",
@@ -912,12 +912,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-30281": {
-      "changed_at": "2026-10-24T18:02:54+00:00",
+      "changed_at": "2026-10-31T19:13:33+00:00",
       "last_seen": "2026-10-25T18:20:56+00:00",
       "name": "PERTEX® QUANTUM AIR Light Thermo Blouson",
-      "sizes": [
-        "2"
-      ]
+      "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-30290": {
       "changed_at": "2026-10-03T18:39:00+00:00",
@@ -1327,7 +1325,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40533b": {
       "changed_at": "2026-10-17T17:50:34+00:00",
-      "last_seen": "2026-10-24T18:02:54+00:00",
+      "last_seen": "2026-10-31T19:13:33+00:00",
       "name": "Supima Moleskin Tapered Trousers",
       "sizes": [
         "1",
@@ -1771,6 +1769,105 @@
         "10"
       ]
     },
+    "https://eng.graphpaper-tokyo.com/products/gm264-50017b": {
+      "changed_at": "2026-10-31T19:13:33+00:00",
+      "last_seen": "2026-10-31T19:13:33+00:00",
+      "name": "Broad Regular Collar Shirt",
+      "sizes": [
+        "1",
+        "2",
+        "3",
+        "2-INT",
+        "3-INT"
+      ]
+    },
+    "https://eng.graphpaper-tokyo.com/products/gm264-50018b": {
+      "changed_at": "2026-10-31T19:13:33+00:00",
+      "last_seen": "2026-10-31T19:13:33+00:00",
+      "name": "Broad L/S Oversized Regular Collar Shirt",
+      "sizes": [
+        "1",
+        "2",
+        "2-INT"
+      ]
+    },
+    "https://eng.graphpaper-tokyo.com/products/gm264-50019b": {
+      "changed_at": "2026-10-31T19:13:33+00:00",
+      "last_seen": "2026-10-31T19:13:33+00:00",
+      "name": "Broad L/S Oversized Band Collar Shirt",
+      "sizes": [
+        "1",
+        "2",
+        "2-INT"
+      ]
+    },
+    "https://eng.graphpaper-tokyo.com/products/gm264-50021stb": {
+      "changed_at": "2026-10-31T19:13:33+00:00",
+      "last_seen": "2026-10-31T19:13:33+00:00",
+      "name": "Broad Stripe Regular Collar Shirt",
+      "sizes": [
+        "1",
+        "2",
+        "3",
+        "2-INT",
+        "3-INT"
+      ]
+    },
+    "https://eng.graphpaper-tokyo.com/products/gm264-50022stb": {
+      "changed_at": "2026-10-31T19:13:33+00:00",
+      "last_seen": "2026-10-31T19:13:33+00:00",
+      "name": "Broad Stripe L/S Oversized Regular Collar Shirt",
+      "sizes": [
+        "1",
+        "2",
+        "2-INT"
+      ]
+    },
+    "https://eng.graphpaper-tokyo.com/products/gm264-50023stb": {
+      "changed_at": "2026-10-31T19:13:33+00:00",
+      "last_seen": "2026-10-31T19:13:33+00:00",
+      "name": "Broad Stripe L/S Oversized Band Collar Shirt",
+      "sizes": [
+        "1",
+        "2"
+      ]
+    },
+    "https://eng.graphpaper-tokyo.com/products/gm264-50024stb": {
+      "changed_at": "2026-10-31T19:13:33+00:00",
+      "last_seen": "2026-10-31T19:13:33+00:00",
+      "name": "Broad Stripe L/S Oversized Band Collar Shirt",
+      "sizes": [
+        "1",
+        "2"
+      ]
+    },
+    "https://eng.graphpaper-tokyo.com/products/gm264-50025stb": {
+      "changed_at": "2026-10-31T19:13:33+00:00",
+      "last_seen": "2026-10-31T19:13:33+00:00",
+      "name": "Broad Stripe L/S Oversized Regular Collar Shirt",
+      "sizes": [
+        "1",
+        "2"
+      ]
+    },
+    "https://eng.graphpaper-tokyo.com/products/gm264-70007b": {
+      "changed_at": "2026-10-31T19:13:33+00:00",
+      "last_seen": "2026-10-31T19:13:33+00:00",
+      "name": "Heavy Weight S/S Oversized Tee",
+      "sizes": [
+        "1",
+        "2"
+      ]
+    },
+    "https://eng.graphpaper-tokyo.com/products/gm264-70008b": {
+      "changed_at": "2026-10-31T19:13:33+00:00",
+      "last_seen": "2026-10-31T19:13:33+00:00",
+      "name": "Heavy Weight L/S Oversized Tee",
+      "sizes": [
+        "1",
+        "2"
+      ]
+    },
     "https://eng.graphpaper-tokyo.com/products/gu233-80193b": {
       "changed_at": "2026-10-12T22:28:23+00:00",
       "last_seen": "2026-10-30T19:54:24+00:00",
@@ -1797,11 +1894,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu241-70136b": {
-      "changed_at": "2026-09-26T18:30:07+00:00",
+      "changed_at": "2026-10-31T19:13:33+00:00",
       "last_seen": "2026-10-30T19:54:24+00:00",
       "name": "Waffle L/S Henley Neck Tee",
       "sizes": [
-        "2",
         "3"
       ]
     },
@@ -1970,7 +2066,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gu253-70700b": {
       "changed_at": "2026-10-17T17:50:34+00:00",
-      "last_seen": "2026-10-24T18:02:54+00:00",
+      "last_seen": "2026-10-31T19:13:33+00:00",
       "name": "LOOPWHEELER for Graphpaper Classic Crew Neck Sweat",
       "sizes": [
         "O/S"
@@ -2152,7 +2248,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-10420b": {
       "changed_at": "2026-10-26T20:25:14+00:00",
-      "last_seen": "2026-10-24T18:02:54+00:00",
+      "last_seen": "2026-10-31T19:13:33+00:00",
       "name": "Light Melton Oversized Coat",
       "sizes": [
         "1"
@@ -2160,7 +2256,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-10420c": {
       "changed_at": "2026-10-24T18:02:54+00:00",
-      "last_seen": "2026-10-24T18:02:54+00:00",
+      "last_seen": "2026-10-31T19:13:33+00:00",
       "name": "Light Melton Oversized Coat",
       "sizes": [
         "1",
@@ -2307,7 +2403,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-30340": {
       "changed_at": "2026-10-17T17:50:34+00:00",
-      "last_seen": "2026-10-24T18:02:54+00:00",
+      "last_seen": "2026-10-31T19:13:33+00:00",
       "name": "Wool Boa Zip-Up Blouson",
       "sizes": [
         "0",
@@ -2317,7 +2413,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-30341": {
       "changed_at": "2026-10-17T17:50:34+00:00",
-      "last_seen": "2026-10-24T18:02:54+00:00",
+      "last_seen": "2026-10-31T19:13:33+00:00",
       "name": "Wool Boa Liner Blouson",
       "sizes": [
         "0",
@@ -2436,13 +2532,12 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-40061db": {
-      "changed_at": "2026-10-16T18:44:55+00:00",
+      "changed_at": "2026-10-31T19:13:33+00:00",
       "last_seen": "2026-10-30T19:54:24+00:00",
       "name": "Selvage Denim Two Tuck Pants -DARK FADE-",
       "sizes": [
         "2",
         "3",
-        "2-INT",
         "0"
       ]
     },
@@ -2652,13 +2747,12 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-70249b": {
-      "changed_at": "2026-10-05T21:57:50+00:00",
+      "changed_at": "2026-10-31T19:13:33+00:00",
       "last_seen": "2026-10-25T18:20:56+00:00",
       "name": "AZUMA Terry Hoodie",
       "sizes": [
         "1",
-        "2",
-        "3"
+        "2"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-70250b": {
@@ -2683,7 +2777,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-70751b": {
       "changed_at": "2026-10-17T17:50:34+00:00",
-      "last_seen": "2026-10-24T18:02:54+00:00",
+      "last_seen": "2026-10-31T19:13:33+00:00",
       "name": "LOOPWHEELER for Graphpaper Raglan Sweat",
       "sizes": [
         "1",
@@ -2698,7 +2792,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-70752b": {
       "changed_at": "2026-10-17T17:50:34+00:00",
-      "last_seen": "2026-10-24T18:02:54+00:00",
+      "last_seen": "2026-10-31T19:13:33+00:00",
       "name": "LOOPWHEELER for Graphpaper Sweat Parka",
       "sizes": [
         "1",
@@ -2713,7 +2807,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-70753b": {
       "changed_at": "2026-10-17T17:50:34+00:00",
-      "last_seen": "2026-10-24T18:02:54+00:00",
+      "last_seen": "2026-10-31T19:13:33+00:00",
       "name": "LOOPWHEELER for Graphpaper Easy Wide Sweat Pants",
       "sizes": [
         "1",
@@ -2722,7 +2816,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-70753c": {
       "changed_at": "2026-10-17T17:50:34+00:00",
-      "last_seen": "2026-10-24T18:02:54+00:00",
+      "last_seen": "2026-10-31T19:13:33+00:00",
       "name": "LOOPWHEELER for Graphpaper Easy Wide Sweat Pants",
       "sizes": [
         "1",
@@ -3172,6 +3266,16 @@
         "O/S"
       ]
     },
+    "https://eng.graphpaper-tokyo.com/products/gu264-70001b": {
+      "changed_at": "2026-10-31T19:13:33+00:00",
+      "last_seen": "2026-10-31T19:13:33+00:00",
+      "name": "2-Pack Crew Neck Tee",
+      "sizes": [
+        "2",
+        "3",
+        "4"
+      ]
+    },
     "https://eng.graphpaper-tokyo.com/products/nexm253-30002": {
       "changed_at": "2026-09-03T18:32:54+00:00",
       "last_seen": "2026-10-25T18:20:56+00:00",
@@ -3344,7 +3448,7 @@
     },
     "https://www.shopneighbour.com/en-us/products/comoli-mens-cotton-jersey-6-pocket-pants-black": {
       "changed_at": "2026-09-25T19:13:15+00:00",
-      "last_seen": "2026-10-24T18:02:58+00:00",
+      "last_seen": "2026-10-31T19:13:36+00:00",
       "name": "Cotton Jersey 6-Pocket Pants Black",
       "sizes": [
         "1"
@@ -3367,7 +3471,7 @@
     },
     "https://www.shopneighbour.com/en-us/products/comoli-mens-cotton-jersey-zip-blouson": {
       "changed_at": "2026-09-28T21:11:55+00:00",
-      "last_seen": "2026-10-24T18:02:58+00:00",
+      "last_seen": "2026-10-31T19:13:36+00:00",
       "name": "Cotton Jersey Zip Blouson Black",
       "sizes": []
     },
