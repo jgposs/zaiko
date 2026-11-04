@@ -212,12 +212,11 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/alumo-for-gp-l-s-oversized-band-collar-shirt": {
-      "changed_at": "2026-10-14T19:17:03+00:00",
+      "changed_at": "2026-11-04T21:14:50+00:00",
       "last_seen": "2026-10-30T19:54:24+00:00",
       "name": "ALUMO for GP L/S Oversized Band Collar Shirt",
       "sizes": [
-        "1",
-        "2"
+        "1"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/alumo-for-graphpaper-cotton-pocket-square": {
@@ -1765,6 +1764,24 @@
         "10"
       ]
     },
+    "https://eng.graphpaper-tokyo.com/products/gm264-50010b": {
+      "changed_at": "2026-11-04T21:14:50+00:00",
+      "last_seen": "2026-11-04T21:14:50+00:00",
+      "name": "Oxford L/S B.D Box Shirt",
+      "sizes": []
+    },
+    "https://eng.graphpaper-tokyo.com/products/gm264-50011b": {
+      "changed_at": "2026-11-04T21:14:50+00:00",
+      "last_seen": "2026-11-04T21:14:50+00:00",
+      "name": "Oxford L/S Oversized B.D Shirt",
+      "sizes": []
+    },
+    "https://eng.graphpaper-tokyo.com/products/gm264-50012b": {
+      "changed_at": "2026-11-04T21:14:50+00:00",
+      "last_seen": "2026-11-04T21:14:50+00:00",
+      "name": "Oxford L/S Oversized Band Collar Shirt",
+      "sizes": []
+    },
     "https://eng.graphpaper-tokyo.com/products/gm264-50017b": {
       "changed_at": "2026-10-31T19:13:33+00:00",
       "last_seen": "2026-10-31T19:13:33+00:00",
@@ -2561,13 +2578,14 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-40063lb": {
-      "changed_at": "2026-10-14T19:17:03+00:00",
+      "changed_at": "2026-11-04T21:14:50+00:00",
       "last_seen": "2026-10-30T19:54:24+00:00",
       "name": "Selvage Denim Belted Pants -LIGHT FADE-",
       "sizes": [
         "0",
         "1",
         "2",
+        "3",
         "3-INT"
       ]
     },
@@ -3258,6 +3276,30 @@
         "3",
         "4"
       ]
+    },
+    "https://eng.graphpaper-tokyo.com/products/gu264-90028b": {
+      "changed_at": "2026-11-04T21:14:50+00:00",
+      "last_seen": "2026-11-04T21:14:50+00:00",
+      "name": "Graphpaper 3-Pack Socks",
+      "sizes": []
+    },
+    "https://eng.graphpaper-tokyo.com/products/gu264-90033b": {
+      "changed_at": "2026-11-04T21:14:50+00:00",
+      "last_seen": "2026-11-04T21:14:50+00:00",
+      "name": "Holeless Leather Classic Belt",
+      "sizes": []
+    },
+    "https://eng.graphpaper-tokyo.com/products/gu264-90034b": {
+      "changed_at": "2026-11-04T21:14:50+00:00",
+      "last_seen": "2026-11-04T21:14:50+00:00",
+      "name": "Holeless Classic Narrow Belt",
+      "sizes": []
+    },
+    "https://eng.graphpaper-tokyo.com/products/gu264-90035b": {
+      "changed_at": "2026-11-04T21:14:50+00:00",
+      "last_seen": "2026-11-04T21:14:50+00:00",
+      "name": "Nylon Riggers Belt",
+      "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/nexm253-30002": {
       "changed_at": "2026-09-03T18:32:54+00:00",
