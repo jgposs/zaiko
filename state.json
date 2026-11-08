@@ -1138,10 +1138,11 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40184b": {
-      "changed_at": "2026-11-07T19:21:17+00:00",
+      "changed_at": "2026-11-08T19:30:17+00:00",
       "last_seen": "2026-11-06T20:49:33+00:00",
       "name": "Scale Off Wool Wide Slacks",
       "sizes": [
+        "2",
         "3",
         "1"
       ]
@@ -2288,12 +2289,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-10420b": {
-      "changed_at": "2026-10-26T20:25:14+00:00",
+      "changed_at": "2026-11-08T19:30:17+00:00",
       "last_seen": "2026-11-07T19:21:17+00:00",
       "name": "Light Melton Oversized Coat",
-      "sizes": [
-        "1"
-      ]
+      "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-10420c": {
       "changed_at": "2026-10-24T18:02:54+00:00",
@@ -2476,11 +2475,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-40058db": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-11-08T19:30:17+00:00",
       "last_seen": "2026-11-06T20:49:33+00:00",
       "name": "Selvage Denim Five Pocket Tapered Pants -DARK FADE-",
       "sizes": [
-        "1",
         "2",
         "3-INT",
         "0",
@@ -3593,12 +3591,11 @@
       ]
     },
     "https://www.shopneighbour.com/en-us/products/comoli-mens-cotton-nylon-zip-parka-black": {
-      "changed_at": "2026-11-05T21:26:20+00:00",
+      "changed_at": "2026-11-08T19:30:19+00:00",
       "last_seen": "2026-11-05T21:26:20+00:00",
       "name": "Cotton Nylon Zip Parka Black",
       "sizes": [
-        "2",
-        "3"
+        "2"
       ]
     },
     "https://www.shopneighbour.com/en-us/products/comoli-mens-drill-zip-jacket-black": {
@@ -3723,10 +3720,12 @@
       "sizes": []
     },
     "https://www.shopneighbour.com/en-us/products/comoli-mens-sheep-grain-leather-coat-brown": {
-      "changed_at": "2026-09-27T18:57:58+00:00",
+      "changed_at": "2026-11-08T19:30:19+00:00",
       "last_seen": "2026-11-01T19:31:34+00:00",
       "name": "Sheep Grain Leather Coat Brown",
-      "sizes": []
+      "sizes": [
+        "2"
+      ]
     },
     "https://www.shopneighbour.com/en-us/products/comoli-mens-short-sleeve-open-collar-shirt-zebra": {
       "changed_at": "2026-10-14T19:17:07+00:00",
