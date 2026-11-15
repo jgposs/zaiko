@@ -768,12 +768,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-10421b": {
-      "changed_at": "2026-11-14T19:52:10+00:00",
+      "changed_at": "2026-11-15T20:18:48+00:00",
       "last_seen": "2026-11-14T19:52:10+00:00",
       "name": "Light Melton Shawl Collar Coat",
-      "sizes": [
-        "1"
-      ]
+      "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-10421c": {
       "changed_at": "2026-10-24T18:02:54+00:00",
@@ -1168,12 +1166,11 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40190b": {
-      "changed_at": "2026-09-22T18:46:04+00:00",
+      "changed_at": "2026-11-15T20:18:48+00:00",
       "last_seen": "2026-11-13T21:22:49+00:00",
       "name": "Scale Off Wool Wide Tapered Chef Pants",
       "sizes": [
-        "1",
-        "2"
+        "1"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40191b": {
@@ -1756,12 +1753,11 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-90699": {
-      "changed_at": "2026-11-05T21:26:17+00:00",
+      "changed_at": "2026-11-15T20:18:48+00:00",
       "last_seen": "2026-11-09T23:44:55+00:00",
       "name": "PPACO for Graphpaper SUEDE SOFT-PAD LOAFER",
       "sizes": [
         "7",
-        "8",
         "10"
       ]
     },
@@ -2430,11 +2426,12 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-30411": {
-      "changed_at": "2026-10-20T19:09:03+00:00",
+      "changed_at": "2026-11-15T20:18:48+00:00",
       "last_seen": "2026-11-09T23:44:55+00:00",
       "name": "Fulled Wool Twill Flight Jacket",
       "sizes": [
-        "0"
+        "0",
+        "1"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-30520b": {
@@ -2810,12 +2807,13 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-80556c": {
-      "changed_at": "2026-10-12T22:28:23+00:00",
+      "changed_at": "2026-11-15T20:18:48+00:00",
       "last_seen": "2026-11-09T23:44:55+00:00",
       "name": "High Gauge L/S Oversized Crew Neck Knit",
       "sizes": [
-        "2",
-        "3"
+        "3",
+        "1",
+        "2"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-80557b": {
@@ -3454,12 +3452,10 @@
       ]
     },
     "https://www.shopneighbour.com/en-us/products/comoli-mens-cotton-nylon-zip-parka-black": {
-      "changed_at": "2026-11-08T19:30:19+00:00",
+      "changed_at": "2026-11-15T20:18:51+00:00",
       "last_seen": "2026-11-12T21:48:52+00:00",
       "name": "Cotton Nylon Zip Parka Black",
-      "sizes": [
-        "2"
-      ]
+      "sizes": []
     },
     "https://www.shopneighbour.com/en-us/products/comoli-mens-drill-zip-jacket-black": {
       "changed_at": "2026-08-29T04:04:20+00:00",
