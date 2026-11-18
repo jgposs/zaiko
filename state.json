@@ -236,11 +236,12 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/alumo-for-gp-l-s-oversized-band-collar-shirt": {
-      "changed_at": "2026-11-04T21:14:50+00:00",
+      "changed_at": "2026-11-18T22:32:55+00:00",
       "last_seen": "2026-11-13T21:22:49+00:00",
       "name": "ALUMO for GP L/S Oversized Band Collar Shirt",
       "sizes": [
-        "1"
+        "1",
+        "2"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/alumo-for-graphpaper-cotton-pocket-square": {
@@ -1759,11 +1760,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-90700": {
-      "changed_at": "2026-10-10T19:14:26+00:00",
+      "changed_at": "2026-11-18T22:32:55+00:00",
       "last_seen": "2026-11-17T22:50:37+00:00",
       "name": "foot the coacher for Graphpaper TIROLEAN",
       "sizes": [
-        "7",
         "7.5",
         "8",
         "8.5",
@@ -1792,7 +1792,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gm264-50010b": {
       "changed_at": "2026-11-07T19:21:17+00:00",
-      "last_seen": "2026-11-11T21:51:04+00:00",
+      "last_seen": "2026-11-18T22:32:55+00:00",
       "name": "Oxford L/S B.D Box Shirt",
       "sizes": [
         "1",
@@ -1802,7 +1802,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gm264-50011b": {
       "changed_at": "2026-11-07T19:21:17+00:00",
-      "last_seen": "2026-11-11T21:51:04+00:00",
+      "last_seen": "2026-11-18T22:32:55+00:00",
       "name": "Oxford L/S Oversized B.D Shirt",
       "sizes": [
         "O/S",
@@ -1811,7 +1811,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gm264-50012b": {
       "changed_at": "2026-11-07T19:21:17+00:00",
-      "last_seen": "2026-11-11T21:51:04+00:00",
+      "last_seen": "2026-11-18T22:32:55+00:00",
       "name": "Oxford L/S Oversized Band Collar Shirt",
       "sizes": [
         "O/S"
@@ -3196,7 +3196,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gu264-90028b": {
       "changed_at": "2026-11-07T19:21:17+00:00",
-      "last_seen": "2026-11-11T21:51:04+00:00",
+      "last_seen": "2026-11-18T22:32:55+00:00",
       "name": "Graphpaper 3-Pack Socks",
       "sizes": [
         "22-25",
@@ -3205,7 +3205,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gu264-90033b": {
       "changed_at": "2026-11-07T19:21:17+00:00",
-      "last_seen": "2026-11-11T21:51:04+00:00",
+      "last_seen": "2026-11-18T22:32:55+00:00",
       "name": "Holeless Leather Classic Belt",
       "sizes": [
         "1",
@@ -3214,7 +3214,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gu264-90034b": {
       "changed_at": "2026-11-07T19:21:17+00:00",
-      "last_seen": "2026-11-11T21:51:04+00:00",
+      "last_seen": "2026-11-18T22:32:55+00:00",
       "name": "Holeless Classic Narrow Belt",
       "sizes": [
         "1",
@@ -3223,7 +3223,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gu264-90035b": {
       "changed_at": "2026-11-07T19:21:17+00:00",
-      "last_seen": "2026-11-11T21:51:04+00:00",
+      "last_seen": "2026-11-18T22:32:55+00:00",
       "name": "Nylon Riggers Belt",
       "sizes": [
         "O/S"
@@ -3300,16 +3300,14 @@
   },
   "kent": {
     "https://www.wearkent.com/products/mens-organic-cotton-classic-boxer#Charcoal-Black": {
-      "changed_at": "2026-11-13T21:22:51+00:00",
+      "changed_at": "2026-11-18T22:32:57+00:00",
       "last_seen": "2026-11-17T22:50:39+00:00",
       "name": "Men's Organic Supima Cotton “Breather” Boxer (Charcoal Black)",
       "sizes": [
         "XS",
         "S",
-        "M",
         "L",
         "XL",
-        "2XL",
         "3XL"
       ]
     }
