@@ -1740,12 +1740,11 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-90699": {
-      "changed_at": "2026-11-15T20:18:48+00:00",
+      "changed_at": "2026-11-22T20:59:52+00:00",
       "last_seen": "2026-11-17T22:50:37+00:00",
       "name": "PPACO for Graphpaper SUEDE SOFT-PAD LOAFER",
       "sizes": [
-        "7",
-        "10"
+        "7"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-90700": {
@@ -2136,12 +2135,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu253-80263b": {
-      "changed_at": "2026-10-23T19:04:59+00:00",
+      "changed_at": "2026-11-22T20:59:52+00:00",
       "last_seen": "2026-11-20T22:12:58+00:00",
       "name": "High Density Open Cardigan",
-      "sizes": [
-        "2"
-      ]
+      "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/gu253-90564c": {
       "changed_at": "2026-08-26T03:16:32+00:00",
@@ -2270,12 +2267,11 @@
       "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-10175b": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-11-22T20:59:52+00:00",
       "last_seen": "2026-11-20T22:12:58+00:00",
       "name": "Solotex Twill Oversized Coat",
       "sizes": [
-        "1",
-        "2"
+        "1"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-10380": {
@@ -2690,21 +2686,19 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-70250b": {
-      "changed_at": "2026-10-07T20:33:41+00:00",
+      "changed_at": "2026-11-22T20:59:52+00:00",
       "last_seen": "2026-11-17T22:50:37+00:00",
       "name": "AZUMA Terry Sweat Pants",
       "sizes": [
         "2",
-        "3",
-        "1"
+        "3"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-70251b": {
-      "changed_at": "2026-10-03T18:39:00+00:00",
+      "changed_at": "2026-11-22T20:59:52+00:00",
       "last_seen": "2026-11-17T22:50:37+00:00",
       "name": "AZUMA Terry Pullover Polo Sweat",
       "sizes": [
-        "1",
         "2",
         "3"
       ]
@@ -3297,11 +3291,10 @@
   },
   "kent": {
     "https://www.wearkent.com/products/mens-organic-cotton-classic-boxer#Charcoal-Black": {
-      "changed_at": "2026-11-20T22:13:00+00:00",
+      "changed_at": "2026-11-22T20:59:54+00:00",
       "last_seen": "2026-11-17T22:50:39+00:00",
       "name": "Men's Organic Supima Cotton “Breather” Boxer (Charcoal Black)",
       "sizes": [
-        "XS",
         "S",
         "M",
         "L",
@@ -3375,11 +3368,10 @@
       "sizes": []
     },
     "https://www.shopneighbour.com/en-us/products/comoli-mens-corduroy-comoli-shirt-black-26": {
-      "changed_at": "2026-11-12T21:48:52+00:00",
+      "changed_at": "2026-11-22T20:59:54+00:00",
       "last_seen": "2026-11-19T22:38:26+00:00",
       "name": "Corduroy Comoli Shirt Black",
       "sizes": [
-        "1",
         "2"
       ]
     },
