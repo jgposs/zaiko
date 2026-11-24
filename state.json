@@ -852,11 +852,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-20220b": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-11-24T02:07:37+00:00",
       "last_seen": "2026-11-20T22:12:58+00:00",
       "name": "Wool Doeskin Jacket",
       "sizes": [
-        "1",
         "2",
         "3",
         "4"
@@ -1182,12 +1181,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40221b": {
-      "changed_at": "2026-11-21T20:52:13+00:00",
+      "changed_at": "2026-11-24T02:07:37+00:00",
       "last_seen": "2026-11-20T22:12:58+00:00",
       "name": "Wool Doeskin Wide Tapered Slacks",
-      "sizes": [
-        "2"
-      ]
+      "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40242": {
       "changed_at": "2026-09-12T17:44:22+00:00",
@@ -1482,11 +1479,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-50230": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-11-24T02:07:37+00:00",
       "last_seen": "2026-11-20T22:12:58+00:00",
       "name": "ALUMO for Graphpaper L/S Oversized Regular Collar Shirt",
       "sizes": [
-        "1",
         "2"
       ]
     },
@@ -1616,12 +1612,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-70208b": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-11-24T02:07:37+00:00",
       "last_seen": "2026-11-20T22:12:58+00:00",
       "name": "Hard Terry Crew Neck Sweat",
-      "sizes": [
-        "O/S"
-      ]
+      "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-70209b": {
       "changed_at": "2026-08-26T03:16:32+00:00",
@@ -2057,15 +2051,6 @@
         "O/S"
       ]
     },
-    "https://eng.graphpaper-tokyo.com/products/gu253-30220b": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
-      "last_seen": "2026-09-24T19:01:50+00:00",
-      "name": "Wool Smooth Flannel Track Blouson",
-      "sizes": [
-        "2",
-        "1"
-      ]
-    },
     "https://eng.graphpaper-tokyo.com/products/gu253-70140b": {
       "changed_at": "2026-08-26T03:16:32+00:00",
       "last_seen": "2026-10-01T20:18:35+00:00",
@@ -2166,38 +2151,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu261-70113b": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-11-24T02:07:37+00:00",
       "last_seen": "2026-11-20T22:12:58+00:00",
       "name": "L/S Oversized Tee",
-      "sizes": [
-        "O/S"
-      ]
-    },
-    "https://eng.graphpaper-tokyo.com/products/gu261-70240b": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
-      "last_seen": "2026-09-24T19:01:50+00:00",
-      "name": "AZUMA Terry Crew Neck Sweat",
-      "sizes": [
-        "3"
-      ]
-    },
-    "https://eng.graphpaper-tokyo.com/products/gu261-70241b": {
-      "changed_at": "2026-09-12T17:44:22+00:00",
-      "last_seen": "2026-09-24T19:01:50+00:00",
-      "name": "AZUMA Terry Hoodie",
-      "sizes": [
-        "2"
-      ]
-    },
-    "https://eng.graphpaper-tokyo.com/products/gu261-70242b": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
-      "last_seen": "2026-09-24T19:01:50+00:00",
-      "name": "AZUMA Terry Sweat Pants",
-      "sizes": [
-        "2",
-        "3",
-        "1"
-      ]
+      "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/gu261-80260b": {
       "changed_at": "2026-08-26T03:16:32+00:00",
@@ -2538,12 +2495,11 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-40523b": {
-      "changed_at": "2026-10-03T18:39:00+00:00",
+      "changed_at": "2026-11-24T02:07:37+00:00",
       "last_seen": "2026-11-17T22:50:37+00:00",
       "name": "Wool Smooth Flannel Easy Wide Pants",
       "sizes": [
         "0",
-        "1",
         "2"
       ]
     },
@@ -2668,12 +2624,11 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-70248b": {
-      "changed_at": "2026-11-14T19:52:10+00:00",
+      "changed_at": "2026-11-24T02:07:37+00:00",
       "last_seen": "2026-11-17T22:50:37+00:00",
       "name": "AZUMA Terry Crew Neck Sweat",
       "sizes": [
-        "2",
-        "3"
+        "2"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-70249b": {
@@ -2762,13 +2717,12 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-80540c": {
-      "changed_at": "2026-10-10T19:14:26+00:00",
+      "changed_at": "2026-11-24T02:07:37+00:00",
       "last_seen": "2026-11-17T22:50:37+00:00",
       "name": "High Density Crew Neck Knit",
       "sizes": [
         "1",
-        "2",
-        "3"
+        "2"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-80541b": {
@@ -2849,11 +2803,10 @@
       "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-80559c": {
-      "changed_at": "2026-09-05T17:15:47+00:00",
+      "changed_at": "2026-11-24T02:07:37+00:00",
       "last_seen": "2026-11-17T22:50:37+00:00",
       "name": "High Gauge Oversized L/S Knit Shirts",
       "sizes": [
-        "1",
         "2",
         "3"
       ]
@@ -3261,15 +3214,6 @@
       "last_seen": "2026-10-25T18:20:56+00:00",
       "name": "SANMONT for Graphpaper Wool Twill Belted Pants",
       "sizes": []
-    },
-    "https://eng.graphpaper-tokyo.com/products/suvin-corduroy-compact-shoulder-double-jacket": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
-      "last_seen": "2026-09-24T19:01:50+00:00",
-      "name": "Suvin Corduroy Compact Shoulder Double Jacket",
-      "sizes": [
-        "1",
-        "2"
-      ]
     },
     "https://eng.graphpaper-tokyo.com/products/techno-wool-nylon-compact-shoulder-jacket": {
       "changed_at": "2026-08-26T03:16:32+00:00",
