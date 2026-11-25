@@ -747,11 +747,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-10419b": {
-      "changed_at": "2026-10-24T18:02:54+00:00",
+      "changed_at": "2026-11-25T23:33:40+00:00",
       "last_seen": "2026-11-21T20:52:13+00:00",
       "name": "Light Melton Pea Coat",
       "sizes": [
-        "1",
         "2"
       ]
     },
@@ -1538,14 +1537,6 @@
         "2"
       ]
     },
-    "https://eng.graphpaper-tokyo.com/products/gm263-50472": {
-      "changed_at": "2026-09-18T18:19:32+00:00",
-      "last_seen": "2026-09-26T18:30:07+00:00",
-      "name": "Wool Hopsack Long-Sleeve Oversized Regular Collar Shirt",
-      "sizes": [
-        "2"
-      ]
-    },
     "https://eng.graphpaper-tokyo.com/products/gm263-50480": {
       "changed_at": "2026-10-19T20:31:44+00:00",
       "last_seen": "2026-10-16T18:44:55+00:00",
@@ -1792,7 +1783,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gm264-50010b": {
       "changed_at": "2026-11-07T19:21:17+00:00",
-      "last_seen": "2026-11-18T22:32:55+00:00",
+      "last_seen": "2026-11-25T23:33:40+00:00",
       "name": "Oxford L/S B.D Box Shirt",
       "sizes": [
         "1",
@@ -1802,7 +1793,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gm264-50011b": {
       "changed_at": "2026-11-07T19:21:17+00:00",
-      "last_seen": "2026-11-18T22:32:55+00:00",
+      "last_seen": "2026-11-25T23:33:40+00:00",
       "name": "Oxford L/S Oversized B.D Shirt",
       "sizes": [
         "O/S",
@@ -1811,7 +1802,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gm264-50012b": {
       "changed_at": "2026-11-07T19:21:17+00:00",
-      "last_seen": "2026-11-18T22:32:55+00:00",
+      "last_seen": "2026-11-25T23:33:40+00:00",
       "name": "Oxford L/S Oversized Band Collar Shirt",
       "sizes": [
         "O/S"
@@ -3138,7 +3129,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gu264-90028b": {
       "changed_at": "2026-11-07T19:21:17+00:00",
-      "last_seen": "2026-11-18T22:32:55+00:00",
+      "last_seen": "2026-11-25T23:33:40+00:00",
       "name": "Graphpaper 3-Pack Socks",
       "sizes": [
         "22-25",
@@ -3147,7 +3138,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gu264-90033b": {
       "changed_at": "2026-11-07T19:21:17+00:00",
-      "last_seen": "2026-11-18T22:32:55+00:00",
+      "last_seen": "2026-11-25T23:33:40+00:00",
       "name": "Holeless Leather Classic Belt",
       "sizes": [
         "1",
@@ -3156,7 +3147,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gu264-90034b": {
       "changed_at": "2026-11-07T19:21:17+00:00",
-      "last_seen": "2026-11-18T22:32:55+00:00",
+      "last_seen": "2026-11-25T23:33:40+00:00",
       "name": "Holeless Classic Narrow Belt",
       "sizes": [
         "1",
@@ -3165,7 +3156,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gu264-90035b": {
       "changed_at": "2026-11-07T19:21:17+00:00",
-      "last_seen": "2026-11-18T22:32:55+00:00",
+      "last_seen": "2026-11-25T23:33:40+00:00",
       "name": "Nylon Riggers Belt",
       "sizes": [
         "O/S"
