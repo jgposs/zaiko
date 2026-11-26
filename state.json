@@ -93,7 +93,7 @@
     },
     "https://www.comoli.jp/mailorder/cotton_mesh_ss_t-shirt_b": {
       "changed_at": "2026-08-26T03:16:20+00:00",
-      "last_seen": "2026-11-19T22:38:14+00:00",
+      "last_seen": "2026-11-26T23:43:26+00:00",
       "name": "COTTON MESH S/S T-SHIRT COLOR： BLACK / WHITE",
       "sizes": [
         "3"
@@ -167,12 +167,10 @@
       "sizes": []
     },
     "https://www.comoli.jp/mailorder/reversible_half_zip_pullover_e": {
-      "changed_at": "2026-11-17T22:50:28+00:00",
+      "changed_at": "2026-11-26T23:43:26+00:00",
       "last_seen": "2026-11-20T22:12:48+00:00",
       "name": "REVERSIBLE HALF ZIP PULLOVER COLOR： BLACK",
-      "sizes": [
-        "2"
-      ]
+      "sizes": []
     },
     "https://www.comoli.jp/mailorder/reversible_jacket_e": {
       "changed_at": "2026-10-07T20:33:23+00:00",
@@ -820,7 +818,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-20110b": {
       "changed_at": "2026-11-20T22:12:58+00:00",
-      "last_seen": "2026-11-19T22:38:23+00:00",
+      "last_seen": "2026-11-26T23:43:36+00:00",
       "name": "Soft Knit Corduroy Jacket",
       "sizes": []
     },
@@ -1046,7 +1044,7 @@
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40112b": {
       "changed_at": "2026-09-05T17:15:47+00:00",
-      "last_seen": "2026-11-19T22:38:23+00:00",
+      "last_seen": "2026-11-26T23:43:36+00:00",
       "name": "Soft Knit Corduroy Wide Tapered Chef Pants",
       "sizes": [
         "1",
@@ -1146,12 +1144,11 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40189b": {
-      "changed_at": "2026-11-10T21:15:29+00:00",
+      "changed_at": "2026-11-26T23:43:36+00:00",
       "last_seen": "2026-11-20T22:12:58+00:00",
       "name": "Scale Off Wool Chef Pants",
       "sizes": [
-        "2",
-        "1"
+        "2"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm263-40190b": {
@@ -1792,12 +1789,11 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm264-50011b": {
-      "changed_at": "2026-11-07T19:21:17+00:00",
+      "changed_at": "2026-11-26T23:43:36+00:00",
       "last_seen": "2026-11-25T23:33:40+00:00",
       "name": "Oxford L/S Oversized B.D Shirt",
       "sizes": [
-        "O/S",
-        "O/S-INT"
+        "O/S"
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gm264-50012b": {
@@ -2051,12 +2047,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu253-70230b": {
-      "changed_at": "2026-08-26T03:16:32+00:00",
+      "changed_at": "2026-11-26T23:43:36+00:00",
       "last_seen": "2026-11-20T22:12:58+00:00",
       "name": "Wool Border L/S Tee",
-      "sizes": [
-        "2"
-      ]
+      "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/gu253-70231b": {
       "changed_at": "2026-08-26T03:16:32+00:00",
@@ -2615,12 +2609,10 @@
       ]
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-70248b": {
-      "changed_at": "2026-11-24T02:07:37+00:00",
+      "changed_at": "2026-11-26T23:43:36+00:00",
       "last_seen": "2026-11-24T23:50:22+00:00",
       "name": "AZUMA Terry Crew Neck Sweat",
-      "sizes": [
-        "2"
-      ]
+      "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-70249b": {
       "changed_at": "2026-10-31T19:13:33+00:00",
@@ -2792,11 +2784,10 @@
       "sizes": []
     },
     "https://eng.graphpaper-tokyo.com/products/gu263-80559c": {
-      "changed_at": "2026-11-24T02:07:37+00:00",
+      "changed_at": "2026-11-26T23:43:36+00:00",
       "last_seen": "2026-11-24T23:50:22+00:00",
       "name": "High Gauge Oversized L/S Knit Shirts",
       "sizes": [
-        "2",
         "3"
       ]
     },
@@ -3241,7 +3232,7 @@
   "neighbour-comoli": {
     "https://www.shopneighbour.com/en-us/products/comoli-mens-black-denim-belted-pants-26": {
       "changed_at": "2026-11-06T20:49:36+00:00",
-      "last_seen": "2026-11-19T22:38:26+00:00",
+      "last_seen": "2026-11-26T23:43:38+00:00",
       "name": "Black Denim Belted Pants",
       "sizes": [
         "3"
@@ -3255,7 +3246,7 @@
     },
     "https://www.shopneighbour.com/en-us/products/comoli-mens-black-denim-work-jacket-26": {
       "changed_at": "2026-11-05T21:26:20+00:00",
-      "last_seen": "2026-11-19T22:38:26+00:00",
+      "last_seen": "2026-11-26T23:43:38+00:00",
       "name": "Black Denim Work Jacket",
       "sizes": [
         "1",
@@ -3277,7 +3268,7 @@
     },
     "https://www.shopneighbour.com/en-us/products/comoli-mens-calfskin-zip-short-jacket-black": {
       "changed_at": "2026-11-09T23:44:57+00:00",
-      "last_seen": "2026-11-19T22:38:26+00:00",
+      "last_seen": "2026-11-26T23:43:38+00:00",
       "name": "Calfskin Zip Short Jacket Black",
       "sizes": []
     },
@@ -3303,7 +3294,7 @@
     },
     "https://www.shopneighbour.com/en-us/products/comoli-mens-corduroy-comoli-shirt-black-26": {
       "changed_at": "2026-11-22T20:59:54+00:00",
-      "last_seen": "2026-11-19T22:38:26+00:00",
+      "last_seen": "2026-11-26T23:43:38+00:00",
       "name": "Corduroy Comoli Shirt Black",
       "sizes": [
         "2"
@@ -3317,7 +3308,7 @@
     },
     "https://www.shopneighbour.com/en-us/products/comoli-mens-corduroy-drawstring-pants-black-26": {
       "changed_at": "2026-11-07T19:21:19+00:00",
-      "last_seen": "2026-11-19T22:38:26+00:00",
+      "last_seen": "2026-11-26T23:43:38+00:00",
       "name": "Corduroy Drawstring Pants Black",
       "sizes": []
     },
@@ -3335,7 +3326,7 @@
     },
     "https://www.shopneighbour.com/en-us/products/comoli-mens-cotton-fleece-hoodie-black-26": {
       "changed_at": "2026-11-09T23:44:57+00:00",
-      "last_seen": "2026-11-19T22:38:26+00:00",
+      "last_seen": "2026-11-26T23:43:38+00:00",
       "name": "Cotton Fleece Hoodie Black",
       "sizes": [
         "2",
@@ -3373,7 +3364,7 @@
     },
     "https://www.shopneighbour.com/en-us/products/comoli-mens-cotton-nylon-zip-parka-black": {
       "changed_at": "2026-11-15T20:18:51+00:00",
-      "last_seen": "2026-11-19T22:38:26+00:00",
+      "last_seen": "2026-11-26T23:43:38+00:00",
       "name": "Cotton Nylon Zip Parka Black",
       "sizes": []
     },
@@ -3403,7 +3394,7 @@
     },
     "https://www.shopneighbour.com/en-us/products/comoli-mens-garment-dyed-m65-jacket-brown": {
       "changed_at": "2026-11-05T21:26:20+00:00",
-      "last_seen": "2026-11-19T22:38:26+00:00",
+      "last_seen": "2026-11-26T23:43:38+00:00",
       "name": "Garment-Dyed M65 Jacket Brown",
       "sizes": []
     },
@@ -3517,7 +3508,7 @@
     },
     "https://www.shopneighbour.com/en-us/products/comoli-mens-ten-c-field-jacket-black": {
       "changed_at": "2026-11-09T23:44:57+00:00",
-      "last_seen": "2026-11-19T22:38:26+00:00",
+      "last_seen": "2026-11-26T23:43:38+00:00",
       "name": "Ten C Field Jacket Black",
       "sizes": [
         "52"
@@ -3525,7 +3516,7 @@
     },
     "https://www.shopneighbour.com/en-us/products/comoli-mens-ten-c-reversible-jacket-black": {
       "changed_at": "2026-11-05T21:26:20+00:00",
-      "last_seen": "2026-11-19T22:38:26+00:00",
+      "last_seen": "2026-11-26T23:43:38+00:00",
       "name": "Ten C Reversible Jacket Black",
       "sizes": [
         "48",
@@ -3541,7 +3532,7 @@
     },
     "https://www.shopneighbour.com/en-us/products/comoli-mens-wool-check-zip-shirt": {
       "changed_at": "2026-11-05T21:26:20+00:00",
-      "last_seen": "2026-11-19T22:38:26+00:00",
+      "last_seen": "2026-11-26T23:43:38+00:00",
       "name": "Wool Check Zip Shirt",
       "sizes": [
         "2",
